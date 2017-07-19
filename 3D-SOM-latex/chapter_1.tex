@@ -1,0 +1,63 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Filename    : chapter_1.tex 
+%
+%   Description : This file will contain your Research Description.
+%                 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Research Description}
+\label{sec:researchdesc}    %--note: labels help you with hyperlink editing (using your IDE)
+
+\section{Overview of the Current State of Technology}
+\label{sec:overview}
+Music has been a part of our culture for hundreds of years, classical music being one of the oldest genre of music. McFee, B., Barringtong, L., \& Lanckriet, G. R. G. (2012)’s research compares the usage of manual technique versus their proposed metric learning framework. With machine learning, the usage of high-quality training data without active user participation and the analysis of more data is possible than with feedback or survey data from active user participation. Human error in the analysis process can also be minimized with machine learning since human-supervised training is minimal. Corrêa, D. C., \& Rodrigues, F. A. (2016)’s research shows the analysis of music features using machine learning techniques. According to the MIR community (Silla, C. N., Jr. , \& Freitas, A. A., 2009), the two main representation of music feature content are either audio-recorded or symbolic-based. The former employs the explicit recording of audio files while the latter uses symbolic data files such as MIDI or KERN.
+
+Throughout time, different styles have developed, each having features unique to themselves. Imogen Tilden (2013) notes the historical influence of composers with each other and how similar the methods of composing classical music are with pop music.  Due to these facts presented, symphonies written in the early 20th century may be influenced by the great composers and compositions of the previous eras. 
+
+Azcarraga \& Flores (2016) conducted a research to understand the relationship of compositions between the same composer to denote style as well as to determine if there are similarities between compositions of different periods of music to denote influence between time periods. The research showed the relationships and influences between composers from 5 major musical periods, namely the Baroque Period, Classical Period, 19th Century music, Romantic Period and the 20th century. By choosing three musical pieces from each of the three composers in each period, the research was able to produce quantitative comparisons of the music trajectories between pieces of the same composer and pieces within the same time period or on another. The research extracted the frequency count for each music segment lasting for a second in order to compare and analyze what pitches are frequently used by a specific musician in his piece.
+
+Self organizing map was used, wherein the map was divided into 21 clusters and each cluster represents a group of similar sounds. Their research showed that using self-organizing maps are indeed helpful in visualizing the musical features of a symphony, making it easier to create insights about the relationships within the different pieces and composers; however, the data set used only contained 45 compositions and therefore may not be representative of the entire collection of symphonies. There are specific cases wherein similar looking maps are generated from two musical pieces that sound nothing alike. These two pieces may have similar features, but since the maps are not time sensitive, they would end up looking quite similar.
+
+According to Xu et al. (2017), time series is a type of serial data which includes equally divided points in time order. With the data series, timing of the pitch is now considered and is the main basis in evaluating results is now not only based on the frequency of each pitch. To make a more precise analysis and understanding of the results, time series is added to the study to improve that a particular music is similar to the other. With this new concept in analyzing the similarities of the musical compositions of each composer by counting frequency of each pitch, there is no study wherein time series is considered in evaluating the different kinds of music with visualization. 
+\section{Research Objectives}
+\label{sec:researchobjectives}
+To incorporate the use of time series in comparing the given set of musical pieces
+\subsection{General Objective}
+\label{sec:generalobjective}
+To incorporate the use of time series in comparing the given set of musical pieces
+\subsection{Specific Objectives}
+\label{sec:specificobjectives}
+\begin{enumerate}
+\item To do a performance evaluation on the algorithm versus the previous version without time series;To include more composers and musical pieces to the data set;
+\item To determine optimal features to be used;
+\item To add in the time series variable to the current existing visualization;
+\item To do a performance evaluation on the algorithm versus the previous version without time series;
+\item To have participants listen and compare the musical pieces for qualitative comparison of symphonies;
+\item To compare the results of the algorithm and the results of the human participants;
+\end{enumerate}
+\section{Scope and Limitations of the Research}
+\label{sec:scopelimitations}
+The research will focus on inferring similarities and trends between different symphonies of multiple composers within different eras by visualizing each piece as a 3 dimensional graph. 
+
+The symphonies used in this research will include influential works from 5 musical eras — specifically, Baroque Era, Classical Period, 19th Century, Romantic Era and 20th Century with each era being represented by 3 composers with at most 5 pieces per person. Only orchestras or composers that are considered as influential during its era will be included in the data set.
+
+To be able to generate a self-organizing map the research will use jAudio to extract audio features from musical segments generated from the orchestra. In addition, for the purpose of increasing accuracy, this paper will use 600 features, as opposed to 78 suggested by Azcarraga \& Flores (2016), to represent each segment in order to accurately plot it on the graph and better differentiate similarly sounding samples. Each music sample will contain 1 second of playback from the composition with each successive segment beginning 0.5 seconds after the last. The resulting data will be processed through k-means clustering to generate a point in the map that best represents the sound clip. As a result, the map is organized into partitions that  denote similarly sounding music segments. 
+
+To create a 3 dimensional model to represent an orchestra, the research will assign each generated self-organizing map to a point in time and will be used to create a graph representing each map in a time series. As a result of using time series, the paper will be able to better differentiate orchestras that use similar themes but at different periods of the composition.
+
+To evaluate the performance of the method proposed in this paper, the paper will generate 3D self-organizing maps using process previously discussed and 2D self-organizing maps using the approach used in the paper of Azcarraga \& Flores (2016). Using the orchestras used in their research, the paper will review whether musical pieces deemed as similar using the 2D self-organizing map are also similar when visualized in a 3D self-organizing map. In order to calculate whether 2 self organizing maps are similar the paper will calculate the euclidean distance between clusters in the map in order to quantify it in percentages.
+
+In order to gather qualitative data the paper will have people who are members of an orchestra listen to 5 music samples deemed by the 3D self-organizing map to be similar and 5 that are dissimilar. In total, 50 participants will listen to 10 3-minute-long music samples. The resulting data, when compared to the results generated by the 3D SOM, will help give insight into the actual effectiveness of the paper’s discussed visualization method.
+
+Similarly to the paper of Azcarraga \& Flores (2016), this research focus on representation of symphonies using self-organizing maps to generate an accurate depiction of a musical piece for the purpose of analysis or comparison.
+
+\section{Significance of the Research}
+\label{sec:significance}
+By applying machine learning to the study of music by different composers, as with Azcarraga \& Flores’s (2016) paper, the study aims to reveal trends on how one composer influenced another’s work through the visualization of the self-organizing maps in SOMphony but now with an added time series variable to further improve the accuracy of the trained maps.
+
+As Imogen Tilden (2013) states, the structure of classical and modern music are very similar, having the verse-chorus structure and modern pop songs are first composed instrumentally. Modern music just takes classical music further by adding in voice and combining the different techniques employed by classical music. As this study focuses on comparing different symphonies and analyzing to see how similar they are, the results of this study will show us trends among composers in terms of their influence on one another in a musical era, the influence one composer had over other composers from a later era, and what the particular style of a particular composer would look like in a self-organizing map. This research will show whether composers from back then had a lasting influence on music 100 or so years from a particular composer’s time period. This research can also show if a particular composer has a definite coherent style that is present in his musical pieces.
+
+Some possible future application of the results of this study would include the improvement of existing music information retrieval (MIR) techniques used by music databases. Corrêa, D. C., \& Rodrigues, F. A. (2016)’s research shows a possible improvement on automatic music genre classification using symbolic-based music features. Similarly, this research can also be used to further improve the algorithms used by playlist managers for the retrieval of similar songs from music databases using the comparison of the trained SOM’s.
+
+

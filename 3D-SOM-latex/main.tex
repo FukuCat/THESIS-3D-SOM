@@ -1,0 +1,92 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Version     : 2.0
+%
+%   Filename    : main.tex
+%
+%   Description : This is the main file for the LaTeX thesis proposal document template.
+%                 The template is intended for use by BSCS students. 
+%
+%                It is assumed that you can learn how to use LaTeX on your own.
+%                Please check/read the following online LaTeX book:
+%
+%                                 http://en.wikibooks.org/wiki/LaTeX
+%     
+%   Author      : Florante R. Salvador
+%
+%   Contributors: 1.  Karlo Campos 
+%                     a. margin settings for DLSU thesis paper 
+%   
+%   Notes       : Please email florante.salvador@dlsu.edu.ph for comments, suggestions, ideas etc.
+%
+%   Reference:
+%
+%
+%   History/Updates:
+%      March 12, 2009 -- created version 1.0 for release to CSC701M (Methods of Research) students
+%      May 30, 2009   -- updated Title page and Abstract for undergrad ST students
+%
+%      Feb 27, 2015 -- Created Version 2 (major overhaul): changed class to report, created a figures folder, 
+%                               removed unnecessary packages, added new comments  based on Ethel Ong's slides
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{preamble}                %-- includes LaTeX source file for the preamble 
+                                  %-- include packages, sets the margin sequence, and many more... 
+                                  %-- your job: check if the settings are suitable for your own printer
+
+\graphicspath{{figures/}}  %-- figures is the name of the folder containing images JPG or PN
+
+\begin{document}
+
+\include{title_page}              %-- includes LaTeX source file for the Title Page 
+                                  %-- your job: **EDIT THIS FILE ** to indicate your own title, name, and thesis adviser's name
+
+
+\include{abstract}                %-- this is the Abstract page
+                                  %-- your job: **EDIT THIS FILE** to indicate your own abstract
+
+\pagenumbering{roman}             %-- this will number pages as i, ii, iii, etc...
+\setcounter{page}{2}
+
+\tableofcontents                  %-- this command is used to generate the Table of Contents
+
+
+%\newpage
+%\listoffigures                    %-- this command is used to generate List of Figures
+
+%\newpage                       
+%\listoftables                     %-- this command is used to generate List of Tables
+
+%\newpage
+
+\pagenumbering{arabic}            %-- this will number pages as 1, 2, 3, etc...
+\setcounter{page}{1}              
+
+
+\include{chapter_1}               %-- includes LaTeX source file for Chapter 1: Research Description
+                                  %-- your job: **EDIT THIS FILE** to indicate your own research description
+
+\include{chapter_2}               %-- includes LaTeX source file for Chapter 2: Review of Related Literature
+                                  %-- your job: **EDIT THIS FILE** to indicate your review of related literature 
+
+\include{chapter_3}               %-- includes LaTeX source file for Chapter 3: Research Methodology
+                                  %-- your job: **EDIT THIS FILE** to indicate your research methodology
+
+%\appendix                         %-- used to specify appendices
+%\include{appendix_A}              %-- includes LaTeX source file for Appendix A
+                                                 %-- your job: **CREATE/EDIT** your own source file for the appendices
+%\include{appendix_B}
+%\include{appendix_C}
+
+%\bibliographystyle{apacite}       %-- specified APA style for bibliograpy
+                                  %-- more details about APA style citation can be found in www.ctan.org/tex-archive/biblio/bibtex/contrib/apacite/
+
+                                  %-- bibliographic entries are handled via bibtex; refer to www.bibtex.org for more details
+
+
+\bibliography{myreferences}       %-- the file "myreferences.bib" is a sample bibliography (bib) from SIGGRAPH 
+                                  %-- your job: **CREATE/EDIT** your own bibliography file  
+
+\end{document}
+
