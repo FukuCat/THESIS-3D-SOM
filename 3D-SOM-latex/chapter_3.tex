@@ -11,20 +11,25 @@ This chapter contains phases and activities that will be performed to accomplish
 
 \section{Research Activities}
 \subsection{Concept Formulation and Review of Related Literature}
-This phase will concern the consolidation of the thesis requirements such as the objective of the research, the research problem to be tackled, and the scopes and limitations of such research. Literatures related to 2D and 3D self-organizing maps, music feature classifications, k-means clustering, and  machine learning will be reviewed as part of the Review of Related Literature.
+This phase will concern the consolidation of the thesis requirements such as the objective of the research, the research problem to be tackled, and the scopes and limitations of such research. Literatures related to 2D and 3D self-organizing maps, music feature classifications, k-means clustering, and  machine learning will be part of the Review of Related Literature.
 
 \subsection{Data Gathering}
 
-This phase will concern the  gathering of the additional symphonies to be used for the research. Aside from the music dataset used in the research of Azcarraga \& Flores (2016), 2 symphonies will be added to each composer, summing up to a total of 75 symphonies. This phase will also include the division of the additional symphonies into 1 sec music segments in preparation for music feature extraction. 
+This phase will concern the  gathering of the additional symphonies to be used for the research to provide more reliable results. Aside from the music dataset used in SOMphony, 2 symphonies will be added to each composer, summing up to a total of 5 symphonies per composer and 125 in all. The proponents have decided to maintain 5 symphonies per composer so that the data set will be balanced. The process of selecting which symphonies to be added would be by random to have a better grasp of the general style of the composer. The audio files would be retrieved from online sources. The researchers  would not take into consideration the file type and bitrate of the audio files since music data that is free for use is limited. 
 
 
-\subsection{Development}
-In this phase, the concept of time series will be incorporated to the algorithm for training the SOM. The system for the visual representation of the trained 3D SOM’s will also be developed. This 3D SOM visualization will look similar to Azcarraga, A., Caronongan, A., Setiono, R., \& Manalili, S. (2016)’s research work but with the altered algorithm for time series.
-\subsection{Training}
-In this phase, training of the symphonies into 3D SOM’s will be done. JAudio will still be used for the music feature extraction and algorithm will for clustering will be modified accordingly based on the results of development. 600 optimal features among all the features will be selected as a result. The newly added, together with the old symphonies should be trained all over again using the new 3D SOM.
+\subsection{Pre-processing}
+To start pre-processing,  the audio files would be converted into wav files in preparation for splitting. WaveSplitter will be used in splitting the audio file into 1 second segments at intervals of 0.5 second. These segments would undergo feature extraction using jAudio. The result would be an xml file containing all the features determined for each segment. The researchers would then run RegEx to extract the unnecessary text in preparation for labeling. Since the proponents would have supervised learning, the data needs to be labelled according to their composer, composition and file name. 
+
+\subsection{Feature Selection}
+In this phase, the proponents will trim down the 600 features that jAudio has extracted. Using decision trees, the top 20 nodes will be selected as the top 20 features. The proponents have decided to have 20 as an arbitrary value for the features to be used. By doing feature selection, the data set would have a uniform number of features for all symphonies and it would also enhance the efficiency of training the SOM. The tree model produced after feature selection is what would be used in training the SOM.
+
+\subsection{Visualization}
+In this phase, the proponents will trim down the 600 features that jAudio has extracted. Using decision trees, the top 20 nodes will be selected as the top 20 features. The proponents have decided to have 20 as an arbitrary value for the features to be used. By doing feature selection, the data set would have a uniform number of features for all symphonies and it would also enhance the efficiency of training the SOM. The tree model produced after feature selection is what would be used in training the SOM.
 
 \subsection{Performance Evaluation and Human Evaluation}
-In this phase, comparison between the results of the previous 2D SOM and the results of the 3D SOM for the symphonies from the old dataset will be made. This, together with the results of the symphonies from the new dataset will make up the quantitative comparison of symphonies. This phase will also include the evaluation of results from at least 50 human participants with knowledge about music who will listen and give comparisons on specified symphonies. This will make up the qualitative comparison of symphony. Both the quantitative and qualitative comparisons will be used in analyzing and concluding the results of the experiment.
+In this phase, the proponents limit themselves to 50 participants. The participant profile would be people that have experience with classical music. In the case that the target amount is not reached within two months, the researchers will proceed to analyze the results they have. The participants would be presented with a 3D graph and two music players. They are tasked to annotate specific regions of the symphony and verify if they are indeed similar. However we do not limit the participants to the specified regions, the participants are free to annotate parts that they believe sound similar. 
+
 \subsection{Documentation}
 This phase will be done all throughout the whole research timeframe. This will include taking down notes on observations and findings during experiments and during the review of related literature, writing related technical documents, and the research paper itself.
 

@@ -11,6 +11,22 @@
 This chapter discusses the features, capabilities, and limitations of existing research, algorithms, or software that are related or are similar to the thesis.
 
 \section{Musical Data Representation and Interpretation}
+ 
+\begin{center}
+\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+ \hline
+ \multicolumn{4}{|c|}{Musical Data Representation and Interpretation} \\
+ \hline
+ Authors \&Year &Title&Research Problem&Approach\\
+ \hline
+ Correa, D. C., \& Rodrigues, F. A. (2016)& A survey on symbolic data-based music genre classification & Expanding music database needs more accurate tools for music information retrieval & Symbolic-based music feature are used to train system for genre classification.\\
+\hline
+ Dubnov, et. al. (2003)& Using Machine-Learning Methods for Musical Style Modeling & Predicting and determining musical context based on relevant past sample is very difficult because the length of the musical context varies widely & Two approaches, incremental parsing (IP) and the prefix suffix trees (PST), are used in designing predictors that can handle data with very large length.\\
+\hline
+  Cambouropoulos, E. \& Widmer, G. (2000)& Automated Motivic Analysis via Melodic Clustering & Finding similarity in music patterns. & Their method uses differences in pitch-intervals and rhythm as basis for splitting one musical motive (small bits of music) from another.\\
+ \hline
+\end{tabular}
+\end{center}
 
 According to Corrêa, D. C., \& Rodrigues, F. A. (2016), as music grows continuously over time, a constant need for an upgrade to satisfy the number and size of music databases causes the development of more accurate tools for music information retrieval (MIR) . MIR is the research field responsible for the development of algorithms or other computational means for the retrieval of useful information from music and the classification of music based on their categories. The ever increasing research on machine learning, the ever expanding abundance of digital audio formats, the growing quality and availability of online symbolic music data, and availability of tools for extracting musical properties motivate this study on machine learning and MIR. One of the main problems in MIR involves the classification of music based on their genre which this study tackles. The automatic genre classification of music plays a key role in online music databases where websites or device music engines manage and label music content for retrieval.
 
@@ -24,11 +40,28 @@ Predicting and determining musical context based on relevant past sample is very
 
 The IP algorithm is a lossless coding scheme implying that the application of this algorithm doesn’t result to loss of some spectrum of music while the PST is a lossy compression. The IP also makes sure that every transition is included in the parsing of the music while in PST, the method is very selective in that some rare events and events that do not improve transition are not included. IP uses online estimation through instantaneous coding meaning that IP continually searches online on possible ways or methods to estimate or predict the next possible sequence while in PST, analysis is done by batches through file compression. By analyzing the statistical data provided by either algorithm, predictions or estimates for the next sequence can be made.
 
-Cambouropoulos, E. and Widmer, G. (2000) stated that music could be categorized into small bits called "motives". These motives are extracted from a musical piece by determining which clusters of musical data can be grouped together while maintaining melodic and rhythmic coherence. This is achieved by representing a melodic segment as a series of notes while minding musical closeness. 
+Cambouropoulos, E. \& Widmer, G. (2000) stated that music could be categorized into small bits called ``motives'' . These motives are extracted from a musical piece by determining which clusters of musical data can be grouped together while maintaining melodic and rhythmic coherence. This is achieved by representing a melodic segment as a series of notes while minding musical closeness. 
 
 Their paper outlines a method that uses differences in pitch-intervals and rhythm as basis for splitting one musical motive from another. For example, two segments can be considered similar if they share a certain number of component notes or intervals using approximate pattern matching. The segments can also be considered similar if they contain shared elements at different pitches. However, this would require a more advanced pattern matching and data structure.
 
 \section{Music Visualization}
+
+\begin{center}
+\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+ \hline
+ \multicolumn{4}{|c|}{Musical Visualization} \\
+ \hline
+ Authors \& Year&Title&Research Problem&Approach\\
+ \hline
+ Azcarraga \& Flores (2016)& SOMphony: Visualizing Symphonies Using Self-Organizing Maps & How influential are composers and their symphonies back in the early musical eras? & Construct 2D SOM trained using k-means clustering to construct visual maps for comparison of symphonies.\\
+\hline
+ Azcarraga, A., Caronongan, A., Setiono, R., \& Manalili, S. (2016) & Validating the Stable Clustering of Songs in a Structured 3D SOM & Will constructing the classic 2D SOM as a 3D map be feasible, with the learning algorithm still the same as the 2D map? & The 3D map is designed as a $3X3X3$ cube with $9X9X9$ nodes. The cube is divided into one core cube and 8 corner cubes. The Euclidean distance from core to each corner represents the quality of the different categories or genres. \\
+\hline
+ Foote (1997) & Visualizing music and audio using self-similarity & Is it possible to display the acoustic similarity between any two instants of an audio file as a two-dimensional representation & Audio similarity is computed by parameterizing them into MFCC’s and getting the autocorrelation of two MFCC feature vectors $V_i$ and $V_j$ that were derived from audio windows. \\
+ \hline
+\end{tabular}
+\end{center}
+
 Azcarraga \& Flores (2016) made a paper about Visualizing Symphonies using Self Organizing Maps in order to know whether the music of the a certain composer and certain century is influenced by their past counterparts. In the map, there are different parts of it that represents a unique sound. Every time a specific pitch is hit by the music, a line is drawn until the music of a certain composer is finished. The study used traditional machine learning algorithm in order to know whether there is similarity across each century composers. Basically, the study counts the frequency of a certain pitch sound and summarizes it in order to compare it with other composers.
 
 	In order to make a deeper analysis of the study. A new algorithm and variable is going to be used. In the study of this thesis paper, the researchers will add a new dimension and the new variable is a time. The time where a specific pitch will now be important in comparing it to the other pitches of the composers. With this, Time Lapse Algorithm is going to be used in order to summarize data with the time included.
@@ -39,12 +72,6 @@ Azcarraga \& Flores (2016) made a paper about Visualizing Symphonies using Self 
 	
 	Foote (1997) presented a paper on Visualizing Music and Audio using Self-Similarity. In this paper, the acoustic similarity between any two instants of an audio file is calculated and displayed as a two-dimensional representation. Structure and repetition is a general feature of nearly all music, with parts resembling certain parts of the song that came before it. This paper presents a method of visualizing the structure of the music by its acoustic similarity or dissimilarity in specific instances of time through grayscale gradation patterns. 
 	
-	Before getting the similarity measures, the two instants  are first parameterized into Mel-frequency cepstral coefficients (MFCCs) plus an energy term. The similarity measure S(i,j) is computed by getting the autocorrelation of two MFCC feature vectors Vi and Vj that were derived from audio windows. A simple metric of vector similarity S is the scalar product of the vectors. A better similarity measure can be obtained by computing the vector correlation over a window w. This captures the time dependence ofthe vectors. To have high similarity measure, the vectors must not only be similar, but their sequence must be similar as well. 
+	Before getting the similarity measures, the two instants  are first parameterized into Mel-frequency cepstral coefficients (MFCCs) plus an energy term. The similarity measure $S(i,j)$ is computed by getting the autocorrelation of two MFCC feature vectors $V_i$ and $V_j$ that were derived from audio windows. A simple metric of vector similarity S is the scalar product of the vectors. A better similarity measure can be obtained by computing the vector correlation over a window w. This captures the time dependence ofthe vectors. To have high similarity measure, the vectors must not only be similar, but their sequence must be similar as well. 
 
-	Given the similarity measures S(i,j) computed for all window combinations, an image is constructed so that each pixel at location (i,j) is given a grayscale value proportional to the measure. The maximum similarity measure is given maximum brightness. Visually, regions of silence or long sustained notes appear as bright squared on the diagonal. Repeated figures such as choruses and phrases will appear as bright off-diagonal rectangles. If the music has a high degree of repetition, it will show up as diagonal stripes or checkerboards that are offset from the main diagonal. Longer audio files would result to larger images due to the rapid rate of feature vectors. To reduce the image size, the similarity is only calculated for certain time indexes. And since S is already calculated at window size w, the paper only looks at time indexes that are an integer multiple of w.
-
-
-\newpage
-\cite{indiaConf} is an example of Ed
-
-\cite{earth} is an example of Ed
+	Given the similarity measures $S(i,j)$ computed for all window combinations, an image is constructed so that each pixel at location $(i,j)$ is given a grayscale value proportional to the measure. The maximum similarity measure is given maximum brightness. Visually, regions of silence or long sustained notes appear as bright squared on the diagonal. Repeated figures such as choruses and phrases will appear as bright off-diagonal rectangles. If the music has a high degree of repetition, it will show up as diagonal stripes or checkerboards that are offset from the main diagonal. Longer audio files would result to larger images due to the rapid rate of feature vectors. To reduce the image size, the similarity is only calculated for certain time indexes and since S is already calculated at window size w, the paper only looks at time indexes that are an integer multiple of w.
