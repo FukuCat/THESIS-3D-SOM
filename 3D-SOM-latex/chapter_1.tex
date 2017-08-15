@@ -32,7 +32,7 @@ To incorporate the use of time series in the visualization of symphonies for com
 \label{sec:specificobjectives}
 \begin{enumerate}
 \item To include more musical pieces to the data set;
-\item To perform feature selection to deermine optimal features to be used;
+\item To perform feature selection to determine optimal features to be used;
 \item To add in the time series variable;
 \item To create a 3D visualization model for the data;
 \item To have participants listen and annotate the musical pieces for qualitative data;
@@ -43,6 +43,8 @@ To incorporate the use of time series in the visualization of symphonies for com
 To expand the data set of SOMphony, the proponents will add an additional 2 symphonies to the existing 3 symphonies for each composer. This will result to a total of 125 symphonies all in all. By having an equal number of symphonies per composer, this maintains a balanced data set for all composers. The criteria for choosing the symphonies to be added would be random to have a better grasp on the general style of the composer.
 
 To be able to generate a self-organizing map, the proponents will use jAudio to extract 600 audio features from musical segments generated from the symphony. For the labelling phase, the proponents will classify the selected features by composition because the research focuses on comparing different compositions and comparing eras or composers. The 600 audio features would be trimmed down through feature selection. Decision trees would be used to determine the features to be kept since those nodes that are nearest to the root node of the tree would be dubbed as the more important features compared to the others. The proponents have decided to have 20 as an arbitrary value for the features to be used. By selecting only 20 features, the data set would have a uniform number of features for all symphonies and it would also enhance the efficiency of training the SOMs as it would not take a long time to extract 20 features compared to extracting 600. 
+
+In incorporating the time series, the musical piece is divided into 1 second segments in order to be uniform all throughout the piece and to avoid incomplete notes. A 0.5 second overlap is used to be able to consider transitions between each second. 
 
 To create a 3D model to represent the symphony, the proponents will assign each generated SOM to a point in time and will be used to create a graph representing each map in a time series. As a result of using time series, our research will be able to better differentiate symphonies that use similar themes but at different periods of time in the composition.
 
