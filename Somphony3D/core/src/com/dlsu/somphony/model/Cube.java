@@ -1,21 +1,35 @@
 package com.dlsu.somphony.model;
 
 import com.badlogic.gdx.controllers.ControllerListener;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.VertexAttributes;
+import com.badlogic.gdx.graphics.g3d.Material;
+import com.badlogic.gdx.graphics.g3d.Model;
 import com.badlogic.gdx.graphics.g3d.ModelInstance;
+import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
+import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
 import com.badlogic.gdx.math.Vector3;
 import com.dlsu.somphony.input.XInputController;
 
 public class Cube extends GameObject {
 
     XInputController controller;
+    Model model;
 
-    public Cube(ModelInstance modelInstance, XInputController controller) {
-        super(modelInstance);
+    public Cube(XInputController controller) {
         this.controller = controller;
+        initialize();
     }
 
     @Override
     public void initialize() {
+
+        // create cube
+        ModelBuilder modelBuilder = new ModelBuilder();
+        model = modelBuilder.createBox(5f, 5f, 5f,
+                new Material(ColorAttribute.createDiffuse(Color.GREEN)),
+                VertexAttributes.Usage.Position | VertexAttributes.Usage.Normal);
+        modelInstance = new ModelInstance(model);
 
     }
 
@@ -43,5 +57,10 @@ public class Cube extends GameObject {
     @Override
     public void render(float delta) {
         updateModel();
+    }
+
+    @Override
+    public void dispose() {
+        model.dispose();
     }
 }

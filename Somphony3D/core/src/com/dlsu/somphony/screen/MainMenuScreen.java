@@ -16,6 +16,7 @@ import com.dlsu.somphony.Driver;
 import com.dlsu.somphony.input.XInputController;
 import com.dlsu.somphony.model.Cube;
 import com.dlsu.somphony.model.GameObject;
+import com.dlsu.somphony.model.SomphonyLine;
 
 import java.util.Iterator;
 
@@ -25,14 +26,13 @@ public class MainMenuScreen implements Screen {
 
     public PerspectiveCamera camera;
     public CameraInputController camController;
-    public Model model;
     public ModelBatch modelBatch;
-    public ModelInstance instance;
     // lighting
     public Environment environment;
     // game objects
     public Array<GameObject> actors;
     public Cube cube;
+    public SomphonyLine line1;
     // controller
     public XInputController controller;
 
@@ -55,16 +55,18 @@ public class MainMenuScreen implements Screen {
         }
         controller = new XInputController();
         Controllers.addListener(controller);
-        // create cube
-        ModelBuilder modelBuilder = new ModelBuilder();
-        model = modelBuilder.createBox(5f, 5f, 5f,
-                new Material(ColorAttribute.createDiffuse(Color.GREEN)),
-                VertexAttributes.Usage.Position | VertexAttributes.Usage.Normal);
-        instance = new ModelInstance(model);
+
+        // generate test lines
+        Array<Vector3> lineArray1 = new Array<Vector3>();
+        lineArray1.add(new Vector3(0.0f, 0.0f, -5.0f));
+        lineArray1.add(new Vector3(0.0f, 0.0f, 5.0f));
+        lineArray1.add(new Vector3(0.0f, 5.0f, 10.0f));
         // create object
         actors = new Array<GameObject>();
-        cube = new Cube(instance, controller);
+        cube = new Cube(controller);
+        line1 = new SomphonyLine(Color.BLUE, lineArray1);
         actors.add(cube);
+        actors.add(line1);
 
 
         modelBatch = new ModelBatch();
@@ -101,20 +103,24 @@ public class MainMenuScreen implements Screen {
             GameObject actor = iter.next();
             actor.input(delta);
             actor.update(delta);
-            actor.render(delta);
         }
         camController.update();
     }
     @Override
     public void render(float delta) {
         input(delta);
-        update(delta);
 
         Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
 
+        update(delta);
         modelBatch.begin(camera);
-        modelBatch.render(instance, environment);
+        Iterator<GameObject> iter = actors.iterator();
+        while(iter.hasNext()) {
+            GameObject actor = iter.next();
+            actor.render(delta);
+            modelBatch.render(actor.modelInstance, environment);
+        }
         modelBatch.end();
     }
 
@@ -141,6 +147,10 @@ public class MainMenuScreen implements Screen {
     @Override
     public void dispose() {
         modelBatch.dispose();
-        model.dispose();
+        Iterator<GameObject> iter = actors.iterator();
+        while(iter.hasNext()) {
+            GameObject actor = iter.next();
+            actor.dispose();
+        }
     }
 }

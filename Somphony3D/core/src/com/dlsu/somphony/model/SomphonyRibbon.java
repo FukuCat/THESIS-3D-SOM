@@ -20,4 +20,9 @@ public class SomphonyRibbon extends GameObject {
     public void render(float delta) {
         updateModel();
     }
+
+    @Override
+    public void dispose() {
+
+    }
 }
