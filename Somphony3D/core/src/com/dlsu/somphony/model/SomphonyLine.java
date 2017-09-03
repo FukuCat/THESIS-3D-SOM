@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g3d.Model;
 import com.badlogic.gdx.graphics.g3d.ModelInstance;
 import com.badlogic.gdx.graphics.g3d.utils.MeshPartBuilder;
 import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
@@ -21,6 +22,27 @@ public class SomphonyLine extends GameObject {
     public Array<Vector3> points;
     public Color color;
     Model model;
+
+    public SomphonyLine(Color color){
+        this.color = color;
+
+        // generate test lines
+
+        points = new Array<Vector3>();
+        points.add(new Vector3(0.0f, 0.0f, 0.0f));
+        for(int i = 1; i <= 10; i++){
+            points.add(new Vector3(
+                    MathUtils.random(-0.2f, 0.2f) + points.get(i - 1).x,
+                    MathUtils.random(-0.2f, 0.2f) + points.get(i - 1).y,
+                    1.0f * i));
+        }
+        System.out.println(points.size);
+        for(int i = 0; i < points.size; i++){
+            System.out.println(points.get(i).x+":"+points.get(i).y+":"+points.get(i).z);
+        }
+        initialize();
+    }
+
     public SomphonyLine(Color color, Array<Vector3> points){
         this.color = color;
         this.points = points;

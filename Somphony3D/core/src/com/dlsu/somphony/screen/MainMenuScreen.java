@@ -31,8 +31,6 @@ public class MainMenuScreen implements Screen {
     public Environment environment;
     // game objects
     public Array<GameObject> actors;
-    public Cube cube;
-    public SomphonyLine line1;
     // controller
     public XInputController controller;
 
@@ -56,17 +54,11 @@ public class MainMenuScreen implements Screen {
         controller = new XInputController();
         Controllers.addListener(controller);
 
-        // generate test lines
-        Array<Vector3> lineArray1 = new Array<Vector3>();
-        lineArray1.add(new Vector3(0.0f, 0.0f, -5.0f));
-        lineArray1.add(new Vector3(0.0f, 0.0f, 5.0f));
-        lineArray1.add(new Vector3(0.0f, 5.0f, 10.0f));
         // create object
         actors = new Array<GameObject>();
-        cube = new Cube(controller);
-        line1 = new SomphonyLine(Color.BLUE, lineArray1);
-        actors.add(cube);
-        actors.add(line1);
+        //actors.add(new Cube(controller));
+        actors.add(new SomphonyLine(Color.BLUE));
+        actors.add(new SomphonyLine(Color.ORANGE));
 
 
         modelBatch = new ModelBatch();
