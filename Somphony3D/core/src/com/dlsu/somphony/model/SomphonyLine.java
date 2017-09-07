@@ -29,14 +29,14 @@ public class SomphonyLine extends GameObject {
         // generate test lines
 
         points = new Array<Vector3>();
-        points.add(new Vector3(0.0f, 0.0f, 0.0f));
+        points.add(new Vector3(0.0f, 0.0f, 0.0f - 5.0f));
         for(int i = 1; i < 10; i++){
             points.add(new Vector3(
                     MathUtils.random(-0.2f, 0.2f) + points.get(i - 1).x,
                     MathUtils.random(-0.2f, 0.2f) + points.get(i - 1).y,
-                    1.0f * i));
+                    1.0f * i - 5.0f));
         }
-        points.add(new Vector3(0.0f, 0.0f, 10.0f));
+        points.add(new Vector3(0.0f, 0.0f, 10.0f - 5.0f));
         System.out.println(points.size);
         for(int i = 0; i < points.size; i++){
             System.out.println(points.get(i).x+":"+points.get(i).y+":"+points.get(i).z);
