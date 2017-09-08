@@ -16,6 +16,7 @@ import com.dlsu.somphony.Driver;
 import com.dlsu.somphony.input.XInputController;
 import com.dlsu.somphony.model.Cube;
 import com.dlsu.somphony.model.GameObject;
+import com.dlsu.somphony.model.SomphonyGrid;
 import com.dlsu.somphony.model.SomphonyLine;
 
 import java.util.Iterator;
@@ -59,6 +60,7 @@ public class MainMenuScreen implements Screen {
         //actors.add(new Cube(controller));
         actors.add(new SomphonyLine(Color.BLUE));
         actors.add(new SomphonyLine(Color.ORANGE));
+        actors.add(new SomphonyGrid(Color.GRAY));
 
 
         modelBatch = new ModelBatch();
@@ -110,8 +112,7 @@ public class MainMenuScreen implements Screen {
         Iterator<GameObject> iter = actors.iterator();
         while(iter.hasNext()) {
             GameObject actor = iter.next();
-            actor.render(delta);
-            modelBatch.render(actor.modelInstance, environment);
+            actor.render(delta, modelBatch, environment);
         }
         modelBatch.end();
     }

@@ -4,6 +4,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g3d.Environment;
+import com.badlogic.gdx.graphics.g3d.ModelBatch;
 import com.badlogic.gdx.graphics.g3d.ModelInstance;
 import com.badlogic.gdx.math.Vector3;
 
@@ -28,7 +30,7 @@ public abstract class GameObject {
     public abstract void initialize();
     public abstract void input(float delta);
     public abstract void update(float delta);
-    public abstract void render(float delta);
+    public abstract void render(float delta, ModelBatch modelBatch, Environment environment);
     public abstract void dispose();
 
     public void setYaw(float y){

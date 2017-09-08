@@ -3,9 +3,7 @@ package com.dlsu.somphony.model;
 import com.badlogic.gdx.controllers.ControllerListener;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.VertexAttributes;
-import com.badlogic.gdx.graphics.g3d.Material;
-import com.badlogic.gdx.graphics.g3d.Model;
-import com.badlogic.gdx.graphics.g3d.ModelInstance;
+import com.badlogic.gdx.graphics.g3d.*;
 import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
 import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
 import com.badlogic.gdx.math.Vector3;
@@ -55,8 +53,10 @@ public class Cube extends GameObject {
     }
 
     @Override
-    public void render(float delta) {
+    public void render(float delta, ModelBatch modelBatch, Environment environment) {
         updateModel();
+
+        modelBatch.render(modelInstance, environment);
     }
 
     @Override
