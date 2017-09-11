@@ -39,7 +39,9 @@ public class MainMenuScreen implements Screen {
         this.game = game;
         // camera
         camera = new PerspectiveCamera(67, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-        camera.position.set(10f, 10f, 10f);
+        //camera.position.set(10f, 10f, 10f);
+        //camera.position.set(5f, 1f, 0f);
+        camera.position.set(0f, 0f, 0f);
         camera.lookAt(0,0,0);
         camera.near = 1f;
         camera.far = 300f;

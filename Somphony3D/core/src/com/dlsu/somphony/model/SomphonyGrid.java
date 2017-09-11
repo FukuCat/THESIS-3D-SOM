@@ -8,16 +8,15 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
 
+import java.util.Iterator;
+
 public class SomphonyGrid extends GameObject {
 
     public Array<Vector3> points;
     public Color color;
-    Model startGridModel;
-    Model endGridModel;
-    Model lineModel;
 
-    ModelInstance gridStartInstance;
-    ModelInstance gridEndInstance;
+    Array<ModelInstance> modelInstanceArray;
+    Array<Model> modelArray;
 
     public SomphonyGrid(Color color){
         this.color = color;
@@ -26,10 +25,13 @@ public class SomphonyGrid extends GameObject {
 
     @Override
     public void initialize() {
+        modelInstanceArray = new Array<ModelInstance>();
+        modelArray = new Array<Model>();
+
         points = new Array<Vector3>();
-        points.add(new Vector3(0.0f - 0.5f, 1.0f - 0.5f, -5.0f));
-        points.add(new Vector3(0.0f - 0.5f, 1.0f - 0.5f, 5.0f));
         ModelBuilder modelBuilder = new ModelBuilder();
+        points.add(new Vector3(-0.5f, -0.5f, -5.0f));
+        points.add(new Vector3(-0.5f, -0.5f, 5.0f));
         modelBuilder.begin();
         MeshPartBuilder builder = modelBuilder.part("line", 1, 3, new Material());
         //builder.setColor(Color.RED);
@@ -39,12 +41,11 @@ public class SomphonyGrid extends GameObject {
             for(int i = 0; i < points.size - 1; i++)
         builder.line(points.get(i).x, points.get(i).y, points.get(i).z,
                 points.get(i + 1).x, points.get(i + 1).y, points.get(i + 1).z);
-        lineModel = modelBuilder.end();
+        modelArray.add(modelBuilder.end());
 
         points = new Array<Vector3>();
-        points.add(new Vector3(0.0f - 0.5f, 0.0f - 0.5f, -5.0f));
-        points.add(new Vector3(0.0f - 0.5f, 1.0f - 0.5f, -5.0f));
-        points.add(new Vector3(1.0f - 0.5f, 1.0f - 0.5f, -5.0f));
+        points.add(new Vector3(0.5f, 0.5f, -5.0f));
+        points.add(new Vector3(0.5f, 0.5f, 5.0f));
 
         modelBuilder.begin();
         builder = modelBuilder.part("line", 1, 3, new Material());
@@ -52,23 +53,66 @@ public class SomphonyGrid extends GameObject {
         for(int i = 0; i < points.size - 1; i++)
             builder.line(points.get(i).x, points.get(i).y, points.get(i).z,
                     points.get(i + 1).x, points.get(i + 1).y, points.get(i + 1).z);
-        startGridModel = modelBuilder.end();
+        modelArray.add(modelBuilder.end());
 
         points = new Array<Vector3>();
-        points.add(new Vector3(0.0f - 0.5f, 0.0f - 0.5f, 5.0f));
-        points.add(new Vector3(0.0f - 0.5f, 1.0f - 0.5f, 5.0f));
-        points.add(new Vector3(1.0f - 0.5f, 1.0f - 0.5f, 5.0f));
+        points.add(new Vector3(0.5f, -0.5f, -5.0f));
+        points.add(new Vector3(0.5f, -0.5f, 5.0f));
+
         modelBuilder.begin();
         builder = modelBuilder.part("line", 1, 3, new Material());
         builder.setColor(color);
         for(int i = 0; i < points.size - 1; i++)
             builder.line(points.get(i).x, points.get(i).y, points.get(i).z,
                     points.get(i + 1).x, points.get(i + 1).y, points.get(i + 1).z);
-        endGridModel = modelBuilder.end();
+        modelArray.add(modelBuilder.end());
 
-        modelInstance = new ModelInstance(lineModel);
-        gridStartInstance = new ModelInstance(startGridModel);
-        gridEndInstance = new ModelInstance(endGridModel);
+        points = new Array<Vector3>();
+        points.add(new Vector3(-0.5f, 0.5f, -5.0f));
+        points.add(new Vector3(-0.5f, 0.5f, 5.0f));
+
+        modelBuilder.begin();
+
+        builder = modelBuilder.part("line", 1, 3, new Material());
+        builder.setColor(color);
+        for(int i = 0; i < points.size - 1; i++)
+            builder.line(points.get(i).x, points.get(i).y, points.get(i).z,
+                    points.get(i + 1).x, points.get(i + 1).y, points.get(i + 1).z);
+        modelArray.add(modelBuilder.end());
+
+        points = new Array<Vector3>();
+        points.add(new Vector3(-0.5f, -0.5f, -5.0f));
+        points.add(new Vector3(-0.5f, 0.5f, -5.0f));
+        points.add(new Vector3(0.5f, 0.5f, -5.0f));
+        points.add(new Vector3(0.5f, -0.5f, -5.0f));
+        points.add(new Vector3(-0.5f, -0.5f, -5.0f));
+
+        modelBuilder.begin();
+        builder = modelBuilder.part("line", 1, 3, new Material());
+        builder.setColor(color);
+        for(int i = 0; i < points.size - 1; i++)
+            builder.line(points.get(i).x, points.get(i).y, points.get(i).z,
+                    points.get(i + 1).x, points.get(i + 1).y, points.get(i + 1).z);
+        modelArray.add(modelBuilder.end());
+
+        points = new Array<Vector3>();
+        points.add(new Vector3(-0.5f, -0.5f, 5.0f));
+        points.add(new Vector3(-0.5f, 0.5f, 5.0f));
+        points.add(new Vector3(0.5f, 0.5f, 5.0f));
+        points.add(new Vector3(0.5f, -0.5f, 5.0f));
+        points.add(new Vector3(-0.5f, -0.5f, 5.0f));
+        modelBuilder.begin();
+        builder = modelBuilder.part("line", 1, 3, new Material());
+        builder.setColor(color);
+        for(int i = 0; i < points.size - 1; i++)
+            builder.line(points.get(i).x, points.get(i).y, points.get(i).z,
+                    points.get(i + 1).x, points.get(i + 1).y, points.get(i + 1).z);
+        modelArray.add(modelBuilder.end());
+
+        Iterator<Model> iterModelArray = modelArray.iterator();
+        while(iterModelArray.hasNext()) {
+            modelInstanceArray.add(new ModelInstance(iterModelArray.next()));
+        }
     }
 
     @Override
@@ -83,16 +127,21 @@ public class SomphonyGrid extends GameObject {
 
     @Override
     public void render(float delta, ModelBatch modelBatch, Environment environment) {
-        updateModel();
-        modelBatch.render(modelInstance, environment);
-        modelBatch.render(gridStartInstance, environment);
-        modelBatch.render(gridEndInstance, environment);
+        //updateModel();
+        Iterator<ModelInstance> iterModelInstanceArray = modelInstanceArray.iterator();
+        ModelInstance modelInstance;
+        while(iterModelInstanceArray.hasNext()) {
+            modelInstance = iterModelInstanceArray.next();
+            modelInstance.transform.setFromEulerAngles(rotation.y, rotation.x, rotation.z).trn(position.z, position.y, position.x);
+            modelBatch.render(modelInstance, environment);
+        }
     }
 
     @Override
     public void dispose() {
-        lineModel.dispose();
-        startGridModel.dispose();
-        endGridModel.dispose();
+        Iterator<Model> iterModelArray = modelArray.iterator();
+        while(iterModelArray.hasNext()) {
+            iterModelArray.next().dispose();
+        }
     }
 }
