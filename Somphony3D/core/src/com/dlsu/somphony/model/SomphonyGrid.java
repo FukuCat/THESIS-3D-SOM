@@ -30,10 +30,12 @@ public class SomphonyGrid extends GameObject {
 
         points = new Array<Vector3>();
         ModelBuilder modelBuilder = new ModelBuilder();
+        MeshPartBuilder builder;
+        /*
         points.add(new Vector3(-0.5f, -0.5f, -5.0f));
         points.add(new Vector3(-0.5f, -0.5f, 5.0f));
         modelBuilder.begin();
-        MeshPartBuilder builder = modelBuilder.part("line", 1, 3, new Material());
+        builder = modelBuilder.part("line", 1, 3, new Material());
         //builder.setColor(Color.RED);
         //builder.line(0.0f, 0.0f, -5.0f, 0.0f, 0.0f, 5.0f);
         builder.setColor(color);
@@ -79,7 +81,7 @@ public class SomphonyGrid extends GameObject {
             builder.line(points.get(i).x, points.get(i).y, points.get(i).z,
                     points.get(i + 1).x, points.get(i + 1).y, points.get(i + 1).z);
         modelArray.add(modelBuilder.end());
-
+        */
         points = new Array<Vector3>();
         points.add(new Vector3(-0.5f, -0.5f, -5.0f));
         points.add(new Vector3(-0.5f, 0.5f, -5.0f));
@@ -94,7 +96,7 @@ public class SomphonyGrid extends GameObject {
             builder.line(points.get(i).x, points.get(i).y, points.get(i).z,
                     points.get(i + 1).x, points.get(i + 1).y, points.get(i + 1).z);
         modelArray.add(modelBuilder.end());
-
+        /*
         points = new Array<Vector3>();
         points.add(new Vector3(-0.5f, -0.5f, 5.0f));
         points.add(new Vector3(-0.5f, 0.5f, 5.0f));
@@ -108,7 +110,7 @@ public class SomphonyGrid extends GameObject {
             builder.line(points.get(i).x, points.get(i).y, points.get(i).z,
                     points.get(i + 1).x, points.get(i + 1).y, points.get(i + 1).z);
         modelArray.add(modelBuilder.end());
-
+        */
         Iterator<Model> iterModelArray = modelArray.iterator();
         while(iterModelArray.hasNext()) {
             modelInstanceArray.add(new ModelInstance(iterModelArray.next()));
