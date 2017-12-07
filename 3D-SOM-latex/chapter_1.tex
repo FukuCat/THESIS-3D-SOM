@@ -17,42 +17,40 @@
 
 	Throughout time, different styles have developed, each having features unique to themselves. Tilden (2013) notes the historical influence of composers with each other and how similar the methods of composing classical music are with pop music.  Due to these facts presented, symphonies written in the early 20th century may be influenced by the great composers and compositions of the previous eras. Analyzing these musical relationships and comparing one to another is a research area that could be done through both manual and machine learning methods.
 
-	McFee, Barrington \& Lanckriet (2012) compare the usage of context-based manual semantic annotation versus their proposed optimized content-based similarity learning framework. With machine learning, the usage of high-quality training data without active user participation and the analysis of more data is possible than with feedback or survey data from active user participation. Human error in the analysis process can also be minimized with machine learning since human-supervised training is minimal. Corrêa \& Rodrigues (2016) shows the analysis of music features using machine learning techniques. According to the MIR community (Silla \& Freitas, 2009), the two main representation of music feature content are either audio-recorded or symbolic-based. The former employs the explicit recording of audio files while the latter uses symbolic data files such as MIDI or KERN.
+	McFee, Barrington \& Lanckriet (2012) compare the use of context-based manual semantic annotation versus their proposed optimized content-based similarity learning framework. With machine learning, the use of high-quality training data without active user participation and the analysis of more data is possible than with feedback or survey data from active user participation. Human error in the analysis process can also be minimized with machine learning since human-supervised training is minimal. Corrêa \& Rodrigues (2016) shows the analysis of music features using machine learning techniques. According to the MIR community (Silla \& Freitas, 2009), the two main representation of music feature content are either audio-recorded or symbolic-based. The former employs the explicit recording of audio files while the latter uses symbolic data files such as MIDI or KERN.
 
 	SOMphony, a research paper by Azcarraga \& Flores (2016), aims to understand the relationship of compositions between the same composer to denote style as well as to determine the similarities between compositions of different periods of music to denote influence between time periods. The research showed the relationships and influences between composers from 5 major musical periods, namely the Baroque Period, Classical Period, 19th Century music, Romantic Period and the 20th century. The research focuses on self-organizing maps (SOM) that are trained using 1-second music segments extracted from the 45 different symphonies. The trained SOM is then further processed by doing a k-means clustering of the node vectors, allowing quantitative comparison music trajectories between symphonies. Their research showed that using SOM is indeed helpful in visualizing the musical features of a symphony, making it easier to create insights about the relationships within the different pieces and composers. The research concludes that a larger dataset would be needed to confirm whether the approach is indeed valid. 
 
-	SOMphony, however, does not take into consideration the notion of time. In time series data, each instance represents a different time step and the attributes give values associated with that time (Witten  \& Frank, 2005).  To be able to generate time sensitive musical analysis, this research will add in the time series variable to the SOM and a new visualization in 3D space would need to be created.
+	SOMphony, however, does not take into consideration the notion of time. In time series data, each instance represents a different time step and the attributes give values associated with that time (Witten  \& Frank, 2005).  To be able to generate time sensitive musical analysis, this research will add in the time dimension variable to the SOM and a new visualization in 3D space would need to be created.
+
+	In another research work by Maaten \& Hinton (2008), they introduce a new visualization technique for assigning data points in a two dimensional or three dimensional map called  t-Distributed Stochastic Neighbor Embedding or t-SNE, which is a variant of Stochastic Neighbor Embedding or SNE. Since t-SNE produces almost very distinct visualizations as will be discussed in more detail in Chapter 2 and Chapter 3 based on the experiment performed by their research work, this technique for visualizing individual symphonies may be more optimal than SOM in terms of both accuracy and efficiency.
 
 
 \section{Research Objectives}
 \label{sec:researchobjectives}
 \subsection{General Objective}
 \label{sec:generalobjective}
-To create a visualization method for the comparison of symphonies with the application of time series
+To visualize symphonies using time dimension
 \subsection{Specific Objectives}
 \label{sec:specificobjectives}
 The research aims to:
 \begin{enumerate}
-\item Expand the data set to include more symphonies;
 \item Perform feature selection to decrease number of features for faster training time in machine learning;
-\item Incorporate time series to the SOM visualization;
+\item Find time-dependent distance measures to compare trajectories;
 \item Create a 3D visualization model for the music data;
-\item Have users listen and annotate the musical pieces for qualitative data;
-\item Verify the results of 3D SOMphony through the results obtained from the human participants;
+\item Determine feasibility of t-SNE as another form of visualization for comparison of symphonies;
 \end{enumerate}
 \section{Scope and Limitations of the Research}
 \label{sec:scopelimitations}
-To expand the data set of SOMphony, the proponents will add an additional 2 symphonies to the existing 3 symphonies for each of the 15 total composers from the previous work. This will result to a total of 75 symphonies in total. By having an equal number of symphonies per composer a balanced data set for all composers can be maintained. The criteria for choosing the symphonies to be added would be random due to the availability of musical pieces and  this would also provide a better grasp on the general style of the composer.
+To expand the data set of SOMphony, the proponents will add an additional 2 symphonies to the existing 3 symphonies for each of the 15 total composers from the previous work and add in 2 additional composers for each era with the same number of compositions for each one. This will result to a total of 125 symphonies in total. By having an equal number of symphonies per composer, a balanced data set for all composers can be maintained. The criteria for choosing the symphonies to be added would be random due to the availability of musical pieces and  this would also provide a better grasp on the general style of the composer.
 
-To be able to generate a self-organizing map, the proponents will use jAudio to extract 436 audio features from musical segments generated from the symphony (See Appendix B). The 436 audio features would be trimmed down through feature selection. Decision Trees will be used to trim excess features and retain only the most relevant ones in order to speed up SOM training without losing too much accuracy (Yang \& Pedersen, 1997). The proponents have decided to have 20 as an arbitrary value for the features to be used. By selecting only the 20 most influential features, the time it would take to train the SOM would not be as time consuming compared to using all 436 features, however, this will be at the cost of some of its accuracy in plotting the symphony’s musical trajectory.
+To be able to generate a self-organizing map, the proponents will use jAudio to extract 436 audio features from musical segments generated from the symphony (See Appendix C). The 436 audio features would be trimmed down through feature selection. Decision Trees will be used to trim excess features and retain only the most relevant ones in order to speed up SOM training without losing too much accuracy (Yang \& Pedersen, 1997). The proponents will experiment on different numbers of of features (n) to be used. By selecting only the n most influential features, the time it would take to train the SOM would not be as time consuming compared to using all 436 features, however, this will be at the cost of some of its accuracy in plotting the symphony’s musical trajectory.
 
-In incorporating the time series, the musical piece is divided into 1 second segments in order to be uniform all throughout the piece and to avoid incomplete notes. A 0.5 second overlap is used to be able to consider transitions between each second. 
+In incorporating the time dimension, the musical piece is divided into 1 second segments in order to be uniform all throughout the piece and to avoid incomplete notes. A 0.5 second overlap is used to be able to consider transitions between each second. 
 
-To create a 3D model to represent the symphony, the proponents will assign each generated SOM to a point in time and will be used to create a graph representing each map in a time series. As a result of using time series, this research will be able to better differentiate symphonies that use similar themes but at different periods of time in the composition.
+To create a 3D model to represent the symphony, the proponents will assign each generated SOM to a point in time and will be used to create a graph representing each map in a time series. As a result of using time dimension, this research will be able to better differentiate symphonies that use similar themes but at different periods of time in the composition.
 
-In gathering qualitative data from human participants, the proponents limit themselves to 50 participants. In the case that the target amount is not reached within two months, the researchers will proceed to analyze the results they have obtained. The participant profile would be both people that have experience or familiarity with music and normal people who may not know much about music. For a more detailed explanation on qualitative data gathering, please refer to section 4.4.2. The participants would be presented with a 3D graph and two music players. They are tasked to annotate specific regions of the symphony if they are indeed similar. However we do not limit the participants to the specified regions, the participants are free to annotate parts that they believe sound similar. 
-
-Similar to SOMphony, the proponents will  focus on representation of symphonies using SOMs for the purpose of comparison to other symphonies. Through the data obtained from the human participants, the proponents will be able to validate if the 3D visualization method is enough to represent the entirety of the symphony for comparison.
+Similar to SOMphony, the proponents will  focus on representation of symphonies using SOMs for the purpose of comparison to other symphonies. T-SNE will also be used as a visualization technique for the musical features of each individual symphonies. The results from t-SNE will then be used to validate if t-SNE is an optimal visualization tool for visualizing symphonies.
 
 \section{Significance of the Research}
 \label{sec:significance}
@@ -70,16 +68,16 @@ This section contains phases and activities that will be performed to accomplish
 This phase will concern the consolidation of the thesis requirements such as the objective of the research, the research problem to be tackled, and the scopes and limitations of such research. Research related to music comparison, machine learning algorithms in music and music visualization will be part of the Review of Related Literature.
 
 \subsection{Data Gathering}
-This phase will concern the  gathering of the additional symphonies to be used for the research. The original music dataset for SOMphony is composed of 75 symphonies spread across 5 periods each having 3 composers. To expand the dataset, 2 symphonies will be added to each composer, summing up to a total of five symphonies per composer for a total of 75 symphonies. The proponents have decided to maintain 5 symphonies per composer so that the data set will be balanced. The process of selecting which symphonies to be added would be by random to have a better grasp of the general style of the composer. The audio files would be retrieved from online sources and physical means whenever possible. The researchers  would not take into consideration the file type and bitrate of the audio files since music data that is free for use is limited. 
+This phase will concern the  gathering of the additional symphonies to be used for the research. The original music dataset for SOMphony is composed of 75 symphonies spread across 5 periods, each having 3 composers. To expand the dataset, 2 symphonies will be added to each composer, summing up to a total of five symphonies per composer and 2 composers will also be added with the same number of symphonies for each era summing to a total of 125 symphonies. The proponents have decided to maintain 5 symphonies per composer so that the data set will be balanced. The process of selecting which symphonies to be added would be by random to have a better grasp of the general style of the composer. The audio files would be retrieved from online sources and physical means. The researchers  would not take into consideration the file type and bitrate of the audio files since music data that is free for use is limited. 
 
 \subsection{Pre-processing}
 To start pre-processing,  the audio files would be converted into wav files in preparation for splitting. WaveSplitter will be used in splitting the audio file into 1 second segments at intervals of 0.5 second. These segments would undergo feature extraction using jAudio. The result would be an xml file containing all the features determined for each segment. The researchers would then run RegEx to extract the unnecessary text in preparation for labeling. Since the proponents would have supervised learning, the data needs to be labelled according to their composer, composition and file name.
 
 \subsection{Feature Selection}
-In this phase, the proponents will trim down the 436 features that jAudio has extracted. Using decision trees, the top 20 nodes will be selected as the top 20 features. The proponents have decided to have 20 as an arbitrary value for the features to be used. By doing feature selection, the data set would have a uniform number of features for all symphonies and it would also enhance the efficiency of training the SOM. The tree model produced after feature selection is what would be used in training the SOM.
+In this phase, the proponents will trim down the 436 features that jAudio has extracted. With decision trees, the top n nodes will be selected as the top n features. Aside from decision trees, the proponents will explore other statistical techniques such as PCA or Pearson correlation for feature selection which may prove more efficient or optimal than decision trees. By doing feature selection, the data set would have a uniform number of features for all symphonies and it would also enhance the efficiency of training the SOM.
 
 \subsection{Visualization}
-The proponents will assign each generated SOM to a point in time and will be used to create a graph representing each map in a time series. As a result of using time series,  the proponents will be able to better differentiate symphonies that use similar themes but at different periods of time in the composition.
+Frequency cluster counting will be mainly used for quantitative measurements to determine if a pair of symphonies are alike as will be discussed in more detail in Chapter 3. The resulting visualization from SOM and t-SNE will then be used to verify both methods’ accuracy by comparing for example if two symphonies by composer A have a much similar visualization. If the resulting visualizations show that the compositions by the same composer are alike, then it may be able to prove the accuracy of the visualization technique used.
 
 \subsection{Performance Evaluation}
 In this phase, the proponents limit themselves to 50 participants. The participant profile would be people that have experience with classical music. In the case that the target amount is not reached within two months, the researchers will proceed to analyze the results they have. The participants would be presented with a 3D graph and two music players. They are tasked to annotate specific regions of the symphony and verify if they are indeed similar. However we do not limit the participants to the specified regions, the participants are free to annotate parts that they believe sound similar.
@@ -97,7 +95,7 @@ Table 1.1 shows the time table for the activities involved with the research for
  \hline
  Activities for 2017& Jun&Jul&Aug&Sep&Oct&Nov&Dec\\
  \hline
-Concept Formulation and RRL&\#\#\#& \#\#\# &\#&&&&
+Concept Formulation and RRL&\#\#\#& \#\#\#\#&\#&&&&
  \\
 \hline
 Data Gathering&&&\#&\#\#\#&\#\#&&
@@ -106,13 +104,13 @@ Data Gathering&&&\#&\#\#\#&\#\#&&
 Pre-processing&&&&\#\#&\#\#&\#\#\#\#&\#\#
  \\
  \hline
-Feature Selecion&&&&&&\#\#&\#\#
+Feature Selecion&&&&&&&
  \\
  \hline
 Visualization Development&&&&\#\#&\#\#&\#\#&\#
  \\
  \hline
-Performance and Human Evaluation&&&&&&&
+Performance Evaluation&&&&&&&
  \\
  \hline
 Documentation&\#\#&\#\#\#& \#\#&\#\#\#&\#\#\#\#&\#\#\#\#&\#\#
@@ -138,13 +136,13 @@ Data Gathering&&&&&&&
 Pre-processing&&&&&&&    
  \\
  \hline
-Feature Selecion&&&&&&\#\#\#&    
+Feature Selecion&\#\#\#&\#\#\#\#&&&&&    
  \\
  \hline
-Visualization Development&&&&\#\#\#& \#\#\#\#&& 
+Visualization Development&&&\#\#\#\#&\#\#\#\#& \#\#\#\#&& 
  \\
  \hline
-Performance and Human Evaluation&&&\#\#\#\#&\#\#\#\#&\#\#\#&\#\#\#&
+Performance Evaluation&&&&&\#\#\#\#&\#\#\#\#&
  \\
  \hline
 Documentation&\#\#\#&\#\#\#\#&\#\#\#\#&\#\#\#\#&\#\#\#\#&\#\#\#\#&\#\#

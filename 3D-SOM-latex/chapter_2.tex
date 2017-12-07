@@ -73,13 +73,22 @@ PST was developed by Ron, Singer \& Tishby (1996). This algorithm is very simila
  \multicolumn{4}{|c|}{Musical Visualization} \\
  \hline
  Authors \& Year&Title&Research Problem&Approach\\
- \hline
- Azcarraga \& Flores (2016)& SOMphony: Visualizing Symphonies Using Self-Organizing Maps & How influential are composers and their symphonies back in the early musical eras? & Construct 2D SOM trained using k-means clustering to construct visual maps for comparison of symphonies.\\
 \hline
  Azcarraga, A., Caronongan, A., Setiono, R., \& Manalili, S. (2016) & Validating the Stable Clustering of Songs in a Structured 3D SOM & Will constructing the classic 2D SOM as a 3D map be feasible, with the learning algorithm still the same as the 2D map? & The 3D map is designed as a $3X3X3$ cube with $9X9X9$ nodes. The cube is divided into one core cube and 8 corner cubes. The Euclidean distance from core to each corner represents the quality of the different categories or genres. \\
 \hline
 Barrington, Chan, \& Lanckriet (2010) & Modelling Music as a Dynamic Texture &Addressing the lack of time-dependency between feature vectors & Dynamic Texture to represent a sequence of audio features \\
 \hline
+Maaten \& Hinton (2008) & Visualizing Data Using t-SNE &To construct a dimensionality reduction visualization technique that can outperform other existing visualization techniques & Modify SNE to produce a more optimal visualization technique by replacing some steps in the algorithm like the cost function of SNE and by replacing the Gaussian distribution with Student t-distribution \\
+ \hline
+\end{tabular}
+\end{center}
+\begin{center}
+\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+ \hline
+ \multicolumn{4}{|c|}{Musical Visualization} \\
+ \hline
+ Authors \& Year&Title&Research Problem&Approach\\
+ \hline
  Foote (1997) & Visualizing music and audio using self-similarity & Is it possible to display the acoustic similarity between any two instants of an audio file as a two-dimensional representation & Audio similarity is computed by parameterizing them into MFCC’s and getting the autocorrelation of two MFCC feature vectors $V_i$ and $V_j$ that were derived from audio windows. \\
  \hline
 \end{tabular}
@@ -92,6 +101,12 @@ In another research work regarding the visualization of symphonies using SOM and
 	Azcarraga, Caronongan, Setiono, \& Manalili (2016) presents a variant of the classical 2D SOM, a 3D SOM, that is stable with the general clusters not moving around on every training phase. A structured 3D SOM is an extension of a 2D Self-Organizing Map to 3D with a predefined structure. The 3D SOM is represented as a 3x3x3 cube with 27 sub-cubes of the same size. Each sub-cube is further divided into 9x9x9 nodes. The structured 3D SOM is a collection of one distinct core cube in the center and 26 exterior cubes surrounding it, hence summing to a total of 27 sub-cubes. Alongside 3D SOM’s built in structure, the learning algorithm used in this 3D SOM includes a four-phase learning and labelling phase. The first phase of training involves the semi-supervised training of the core cube. The second phase involves yet another semi-supervised training, but for the eight corner cubes. The third phase involves training the core cube again, but the training will be unsupervised. The fourth and final phase will be the labelling phase. This phase involves the uploading of the music files into the cube and labelling them accordingly. The music dataset used in this research includes songs from 9 genres: blues, country, hip-hop, disco, jazz, metal, pop, reggae, and rock. Each genre has 100 songs, thus summing to a total of 900 songs.
 
 	SOM is usually represented as a 2D map with the input elements being similar to the input environment. This research verifies that designing the SOM as a 3D map is very feasible, with the learning algorithm still the same as with the 2D map. By extending the SOM from 2D map to 3D, the map is further distinguished into the sub-cubes: eight corner cubes and one core cube in the center. Each corner cube represents a music genre while the core cube represents the song itself. The 3D SOM will be able to identify the quality of the different categories or genres of music albums based on a measure of distortion values of music files with respect to their respective music genres. Distortion value is measured by the Euclidean distance between the core cube and a corner cube.
+
+	Maaten \& Hinton presents a visualization technique using dimensional reduction of high dimensional data into a 2D or 3D map called t-SNE as was briefly discussed in the introduction. This technique aims to transform high dimensional data into low dimensional data representation for data plotting in the map using a series of computational steps or algorithm which will be discussed in more detail in Chapter 3.
+
+	In their research work, they compared t-SNE with other techniques for dimensionality reduction for visualization of data which includes Sammon mapping, Isomap, and LLE using the MNIST data set, the Olivetti faces data set, and the COIL-20 data set. The resulting visualizations by t-SNE for all three types of data set proved to be superior to the three other techniques as t-SNE was able to cleanly cluster the different data classes together for each data set as compared to the other three techniques.
+
+	The main advantage of using t-SNE to other techniques is that t-SNE models dissimilar data points by means of large pairwise distances and models similar data points by means of small pairwise distances. This would result in a visual image that have similar data points grouped together and are far apart from data points that are very dissimilar with them. T-SNE also uses either of two tricks which they label as early compression and early exaggeration. Early compression is when the map points are forced to stay together at the start of the optimization and early exaggeration is when map points are forced to have large gaps between their respective clusters by multiplying all of the high dimensional probabilities with a certain constant value so that the modelled data points will have larger values. When the data points are closely packed together in early compression, the clusters will be able to move much easier. Similarly, when there are large gaps among the different data points, the clusters will also be able to much easier to find a good global optimization.
 
 	
 	Foote (1997) presented a paper on Visualizing Music and Audio using Self-Similarity. In this paper, the acoustic similarity between any two instants of an audio file is calculated and displayed as a two-dimensional representation. Structure and repetition is a general feature of nearly all music, with parts resembling certain parts of the song that came before it. This paper presents a method of visualizing the structure of the music by its acoustic similarity or dissimilarity in specific instances of time through grayscale gradation patterns. 
