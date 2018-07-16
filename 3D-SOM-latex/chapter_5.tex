@@ -1,0 +1,393 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Filename    : chapter_3.tex 
+%
+%   Description : This file will contain your Research Methodology.
+%                 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Results and Analysis}
+This chapter contains all the results from the research conducted and the corresponding analyses for the results.
+
+\section{SOM}
+
+This phase will concern the  expansion of the original music dataset for SOMphony. Each of the 5 eras will have 5 composers with 5 symphonies each. This will sum up to a total of 125 symphonies. The proponents have decided to only include composers that have composed at least 5 symphonies to be able to maintain a balanced data set. The process of selecting which symphonies to be added would be by random to have a better grasp of the general style of the composer. The audio files would be retrieved from online sources and physical means. The researchers would not take into consideration the file type and bitrate of the audio files since music data that is free for use is limited.
+
+\section{t-SNE}
+TSNE...
+
+% Please add the following required packages to your document preamble:
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+\begin{longtable}{lllllll}
+\hline
+Row Labels & A & B & C & D & E & \begin{tabular}[c]{@{}l@{}}Grand\\   Total\end{tabular} \\ \hline
+\endfirsthead
+%
+\endhead
+%
+\multicolumn{1}{|l|}{P1C1S1} & \multicolumn{1}{l|}{383} & \multicolumn{1}{l|}{43} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{152} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{585} \\ \hline
+\multicolumn{1}{|l|}{P1C1S2} & \multicolumn{1}{l|}{116} & \multicolumn{1}{l|}{1609} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{16} & \multicolumn{1}{l|}{710} & \multicolumn{1}{l|}{2453} \\ \hline
+\multicolumn{1}{|l|}{P1C1S3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{795} & \multicolumn{1}{l|}{803} \\ \hline
+\multicolumn{1}{|l|}{P1C1S4} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{243} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{245} \\ \hline
+\multicolumn{1}{|l|}{P1C1S5} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{352} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{358} \\ \hline
+\multicolumn{1}{|l|}{P1C2S1} & \multicolumn{1}{l|}{223} & \multicolumn{1}{l|}{14} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{153} & \multicolumn{1}{l|}{390} \\ \hline
+\multicolumn{1}{|l|}{P1C2S2} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{841} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{31} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{880} \\ \hline
+\multicolumn{1}{|l|}{P1C2S3} & \multicolumn{1}{l|}{106} & \multicolumn{1}{l|}{100} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{431} & \multicolumn{1}{l|}{637} \\ \hline
+\multicolumn{1}{|l|}{P1C2S4} & \multicolumn{1}{l|}{479} & \multicolumn{1}{l|}{18} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{154} & \multicolumn{1}{l|}{661} \\ \hline
+\multicolumn{1}{|l|}{P1C2S5} & \multicolumn{1}{l|}{180} & \multicolumn{1}{l|}{415} & \multicolumn{1}{l|}{48} & \multicolumn{1}{l|}{291} & \multicolumn{1}{l|}{339} & \multicolumn{1}{l|}{1273} \\ \hline
+\multicolumn{1}{|l|}{P1C3S1} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{41} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{596} & \multicolumn{1}{l|}{638} \\ \hline
+\multicolumn{1}{|l|}{P1C3S2} & \multicolumn{1}{l|}{450} & \multicolumn{1}{l|}{73} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{32} & \multicolumn{1}{l|}{71} & \multicolumn{1}{l|}{631} \\ \hline
+\multicolumn{1}{|l|}{P1C3S3} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{90} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{227} & \multicolumn{1}{l|}{318} \\ \hline
+\multicolumn{1}{|l|}{P1C3S4} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{10} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{387} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{399} \\ \hline
+\multicolumn{1}{|l|}{P1C3S5} & \multicolumn{1}{l|}{276} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{23} & \multicolumn{1}{l|}{302} \\ \hline
+\multicolumn{1}{|l|}{P1C4S1} & \multicolumn{1}{l|}{58} & \multicolumn{1}{l|}{99} & \multicolumn{1}{l|}{20} & \multicolumn{1}{l|}{82} & \multicolumn{1}{l|}{22} & \multicolumn{1}{l|}{281} \\ \hline
+\multicolumn{1}{|l|}{P1C4S2} & \multicolumn{1}{l|}{83} & \multicolumn{1}{l|}{109} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{783} & \multicolumn{1}{l|}{977} \\ \hline
+\multicolumn{1}{|l|}{P1C4S3} & \multicolumn{1}{l|}{297} & \multicolumn{1}{l|}{286} & \multicolumn{1}{l|}{83} & \multicolumn{1}{l|}{408} & \multicolumn{1}{l|}{57} & \multicolumn{1}{l|}{1131} \\ \hline
+\multicolumn{1}{|l|}{P1C4S4} & \multicolumn{1}{l|}{104} & \multicolumn{1}{l|}{78} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1344} & \multicolumn{1}{l|}{1530} \\ \hline
+\multicolumn{1}{|l|}{P1C4S5} & \multicolumn{1}{l|}{134} & \multicolumn{1}{l|}{690} & \multicolumn{1}{l|}{72} & \multicolumn{1}{l|}{253} & \multicolumn{1}{l|}{44} & \multicolumn{1}{l|}{1193} \\ \hline
+\multicolumn{1}{|l|}{P1C5S1} & \multicolumn{1}{l|}{33} & \multicolumn{1}{l|}{952} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{24} & \multicolumn{1}{l|}{1012} \\ \hline
+\multicolumn{1}{|l|}{P1C5S2} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{241} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{87} & \multicolumn{1}{l|}{335} \\ \hline
+\multicolumn{1}{|l|}{P1C5S3} & \multicolumn{1}{l|}{12} & \multicolumn{1}{l|}{338} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{111} & \multicolumn{1}{l|}{462} \\ \hline
+\multicolumn{1}{|l|}{P1C5S4} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{70} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{251} & \multicolumn{1}{l|}{328} \\ \hline
+\multicolumn{1}{|l|}{P1C5S5} & \multicolumn{1}{l|}{268} & \multicolumn{1}{l|}{13} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{133} & \multicolumn{1}{l|}{416} \\ \hline
+\multicolumn{1}{|l|}{P2C1S1} & \multicolumn{1}{l|}{1369} & \multicolumn{1}{l|}{643} & \multicolumn{1}{l|}{228} & \multicolumn{1}{l|}{414} & \multicolumn{1}{l|}{121} & \multicolumn{1}{l|}{2775} \\ \hline
+\multicolumn{1}{|l|}{P2C1S2} & \multicolumn{1}{l|}{1055} & \multicolumn{1}{l|}{827} & \multicolumn{1}{l|}{77} & \multicolumn{1}{l|}{398} & \multicolumn{1}{l|}{180} & \multicolumn{1}{l|}{2537} \\ \hline
+\multicolumn{1}{|l|}{P2C1S3} & \multicolumn{1}{l|}{988} & \multicolumn{1}{l|}{686} & \multicolumn{1}{l|}{107} & \multicolumn{1}{l|}{806} & \multicolumn{1}{l|}{143} & \multicolumn{1}{l|}{2730} \\ \hline
+\multicolumn{1}{|l|}{P2C1S4} & \multicolumn{1}{l|}{1808} & \multicolumn{1}{l|}{534} & \multicolumn{1}{l|}{22} & \multicolumn{1}{l|}{217} & \multicolumn{1}{l|}{425} & \multicolumn{1}{l|}{3006} \\ \hline
+\multicolumn{1}{|l|}{P2C1S5} & \multicolumn{1}{l|}{478} & \multicolumn{1}{l|}{148} & \multicolumn{1}{l|}{18} & \multicolumn{1}{l|}{90} & \multicolumn{1}{l|}{232} & \multicolumn{1}{l|}{966} \\ \hline
+\multicolumn{1}{|l|}{P2C2S1} & \multicolumn{1}{l|}{86} & \multicolumn{1}{l|}{91} & \multicolumn{1}{l|}{40} & \multicolumn{1}{l|}{40} & \multicolumn{1}{l|}{191} & \multicolumn{1}{l|}{448} \\ \hline
+\multicolumn{1}{|l|}{P2C2S2} & \multicolumn{1}{l|}{180} & \multicolumn{1}{l|}{258} & \multicolumn{1}{l|}{60} & \multicolumn{1}{l|}{270} & \multicolumn{1}{l|}{110} & \multicolumn{1}{l|}{878} \\ \hline
+\multicolumn{1}{|l|}{P2C2S3} & \multicolumn{1}{l|}{336} & \multicolumn{1}{l|}{1059} & \multicolumn{1}{l|}{104} & \multicolumn{1}{l|}{180} & \multicolumn{1}{l|}{373} & \multicolumn{1}{l|}{2052} \\ \hline
+\multicolumn{1}{|l|}{P2C2S4} & \multicolumn{1}{l|}{353} & \multicolumn{1}{l|}{287} & \multicolumn{1}{l|}{39} & \multicolumn{1}{l|}{32} & \multicolumn{1}{l|}{454} & \multicolumn{1}{l|}{1165} \\ \hline
+\multicolumn{1}{|l|}{P2C2S5} & \multicolumn{1}{l|}{545} & \multicolumn{1}{l|}{709} & \multicolumn{1}{l|}{34} & \multicolumn{1}{l|}{121} & \multicolumn{1}{l|}{667} & \multicolumn{1}{l|}{2076} \\ \hline
+\multicolumn{1}{|l|}{P2C3S1} & \multicolumn{1}{l|}{279} & \multicolumn{1}{l|}{369} & \multicolumn{1}{l|}{12} & \multicolumn{1}{l|}{22} & \multicolumn{1}{l|}{249} & \multicolumn{1}{l|}{931} \\ \hline
+\multicolumn{1}{|l|}{P2C3S2} & \multicolumn{1}{l|}{72} & \multicolumn{1}{l|}{206} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{804} & \multicolumn{1}{l|}{1092} \\ \hline
+\multicolumn{1}{|l|}{P2C3S3} & \multicolumn{1}{l|}{259} & \multicolumn{1}{l|}{133} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{1218} & \multicolumn{1}{l|}{1612} \\ \hline
+\multicolumn{1}{|l|}{P2C3S4} & \multicolumn{1}{l|}{623} & \multicolumn{1}{l|}{192} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{864} & \multicolumn{1}{l|}{1684} \\ \hline
+\multicolumn{1}{|l|}{P2C3S5} & \multicolumn{1}{l|}{504} & \multicolumn{1}{l|}{123} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{81} & \multicolumn{1}{l|}{599} & \multicolumn{1}{l|}{1313} \\ \hline
+\multicolumn{1}{|l|}{P2C4S1} & \multicolumn{1}{l|}{1396} & \multicolumn{1}{l|}{330} & \multicolumn{1}{l|}{16} & \multicolumn{1}{l|}{44} & \multicolumn{1}{l|}{1164} & \multicolumn{1}{l|}{2950} \\ \hline
+\multicolumn{1}{|l|}{P2C4S2} & \multicolumn{1}{l|}{764} & \multicolumn{1}{l|}{612} & \multicolumn{1}{l|}{421} & \multicolumn{1}{l|}{265} & \multicolumn{1}{l|}{845} & \multicolumn{1}{l|}{2907} \\ \hline
+\multicolumn{1}{|l|}{P2C4S3} & \multicolumn{1}{l|}{1082} & \multicolumn{1}{l|}{293} & \multicolumn{1}{l|}{71} & \multicolumn{1}{l|}{162} & \multicolumn{1}{l|}{913} & \multicolumn{1}{l|}{2521} \\ \hline
+\multicolumn{1}{|l|}{P2C4S4} & \multicolumn{1}{l|}{881} & \multicolumn{1}{l|}{208} & \multicolumn{1}{l|}{30} & \multicolumn{1}{l|}{11} & \multicolumn{1}{l|}{2112} & \multicolumn{1}{l|}{3242} \\ \hline
+\multicolumn{1}{|l|}{P2C4S5} & \multicolumn{1}{l|}{1091} & \multicolumn{1}{l|}{546} & \multicolumn{1}{l|}{492} & \multicolumn{1}{l|}{271} & \multicolumn{1}{l|}{771} & \multicolumn{1}{l|}{3171} \\ \hline
+\multicolumn{1}{|l|}{P2C5S1} & \multicolumn{1}{l|}{694} & \multicolumn{1}{l|}{521} & \multicolumn{1}{l|}{232} & \multicolumn{1}{l|}{703} & \multicolumn{1}{l|}{1446} & \multicolumn{1}{l|}{3596} \\ \hline
+\multicolumn{1}{|l|}{P2C5S2} & \multicolumn{1}{l|}{700} & \multicolumn{1}{l|}{653} & \multicolumn{1}{l|}{476} & \multicolumn{1}{l|}{1144} & \multicolumn{1}{l|}{80} & \multicolumn{1}{l|}{3053} \\ \hline
+\multicolumn{1}{|l|}{P2C5S3} & \multicolumn{1}{l|}{1375} & \multicolumn{1}{l|}{373} & \multicolumn{1}{l|}{539} & \multicolumn{1}{l|}{792} & \multicolumn{1}{l|}{281} & \multicolumn{1}{l|}{3360} \\ \hline
+\multicolumn{1}{|l|}{P2C5S4} & \multicolumn{1}{l|}{1145} & \multicolumn{1}{l|}{1119} & \multicolumn{1}{l|}{629} & \multicolumn{1}{l|}{1408} & \multicolumn{1}{l|}{26} & \multicolumn{1}{l|}{4327} \\ \hline
+\multicolumn{1}{|l|}{P2C5S5} & \multicolumn{1}{l|}{472} & \multicolumn{1}{l|}{381} & \multicolumn{1}{l|}{129} & \multicolumn{1}{l|}{301} & \multicolumn{1}{l|}{339} & \multicolumn{1}{l|}{1622} \\ \hline
+\multicolumn{1}{|l|}{P3C1S1} & \multicolumn{1}{l|}{514} & \multicolumn{1}{l|}{411} & \multicolumn{1}{l|}{87} & \multicolumn{1}{l|}{296} & \multicolumn{1}{l|}{46} & \multicolumn{1}{l|}{1354} \\ \hline
+\multicolumn{1}{|l|}{P3C1S2} & \multicolumn{1}{l|}{246} & \multicolumn{1}{l|}{103} & \multicolumn{1}{l|}{14} & \multicolumn{1}{l|}{84} & \multicolumn{1}{l|}{28} & \multicolumn{1}{l|}{475} \\ \hline
+\multicolumn{1}{|l|}{P3C1S3} & \multicolumn{1}{l|}{1460} & \multicolumn{1}{l|}{258} & \multicolumn{1}{l|}{65} & \multicolumn{1}{l|}{112} & \multicolumn{1}{l|}{498} & \multicolumn{1}{l|}{2393} \\ \hline
+\multicolumn{1}{|l|}{P3C1S4} & \multicolumn{1}{l|}{1032} & \multicolumn{1}{l|}{102} & \multicolumn{1}{l|}{15} & \multicolumn{1}{l|}{29} & \multicolumn{1}{l|}{933} & \multicolumn{1}{l|}{2111} \\ \hline
+\multicolumn{1}{|l|}{P3C1S5} & \multicolumn{1}{l|}{47} & \multicolumn{1}{l|}{116} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{1109} & \multicolumn{1}{l|}{1277} \\ \hline
+\multicolumn{1}{|l|}{P3C2S1} & \multicolumn{1}{l|}{36} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{1653} & \multicolumn{1}{l|}{237} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{1931} \\ \hline
+\multicolumn{1}{|l|}{P3C2S2} & \multicolumn{1}{l|}{371} & \multicolumn{1}{l|}{70} & \multicolumn{1}{l|}{10} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{554} & \multicolumn{1}{l|}{1006} \\ \hline
+\multicolumn{1}{|l|}{P3C2S3} & \multicolumn{1}{l|}{461} & \multicolumn{1}{l|}{41} & \multicolumn{1}{l|}{9} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{531} & \multicolumn{1}{l|}{1042} \\ \hline
+\multicolumn{1}{|l|}{P3C2S4} & \multicolumn{1}{l|}{1048} & \multicolumn{1}{l|}{102} & \multicolumn{1}{l|}{80} & \multicolumn{1}{l|}{199} & \multicolumn{1}{l|}{574} & \multicolumn{1}{l|}{2003} \\ \hline
+\multicolumn{1}{|l|}{P3C2S5} & \multicolumn{1}{l|}{487} & \multicolumn{1}{l|}{73} & \multicolumn{1}{l|}{434} & \multicolumn{1}{l|}{444} & \multicolumn{1}{l|}{15} & \multicolumn{1}{l|}{1453} \\ \hline
+\multicolumn{1}{|l|}{P3C3S1} & \multicolumn{1}{l|}{32} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1351} & \multicolumn{1}{l|}{724} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{2107} \\ \hline
+\multicolumn{1}{|l|}{P3C3S2} & \multicolumn{1}{l|}{18} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1068} & \multicolumn{1}{l|}{598} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{1689} \\ \hline
+\multicolumn{1}{|l|}{P3C3S3} & \multicolumn{1}{l|}{173} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1568} & \multicolumn{1}{l|}{245} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1990} \\ \hline
+\multicolumn{1}{|l|}{P3C3S4} & \multicolumn{1}{l|}{54} & \multicolumn{1}{l|}{10} & \multicolumn{1}{l|}{3109} & \multicolumn{1}{l|}{1114} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{4291} \\ \hline
+\multicolumn{1}{|l|}{P3C3S5} & \multicolumn{1}{l|}{42} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1139} & \multicolumn{1}{l|}{521} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1702} \\ \hline
+\multicolumn{1}{|l|}{P3C4S1} & \multicolumn{1}{l|}{1028} & \multicolumn{1}{l|}{139} & \multicolumn{1}{l|}{53} & \multicolumn{1}{l|}{378} & \multicolumn{1}{l|}{462} & \multicolumn{1}{l|}{2060} \\ \hline
+\multicolumn{1}{|l|}{P3C4S2} & \multicolumn{1}{l|}{414} & \multicolumn{1}{l|}{316} & \multicolumn{1}{l|}{118} & \multicolumn{1}{l|}{250} & \multicolumn{1}{l|}{90} & \multicolumn{1}{l|}{1188} \\ \hline
+\multicolumn{1}{|l|}{P3C4S3} & \multicolumn{1}{l|}{2275} & \multicolumn{1}{l|}{340} & \multicolumn{1}{l|}{135} & \multicolumn{1}{l|}{192} & \multicolumn{1}{l|}{346} & \multicolumn{1}{l|}{3288} \\ \hline
+\multicolumn{1}{|l|}{P3C4S4} & \multicolumn{1}{l|}{1021} & \multicolumn{1}{l|}{522} & \multicolumn{1}{l|}{108} & \multicolumn{1}{l|}{145} & \multicolumn{1}{l|}{469} & \multicolumn{1}{l|}{2265} \\ \hline
+\multicolumn{1}{|l|}{P3C4S5} & \multicolumn{1}{l|}{602} & \multicolumn{1}{l|}{194} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{13} & \multicolumn{1}{l|}{879} & \multicolumn{1}{l|}{1694} \\ \hline
+\multicolumn{1}{|l|}{P3C5S1} & \multicolumn{1}{l|}{592} & \multicolumn{1}{l|}{311} & \multicolumn{1}{l|}{377} & \multicolumn{1}{l|}{347} & \multicolumn{1}{l|}{317} & \multicolumn{1}{l|}{1944} \\ \hline
+\multicolumn{1}{|l|}{P3C5S2} & \multicolumn{1}{l|}{1493} & \multicolumn{1}{l|}{740} & \multicolumn{1}{l|}{244} & \multicolumn{1}{l|}{546} & \multicolumn{1}{l|}{101} & \multicolumn{1}{l|}{3124} \\ \hline
+\multicolumn{1}{|l|}{P3C5S3} & \multicolumn{1}{l|}{1753} & \multicolumn{1}{l|}{286} & \multicolumn{1}{l|}{129} & \multicolumn{1}{l|}{329} & \multicolumn{1}{l|}{22} & \multicolumn{1}{l|}{2519} \\ \hline
+\multicolumn{1}{|l|}{P3C5S4} & \multicolumn{1}{l|}{713} & \multicolumn{1}{l|}{126} & \multicolumn{1}{l|}{14} & \multicolumn{1}{l|}{28} & \multicolumn{1}{l|}{938} & \multicolumn{1}{l|}{1819} \\ \hline
+\multicolumn{1}{|l|}{P3C5S5} & \multicolumn{1}{l|}{27} & \multicolumn{1}{l|}{70} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{723} & \multicolumn{1}{l|}{826} \\ \hline
+\multicolumn{1}{|l|}{P4C1S1} & \multicolumn{1}{l|}{429} & \multicolumn{1}{l|}{316} & \multicolumn{1}{l|}{106} & \multicolumn{1}{l|}{186} & \multicolumn{1}{l|}{143} & \multicolumn{1}{l|}{1180} \\ \hline
+\multicolumn{1}{|l|}{P4C1S2} & \multicolumn{1}{l|}{820} & \multicolumn{1}{l|}{2985} & \multicolumn{1}{l|}{264} & \multicolumn{1}{l|}{1919} & \multicolumn{1}{l|}{58} & \multicolumn{1}{l|}{6046} \\ \hline
+\multicolumn{1}{|l|}{P4C1S3} & \multicolumn{1}{l|}{1145} & \multicolumn{1}{l|}{1717} & \multicolumn{1}{l|}{357} & \multicolumn{1}{l|}{621} & \multicolumn{1}{l|}{307} & \multicolumn{1}{l|}{4147} \\ \hline
+\multicolumn{1}{|l|}{P4C1S4} & \multicolumn{1}{l|}{1088} & \multicolumn{1}{l|}{519} & \multicolumn{1}{l|}{54} & \multicolumn{1}{l|}{107} & \multicolumn{1}{l|}{346} & \multicolumn{1}{l|}{2114} \\ \hline
+\multicolumn{1}{|l|}{P4C1S5} & \multicolumn{1}{l|}{612} & \multicolumn{1}{l|}{215} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{88} & \multicolumn{1}{l|}{424} & \multicolumn{1}{l|}{1341} \\ \hline
+\multicolumn{1}{|l|}{P4C2S1} & \multicolumn{1}{l|}{438} & \multicolumn{1}{l|}{182} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{100} & \multicolumn{1}{l|}{2682} & \multicolumn{1}{l|}{3403} \\ \hline
+\multicolumn{1}{|l|}{P4C2S2} & \multicolumn{1}{l|}{1456} & \multicolumn{1}{l|}{575} & \multicolumn{1}{l|}{207} & \multicolumn{1}{l|}{490} & \multicolumn{1}{l|}{115} & \multicolumn{1}{l|}{2843} \\ \hline
+\multicolumn{1}{|l|}{P4C2S3} & \multicolumn{1}{l|}{2016} & \multicolumn{1}{l|}{1059} & \multicolumn{1}{l|}{103} & \multicolumn{1}{l|}{332} & \multicolumn{1}{l|}{524} & \multicolumn{1}{l|}{4034} \\ \hline
+\multicolumn{1}{|l|}{P4C2S4} & \multicolumn{1}{l|}{1329} & \multicolumn{1}{l|}{354} & \multicolumn{1}{l|}{17} & \multicolumn{1}{l|}{46} & \multicolumn{1}{l|}{804} & \multicolumn{1}{l|}{2550} \\ \hline
+\multicolumn{1}{|l|}{P4C2S5} & \multicolumn{1}{l|}{593} & \multicolumn{1}{l|}{94} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{15} & \multicolumn{1}{l|}{848} & \multicolumn{1}{l|}{1550} \\ \hline
+\multicolumn{1}{|l|}{P4C3S1} & \multicolumn{1}{l|}{15} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{2838} & \multicolumn{1}{l|}{1617} & \multicolumn{1}{l|}{21} & \multicolumn{1}{l|}{4491} \\ \hline
+\multicolumn{1}{|l|}{P4C3S2} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{2373} & \multicolumn{1}{l|}{1664} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{4052} \\ \hline
+\multicolumn{1}{|l|}{P4C3S3} & \multicolumn{1}{l|}{46} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{168} & \multicolumn{1}{l|}{5139} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5353} \\ \hline
+\multicolumn{1}{|l|}{P4C3S4} & \multicolumn{1}{l|}{12} & \multicolumn{1}{l|}{253} & \multicolumn{1}{l|}{153} & \multicolumn{1}{l|}{3404} & \multicolumn{1}{l|}{12} & \multicolumn{1}{l|}{3834} \\ \hline
+\multicolumn{1}{|l|}{P4C3S5} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{3885} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{62} & \multicolumn{1}{l|}{99} & \multicolumn{1}{l|}{4050} \\ \hline
+\multicolumn{1}{|l|}{P4C4S1} & \multicolumn{1}{l|}{889} & \multicolumn{1}{l|}{497} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{15} & \multicolumn{1}{l|}{1337} & \multicolumn{1}{l|}{2738} \\ \hline
+\multicolumn{1}{|l|}{P4C4S2} & \multicolumn{1}{l|}{1195} & \multicolumn{1}{l|}{566} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{201} & \multicolumn{1}{l|}{910} & \multicolumn{1}{l|}{2874} \\ \hline
+\multicolumn{1}{|l|}{P4C4S3} & \multicolumn{1}{l|}{1875} & \multicolumn{1}{l|}{66} & \multicolumn{1}{l|}{212} & \multicolumn{1}{l|}{287} & \multicolumn{1}{l|}{342} & \multicolumn{1}{l|}{2782} \\ \hline
+\multicolumn{1}{|l|}{P4C4S4} & \multicolumn{1}{l|}{138} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{3393} & \multicolumn{1}{l|}{25} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{3557} \\ \hline
+\multicolumn{1}{|l|}{P4C4S5} & \multicolumn{1}{l|}{40} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{3044} & \multicolumn{1}{l|}{60} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{3151} \\ \hline
+\multicolumn{1}{|l|}{P4C5S1} & \multicolumn{1}{l|}{379} & \multicolumn{1}{l|}{367} & \multicolumn{1}{l|}{243} & \multicolumn{1}{l|}{401} & \multicolumn{1}{l|}{70} & \multicolumn{1}{l|}{1460} \\ \hline
+\multicolumn{1}{|l|}{P4C5S2} & \multicolumn{1}{l|}{673} & \multicolumn{1}{l|}{250} & \multicolumn{1}{l|}{204} & \multicolumn{1}{l|}{327} & \multicolumn{1}{l|}{140} & \multicolumn{1}{l|}{1594} \\ \hline
+\multicolumn{1}{|l|}{P4C5S3} & \multicolumn{1}{l|}{1866} & \multicolumn{1}{l|}{331} & \multicolumn{1}{l|}{157} & \multicolumn{1}{l|}{398} & \multicolumn{1}{l|}{408} & \multicolumn{1}{l|}{3160} \\ \hline
+\multicolumn{1}{|l|}{P4C5S4} & \multicolumn{1}{l|}{672} & \multicolumn{1}{l|}{379} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{104} & \multicolumn{1}{l|}{476} & \multicolumn{1}{l|}{1638} \\ \hline
+\multicolumn{1}{|l|}{P4C5S5} & \multicolumn{1}{l|}{168} & \multicolumn{1}{l|}{354} & \multicolumn{1}{l|}{33} & \multicolumn{1}{l|}{87} & \multicolumn{1}{l|}{842} & \multicolumn{1}{l|}{1484} \\ \hline
+\multicolumn{1}{|l|}{P5C1S1} & \multicolumn{1}{l|}{46} & \multicolumn{1}{l|}{471} & \multicolumn{1}{l|}{1397} & \multicolumn{1}{l|}{3291} & \multicolumn{1}{l|}{101} & \multicolumn{1}{l|}{5306} \\ \hline
+\multicolumn{1}{|l|}{P5C1S2} & \multicolumn{1}{l|}{158} & \multicolumn{1}{l|}{15} & \multicolumn{1}{l|}{3637} & \multicolumn{1}{l|}{1511} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5321} \\ \hline
+\multicolumn{1}{|l|}{P5C1S3} & \multicolumn{1}{l|}{150} & \multicolumn{1}{l|}{21} & \multicolumn{1}{l|}{2394} & \multicolumn{1}{l|}{1556} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{4121} \\ \hline
+\multicolumn{1}{|l|}{P5C1S4} & \multicolumn{1}{l|}{472} & \multicolumn{1}{l|}{11} & \multicolumn{1}{l|}{3292} & \multicolumn{1}{l|}{1729} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5504} \\ \hline
+\multicolumn{1}{|l|}{P5C1S5} & \multicolumn{1}{l|}{652} & \multicolumn{1}{l|}{13} & \multicolumn{1}{l|}{2826} & \multicolumn{1}{l|}{2141} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5632} \\ \hline
+\multicolumn{1}{|l|}{P5C2S1} & \multicolumn{1}{l|}{2968} & \multicolumn{1}{l|}{1071} & \multicolumn{1}{l|}{756} & \multicolumn{1}{l|}{822} & \multicolumn{1}{l|}{75} & \multicolumn{1}{l|}{5692} \\ \hline
+\multicolumn{1}{|l|}{P5C2S2} & \multicolumn{1}{l|}{2594} & \multicolumn{1}{l|}{683} & \multicolumn{1}{l|}{1211} & \multicolumn{1}{l|}{1497} & \multicolumn{1}{l|}{157} & \multicolumn{1}{l|}{6142} \\ \hline
+\multicolumn{1}{|l|}{P5C2S3} & \multicolumn{1}{l|}{2612} & \multicolumn{1}{l|}{217} & \multicolumn{1}{l|}{63} & \multicolumn{1}{l|}{201} & \multicolumn{1}{l|}{1489} & \multicolumn{1}{l|}{4582} \\ \hline
+\multicolumn{1}{|l|}{P5C2S4} & \multicolumn{1}{l|}{341} & \multicolumn{1}{l|}{1070} & \multicolumn{1}{l|}{94} & \multicolumn{1}{l|}{114} & \multicolumn{1}{l|}{4240} & \multicolumn{1}{l|}{5859} \\ \hline
+\multicolumn{1}{|l|}{P5C2S5} & \multicolumn{1}{l|}{1856} & \multicolumn{1}{l|}{434} & \multicolumn{1}{l|}{377} & \multicolumn{1}{l|}{325} & \multicolumn{1}{l|}{207} & \multicolumn{1}{l|}{3199} \\ \hline
+\multicolumn{1}{|l|}{P5C2S5C} & \multicolumn{1}{l|}{1101} & \multicolumn{1}{l|}{103} & \multicolumn{1}{l|}{231} & \multicolumn{1}{l|}{69} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1508} \\ \hline
+\multicolumn{1}{|l|}{P5C2S5D} & \multicolumn{1}{l|}{854} & \multicolumn{1}{l|}{317} & \multicolumn{1}{l|}{82} & \multicolumn{1}{l|}{132} & \multicolumn{1}{l|}{174} & \multicolumn{1}{l|}{1559} \\ \hline
+\multicolumn{1}{|l|}{P5C3S1} & \multicolumn{1}{l|}{1194} & \multicolumn{1}{l|}{1907} & \multicolumn{1}{l|}{618} & \multicolumn{1}{l|}{1215} & \multicolumn{1}{l|}{493} & \multicolumn{1}{l|}{5427} \\ \hline
+\multicolumn{1}{|l|}{P5C3S2} & \multicolumn{1}{l|}{2590} & \multicolumn{1}{l|}{1264} & \multicolumn{1}{l|}{417} & \multicolumn{1}{l|}{734} & \multicolumn{1}{l|}{564} & \multicolumn{1}{l|}{5569} \\ \hline
+\multicolumn{1}{|l|}{P5C3S3} & \multicolumn{1}{l|}{2975} & \multicolumn{1}{l|}{1009} & \multicolumn{1}{l|}{212} & \multicolumn{1}{l|}{786} & \multicolumn{1}{l|}{419} & \multicolumn{1}{l|}{5401} \\ \hline
+\multicolumn{1}{|l|}{P5C3S4} & \multicolumn{1}{l|}{1460} & \multicolumn{1}{l|}{534} & \multicolumn{1}{l|}{20} & \multicolumn{1}{l|}{730} & \multicolumn{1}{l|}{1418} & \multicolumn{1}{l|}{4162} \\ \hline
+\multicolumn{1}{|l|}{P5C3S5} & \multicolumn{1}{l|}{2023} & \multicolumn{1}{l|}{707} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{299} & \multicolumn{1}{l|}{2572} & \multicolumn{1}{l|}{5609} \\ \hline
+\multicolumn{1}{|l|}{P5C4S1} & \multicolumn{1}{l|}{585} & \multicolumn{1}{l|}{1076} & \multicolumn{1}{l|}{911} & \multicolumn{1}{l|}{1186} & \multicolumn{1}{l|}{165} & \multicolumn{1}{l|}{3923} \\ \hline
+\multicolumn{1}{|l|}{P5C4S2} & \multicolumn{1}{l|}{292} & \multicolumn{1}{l|}{1955} & \multicolumn{1}{l|}{1144} & \multicolumn{1}{l|}{1943} & \multicolumn{1}{l|}{111} & \multicolumn{1}{l|}{5445} \\ \hline
+\multicolumn{1}{|l|}{P5C4S3} & \multicolumn{1}{l|}{624} & \multicolumn{1}{l|}{2737} & \multicolumn{1}{l|}{428} & \multicolumn{1}{l|}{1329} & \multicolumn{1}{l|}{552} & \multicolumn{1}{l|}{5670} \\ \hline
+\multicolumn{1}{|l|}{P5C4S4} & \multicolumn{1}{l|}{641} & \multicolumn{1}{l|}{2713} & \multicolumn{1}{l|}{719} & \multicolumn{1}{l|}{1160} & \multicolumn{1}{l|}{286} & \multicolumn{1}{l|}{5519} \\ \hline
+\multicolumn{1}{|l|}{P5C4S5} & \multicolumn{1}{l|}{1242} & \multicolumn{1}{l|}{2513} & \multicolumn{1}{l|}{299} & \multicolumn{1}{l|}{561} & \multicolumn{1}{l|}{424} & \multicolumn{1}{l|}{5039} \\ \hline
+\multicolumn{1}{|l|}{P5C5S1} & \multicolumn{1}{l|}{234} & \multicolumn{1}{l|}{2447} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{360} & \multicolumn{1}{l|}{3036} & \multicolumn{1}{l|}{6083} \\ \hline
+\multicolumn{1}{|l|}{P5C5S2} & \multicolumn{1}{l|}{58} & \multicolumn{1}{l|}{3071} & \multicolumn{1}{l|}{22} & \multicolumn{1}{l|}{26} & \multicolumn{1}{l|}{938} & \multicolumn{1}{l|}{4115} \\ \hline
+\multicolumn{1}{|l|}{P5C5S3} & \multicolumn{1}{l|}{2613} & \multicolumn{1}{l|}{665} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{333} & \multicolumn{1}{l|}{2554} & \multicolumn{1}{l|}{6173} \\ \hline
+\multicolumn{1}{|l|}{P5C5S4} & \multicolumn{1}{l|}{251} & \multicolumn{1}{l|}{762} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{170} & \multicolumn{1}{l|}{4067} & \multicolumn{1}{l|}{5250} \\ \hline
+\multicolumn{1}{|l|}{P5C5S5} & \multicolumn{1}{l|}{793} & \multicolumn{1}{l|}{745} & \multicolumn{1}{l|}{913} & \multicolumn{1}{l|}{2509} & \multicolumn{1}{l|}{777} & \multicolumn{1}{l|}{5737} \\ \hline
+Grand Total & 86983 & 65867 & 51845 & 60726 & 65355 & 330776 \\ \hline
+\end{longtable}
+
+
+% Figures below
+\begin{figure}[h]
+\caption{All Symphonies}
+\centering
+\includegraphics[scale=0.15]{TSNE_Plot}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Baroque Period}
+  \centering
+  \includegraphics[scale=0.15]{P1}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Classical Period}
+  \centering
+  \includegraphics[scale=0.15]{P2}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{19th Century}
+  \centering
+  \includegraphics[scale=0.15]{P3}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Romantic Period}
+  \centering
+  \includegraphics[scale=0.15]{P4}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+\caption{20th Century}
+\centering
+\includegraphics[scale=0.15]{P5}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Baroque: Bach}
+  \centering
+  \includegraphics[scale=0.15]{P1C1}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Baroque: Boyce}
+  \centering
+  \includegraphics[scale=0.15]{P1C2}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Baroque: Gabrieli}
+  \centering
+  \includegraphics[scale=0.15]{P1C3}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Baroque: Sammartini}
+  \centering
+  \includegraphics[scale=0.15]{P1C4}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+\caption{Baroque: Viadana}
+\centering
+\includegraphics[scale=0.15]{P1C5}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Classical: Boccherini}
+  \centering
+  \includegraphics[scale=0.15]{P2C1}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Classical: Haydn}
+  \centering
+  \includegraphics[scale=0.15]{P2C2}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Classical: Mozart}
+  \centering
+  \includegraphics[scale=0.15]{P2C3}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Baroque: Sammartini}
+  \centering
+  \includegraphics[scale=0.15]{P2C4}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+\caption{Classical: Salieri}
+\centering
+\includegraphics[scale=0.15]{P2C5}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{19th Century: Beethoven}
+  \centering
+  \includegraphics[scale=0.15]{P3C1}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{19th Century: Clementi}
+  \centering
+  \includegraphics[scale=0.15]{P3C2}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{19th Century: Gossec}
+  \centering
+  \includegraphics[scale=0.15]{P3C3}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{19th Century: Kalliwoda}
+  \centering
+  \includegraphics[scale=0.15]{P3C4}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+\caption{19th Century: Rubinstein}
+\centering
+\includegraphics[scale=0.15]{P3C5}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Romantic: Dvorak}
+  \centering
+  \includegraphics[scale=0.15]{P4C1}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Romantic: Mendelssohn}
+  \centering
+  \includegraphics[scale=0.15]{P4C2}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Romantic: Schubert}
+  \centering
+  \includegraphics[scale=0.15]{P4C3}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Romantic: Schumann}
+  \centering
+  \includegraphics[scale=0.15]{P4C4}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+\caption{Romantic: Tchaikovsky}
+\centering
+\includegraphics[scale=0.15]{P4C5}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{20th Cen: Antheil}
+  \centering
+  \includegraphics[scale=0.15]{P5C1}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{20th Cen: Rachmaninoff}
+  \centering
+  \includegraphics[scale=0.15]{P5C2}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{20th Cen: Rubbra}
+  \centering
+  \includegraphics[scale=0.15]{P5C3}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{20th Cen: Shostakovich}
+  \centering
+  \includegraphics[scale=0.15]{P5C4}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+\caption{20th Cen: Stravinsky}
+\centering
+\includegraphics[scale=0.15]{P5C5}
+\end{figure}

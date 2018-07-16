@@ -6,61 +6,36 @@
 %                 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Research Overview}
-This chapter contains procedures that propoenents will follow for the research based from theories and concepts discuess in chapter 3 and the methodologies discussed in chapter 1.
+\chapter{Pipeline}
+This chapter contains procedures that propoenents will follow for the research based from theories and concepts discussed in chapter 3 and the methodologies discussed in chapter 1.
 
-\section{System Architecture}
+\section{Data Collection}
 
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.7]{sysarch1}
-\end{figure}
+This phase will concern the  expansion of the original music dataset for SOMphony. Each of the 5 eras will have 5 composers with 5 symphonies each. This will sum up to a total of 125 symphonies. The proponents have decided to only include composers that have composed at least 5 symphonies to be able to maintain a balanced data set. The process of selecting which symphonies to be added would be by random to have a better grasp of the general style of the composer. The audio files would be retrieved from online sources and physical means. The researchers would not take into consideration the file type and bitrate of the audio files since music data that is free for use is limited.
 
-\begin{figure}[h]
-\centering
-\includegraphics{sysarch2}
-\end{figure}
+\section{Data Preprocessing}
+The audio files will be trimmed using Audacity, removing the silent parts usually found at the start and/or end of the composition. This would reduce the amount of empty data, since no features can be extracted when there is no audio. After the music files are trimmed, they will be cut into one second music segments with a half-second overlap as discussed in Section 1.5.3 using Direct WAV MP3 Splitter.
 
-\section{Preprocessing}
+\section{Feature Extraction}
+The music segments will then have their features be extracted using jAudio, producing an XML file as an output. The researchers have decided to extract 436 features, refer to Appendix C for the complete list with their descriptions. These researchers have selected all the features that doesn’t have variable-sized dimension. The XML file will then be converted to CSV format. The result would be an xml file containing all the features determined for each segment. The researchers would then run a RegEx script from SOMphony to extract the unnecessary text in preparation for labeling. The data needs to be labeled according to their composer, composition and file name.
 
-After acquiring the symphonies from online sources or through physical means, omitting segments of the music file which has no sound in it will be done using Audacity. This is done so that the output produced later will have no empty values since no sound will result in empty values. After the music files are cleaned, they will then be cut into one second music segments with a half second overlapping interval just as discussed in section 1.5.3 using Direct WAV MP3 Splitter. The music segments will then have their features be extracted using jAudio, producing an output file of XML. The XML file will then be converted to CSV format. The consolidated CSV file of all symphonies will then be used for feature selection to select only the more important features just as discussed in section 3.2.4. After the features have been selected, audio feature extraction will be done again, but only for these selected features. The resulting CSV file will then be used for machine learning using RapidMiner to be used in producing the SOM.
+\section{Feature Selection}
+In this phase, the proponents will trim down the 436 features that jAudio has extracted to lessen the training time for the SOM. 
 
-\section{Visualization Components}
-\subsection{Function}
+The proponents will explore different algorithms for feature selection. The proponents initially decided on using decision trees.  As mentioned in Section 3.2.4, decision tree algorithms are best used for feature selection. However, there are other successfully tested algorithm for feature selection like Pearson's correlation coefficient, principal component analysis (PCA, chi-square and Fisher-like criterion.
 
-The program will allow the proponents to visualize the SOM in 3D by plotting the BMU of each music segment on a 2D plane and then collating the results of all segments in the composition in time series. The result is a line T(x, y, z) where (x, y) denotes the coordinates of the BMU of a particular music segment on the SOM and z being the index of the segment in the time series.
-
-\subsection{Screenflow}
+\section{Data Visualization}
+The proponents will visualize the SOM in 3D by plotting the BMU of each music segment on a 2D plane and then collating the results of all segments in the composition in time series. The result is a line T (x, y, z) where (x, y) denotes the coordinates of the BMU of a particular music segment on the SOM and z being the index of the segment in the time series. Displaying the data of one symphony will plot a line that represents the musical trajectory or progression of the symphony in the SOM from start to finish. Each point on the z-axis (longest axis) represents the position of the BMU on the SOM at a particular interval in the time series. Alternatively, when comparing two symphonies, two lines will be generated representing the musical trajectories of both symphonies.
 
 \begin{figure}[h]
-\caption{Figure 4.1)}
+\caption{3D Visualization Sample}
 \centering
-\includegraphics{visual1}
+\includegraphics[scale=0.5]{3d_visual}
 \end{figure}
 
-Displaying the data of one symphony will plot a line that represents the musical trajectory or progression of the symphony in the SOM from start to finish. Each point on the z-axis (longest axis) represents the position of the BMU on the SOM at a particular interval in the time series as shown in Figure 4.1.
+As seen in Figure 4.1, the yellow and blue edges represent the trajectory of each of the symphonies as they progress through time. A line is drawn between two points from both symphonies to show the Euclidean distance between the BMUs at the particular time slice. The color of this line would change depending  on the euclidean distance, which has a direct implication on the similarity of the two BMUs. Parts of the ribbon that appear to be green would signify that at these time slices, the symphonies sound similar. The parts that appear red would be the parts where the symphony will appear the least similar.
 
-\begin{figure}[h]
-\caption{Figure 4.2)}
-\centering
-\includegraphics{visual2}
-\end{figure}
+\section{Evaluation}
+Frequency cluster counting will be used to determine if a pair of symphonies are alike. Each time a BMU appears inside a cluster, the frequency count for that cluster is incremented. In this way, the clusters frequently visited throughout the length of the musical piece, will have a large frequency count. The frequency counts are then normalized by dividing the counts of a certain composition by its total number of 1-second segments. Once these normalized frequency counts are summarized, the resulting percentages can then be used to perform pair-wise comparisons between symphonies.
 
-Alternatively, when comparing two symphonies, two lines will be generated representing the musical trajectories of both symphonies. As shown in Figure 4.2, the area between the two lines will be colored depending on the Euclidean distance between the two BMUs in the same time axis.
-
-\section{Testing and Methodology}
-\subsection{Quantitative}
-
-K-means clustering algorithm will be used as the algorithm for machine learning and Euclidean distance will be used for calculating the BMUs for each cluster to compare the similarities of symphonies just as discussed in section 3.5.1.
-
-\subsection{Qualitative}
-
-A survey form deployed online will be used to validate the result for the quantitative measurements starting April 2018 to June 2018. In the survey, the participant will first be asked for their voluntary consent as shown in Appendix E. Then, upon consenting, they will be asked to listen to two symphonies that are found to be similar using the quantitative measure used in the research as seen in figure 4.3. The system will provide suggested time slices for them to annotate. An annotation module is provided for the user to rate the similarity from 1 to 5, with 1 being dissimilar and 5 as similar. They may also choose to annotate which part/parts in the symphony that was not suggested yet they believe were similar. Upon selecting time slices, the coloration of the time slices would change depending on the \% similarity of the selected slice. A spectrum of red to green would be used, with red representing a low \% similarity and green representing a high \% similarity. The results from these should help validate if this research work’s methodology and speculated results prove true.
-
-\begin{figure}[h]
-\caption{Figure 4.3)}
-\centering
-\includegraphics[scale=0.5]{survey}
-\end{figure}
-
-50 participants will be asked to answer these survey forms. The participants’ profile will come in the form of either musical inclined people or just regular people who may not know much about music. An estimate of around 60\% of the survey forms must be answered by musical inclined people and about 40\% answered by regular people because musical inclined people know best about music and are reliable sources for comparison but they may also hold biases with regards to the music they listen to or whether they like listening to this particular composer or not; therefore, including regular people in the survey will help lessen the bias since no knowledge over something will result in no bias. 
+The resulting visualization from SOM and t-SNE will then be used to verify both methods’ accuracy by comparing for example if two symphonies by composer A have a much similar visualization. If the resulting visualizations show that the compositions by the same composer are alike, then it may be able to prove the accuracy of the visualization technique used.

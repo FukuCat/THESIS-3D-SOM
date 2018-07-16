@@ -21,11 +21,11 @@ Today, music information retrieval (MIR) has become an important area of researc
 
 \subsubsection{MFCC}
 
-MFCC, also known as Mel-Frequency Cepstral Coefficients, is the most commonly used feature in speech analysis and since speech analysis and music research are closely interrelated as pointed out by Loughran, Walker, O’Neill, \& O’Farrell (2008), then MFCC will likely be the most commonly used feature in music feature extraction.
+MFCC, also known as Mel-Frequency Cepstral Coefficients, is the most commonly used feature in speech analysis and since speech analysis and music research are closely interrelated as pointed out by Loughran, Walker, O'Neill, \& O'Farrell (2008), then MFCC will likely be the most commonly used feature in music feature extraction.
 
 According to Lutter (2014), MFCC is based mainly from experiments on human misconceptions of words such as when a person misunderstands what another person says. This feature extraction method was first developed by Bridle and Brown in 1974 and was further developed by Mermelstein (1976).  The MFCC feature extraction method involves mimicking some parts of the human speech production and speech perception. This feature extraction involves five steps, namely the fourier transform, the mel-frequency spectrum, the logarithm, cepstral coefficients, and the derivatives. The first step, fourier transform makes use of the formula $C_r,_k=| \frac{1}{N}\sum_{j=0}^{N-1} fj exp [-i 2 \pi \frac{jk}{N}]|$, where $k=0,1,...,(\frac{N}{2})-1$ and N is the number of samples within a speech or time frame.
 
-The mel-frequency spectrum closely mimics the sensation of the human ear’s auditory system and the process involves filtering the spectrum with different band-pass filters, devices that pass frequencies within a certain range and reject all others, and the power for each band-pass filter is computed accordingly (Agarwal, 2017). The computation makes use of the formula $C_T,_j=\sum_{k=0}^{\frac{N}{2}-1} d_j,_k C_T,_k $, where $j=0,1,...,N_d$ and d is the amplitude of the band-pass filters at index j and frequency k, to produce the corresponding filter bank for the spectrum.
+The mel-frequency spectrum closely mimics the sensation of the human ear's auditory system and the process involves filtering the spectrum with different band-pass filters, devices that pass frequencies within a certain range and reject all others, and the power for each band-pass filter is computed accordingly (Agarwal, 2017). The computation makes use of the formula $C_T,_j=\sum_{k=0}^{\frac{N}{2}-1} d_j,_k C_T,_k $, where $j=0,1,...,N_d$ and d is the amplitude of the band-pass filters at index j and frequency k, to produce the corresponding filter bank for the spectrum.
 
 The third step, logarithm involves mimicking the perception of loudness by the human ear and is represented by the formula $C_T,_j= log(C_T,_j)$  where $ j=0,1,...,N_d$.
 
@@ -40,7 +40,7 @@ In gathering data, a careful lookup for patent or copyright issues must strictly
 
 \subsection{Preparation of Dataset}
 
-In Azcarraga \& Flores (2016)’s research regarding visualization and comparison of symphonies through SOM, the preparation of dataset was done by first cutting the symphony into multiple 1 second music segments with an overlapping interval of 0.5 second to provide a smoother transition of the segments when represented later visually in addition to taking consideration of sections or notes that have been abruptly cut during the splitting process. In this way, after the feature is extracted and trained in the SOM, the multiple music segments will make up different musical trajectories which makes up the map visualization.
+In Azcarraga \& Flores (2016)'s research regarding visualization and comparison of symphonies through SOM, the preparation of dataset was done by first cutting the symphony into multiple 1 second music segments with an overlapping interval of 0.5 second to provide a smoother transition of the segments when represented later visually in addition to taking consideration of sections or notes that have been abruptly cut during the splitting process. In this way, after the feature is extracted and trained in the SOM, the multiple music segments will make up different musical trajectories which makes up the map visualization.
 
 \subsection{Feature Extraction}
 
@@ -57,7 +57,7 @@ Feature selection is the automatic selection of attributes in the dataset that a
 
 Grabczewski \& Jankowski (2005) explains that decision tree algorithms are best used for feature selection because of the inherent characteristic of decision trees that allows them to separate the different features and showcase the more important features since it will appear at the root of the decision tree.
 	
-Some simple but successfully tested algorithms for feature selection would include Pearson’s correlation coefficient and Fisher-like criterion. Pearson’s correlation coefficient or Pearson’s R is widely used in the computation of statistics and this involves detecting linear correlation, which is the representation of how close the data points are in making a straight line in a graph, just as shown in Figure 3.1.
+Some simple but successfully tested algorithms for feature selection would include Pearson's correlation coefficient and Fisher-like criterion. Pearson's correlation coefficient or Pearson's R is widely used in the computation of statistics and this involves detecting linear correlation, which is the representation of how close the data points are in making a straight line in a graph, just as shown in Figure 3.1.
 
 \begin{figure}[h]
 \caption{Pearson Correlation Graph}
@@ -104,7 +104,7 @@ Rumelhart \& Zipser (1985) defines a class under supervised learning called comp
 
 \subsubsection{K-Means Clustering Algorithm}
 
-K-means clustering algorithm is a type of unsupervised learning algorithm wherein a set of unlabeled data will be grouped together and these groups are defined as the k variable. The algorithm will assign the different data points to their respective k-groups based on the selected features. Data points will then end up being clustered based on their feature similarities. The algorithm has two main iterative steps, , the data assignment step and the centroid update step, that repeats until either data points change clusters, the sum of the distances is minimized, or some maximum number of iterations is reached. Before starting with these two steps, the centroid for each k-cluster is computed first. In data assignment, each data point is placed in their nearest centroid value computed with squared Euclidean distance. In centroid update, the centroid is recomputed by taking the mean of all the data assigned to the centroid’s cluster (Hartigan \& Wong, 1979).
+K-means clustering algorithm is a type of unsupervised learning algorithm wherein a set of unlabeled data will be grouped together and these groups are defined as the k variable. The algorithm will assign the different data points to their respective k-groups based on the selected features. Data points will then end up being clustered based on their feature similarities. The algorithm has two main iterative steps, , the data assignment step and the centroid update step, that repeats until either data points change clusters, the sum of the distances is minimized, or some maximum number of iterations is reached. Before starting with these two steps, the centroid for each k-cluster is computed first. In data assignment, each data point is placed in their nearest centroid value computed with squared Euclidean distance. In centroid update, the centroid is recomputed by taking the mean of all the data assigned to the cluster of the centroid (Hartigan \& Wong, 1979).
 
 \subsubsection{t-SNE}
 
@@ -116,13 +116,23 @@ With the variance $\delta i$  of the Gaussian that is centered over each high-di
 
 The gradient can be thought of as a spring force from a map point $y_i$ to any $y_j$ along the map. As the force is computed with $y_i-y_j$, the resulting force can either make the points repel or attract each other depending if the distance between the two is too small or too large. To speed up the optimization and to avoid poor local minima, a gradient update with a momentum term is done using $y^{(t)} = y^{(t-1)} + \eta \frac{\delta C}{\delta y} + \alpha (t) (y^{(t-1)}-y^{(t-2)})$ where $y^t$ indicates the solution at iteration t, $\eta$ indicates the learning rate, and $\alpha (t)$ represents the momentum at iteration t.
 
+In t-SNE, certain issues such as the crowding problem, which is when too many data points get crowded in a map with a small number of dimension such as with 2D or 3D, are tackled by using a symmetrized version of the SNE cost function with more simple gradients and to use Student t-distribution instead of the Gaussian distribution when computing similarity between two low-dimensional points. The alternative cost function for a symmetrized SNE is $C=KL(P||Q) = \sum_{i}\sum_{j} p_{ij}log\frac {p_{ij}}{q_{ij}}$ where $p_{i|i}$ and $q_{i|i}$ are set to 0 just as in SNE and $p_{ij}$= $p_{ji}$ as $q_{ij}$= $q_{ji}$ since they constitute the symmetric property. $p_{ij}$ is computed using $p_{ij} = \frac{exp(-||x_i - x_j||^2 / 2 \delta ^2 )}{\sum_{k \neq 1}exp(-||x_k - x_l||^2 / 2 \delta ^2 )}$ and $q_{ij}$ using $q_{ij} = \frac{exp(-||y_i - y_j||^2)}{\sum_{k \neq 1}exp(-||y_k - y_l||^2)}$. In order to avoid having $p_{ij}$ with extremely small values which results from outliers, $p_{ij}$ is first set by $p_{ij} = \frac{p_{j|i} + p_{i|j}}{2n}$ so that $\sum_j p_{ij} > \frac{1}{2n}$ for all data points $x_i$. The gradient of symmetric SNE is computed using $\frac{\delta C}{\delta y_i} = 4 \sum_j (p_{ij} - q_{ij})(y_i - y_j)$.
+
+In t-SNE, just as discussed above, Student t-distribution with one degree of freedom will take the place of Gaussian distribution as the heavy-tailed distribution in the low-dimensional map. $q_{ij}$ will now be computed using $q_{ij} = \frac{(1+||y_i - y_j||^2)^{-1}}{\sum_{k \neq 1} (1+||y_k - y_l||^2)^{-1}} $. A student t-distribution with one degree of freedom is used because it has the property $(1+||y_i - y_j||^2)^{-1}$  wherein it  approaches an inverse law for large pairwise distances in the low dimensional map. The resulting map representation of joint probabilities will make the map points invariant to changes in the scale of the map. Large clusters of points that are far apart will also interact just the same way as how an individual point would.
+
+The gradient of the Kullback-Leibler divergence between P and the Student t-based joint probability distribution Q can be computed using $\frac{\delta C}{\delta y_i} = 4\sum_j (p_{ij} - q_{ij})(y_i - y_j)(1+||y_i - y_j||^2)^{-1}$. The resulting gradient from t-SNE will strongly repel dissimilar data points resulting in a visual image that clearly separates each data class as can be clearly seen in the t-SNE results in Appendix E as compared with the results from the other dimensionality reduction techniques used.
+
+In their experiment set-up, they used a total of three data sets as was discussed back in Chapter 2 which includes the MNIST data set, the Olivetti faces data set, and the COIL-20 data set. They first used PCA to reduce the dimensionality of the data to 30 so that the computation of pairwise distances between data points would be faster and at the same time also suppresses the noise without severely distorting the distances between the data points. They then applied different dimensionality reduction techniques which includes Sammon mapping, Isomap, and LLE to compare the resulting visualization later on with the result of t-SNE. The results of each data set for each technique on the MNIST data set can be viewed in Appendix E. The coloring scheme in the visual images represent each class of data. The cost function parameter they used for their experiment was Perp = 40 for t-SNE, none for Sammon mapping, and k = 12 for Sammon mapping and Isomap.
+
+Their results show that t-SNE overall had better visualization because the data classes are more distinct or separated than compared with the results from the other methods.  In general, t-SNE outperformed all the other dimensionality reduction techniques used in their research; however, the authors point out that t-SNE has three general weakness to consider. The first one is that it is unclear how t-SNE will perform on the more general task of dimensional reduction. In other words, if dimensionality is increased to more than 3, it is unclear whether t-SNE will still produce optimal visualization results. One way of addressing this problem is to optimize the Student t-distribution to have more than one degree of freedom. The second weakness is the curse of intrinsic dimensionality since t-SNE only reduces the dimensionality of data based on the local property of the data. Data sets that have high intrinsic dimensionality and an underlying manifold that is highly varying causes the local linearity of assumption on the manifold that t-SNE implicitly makes be violated; therefore, applying t-SNE to data sets with high intrinsic dimensionality can produce unreliable results. One way to address this problem is to perform t-SNE on a data representation obtained from a model that represents the highly varying data manifold efficiently in a number of non-linear layers. The last weakness is the non-convexity of the t-SNE cost function. Since the cost function of t-SNE is non-convex, several optimization parameters would first have to be chosen. The constructed solutions would then vary depending on the optimization parameter used each time from an initial random configuration of map data point. They explicitly point out however that the same choice of parameters can be used for different visualization tasks and the result would still be of similar
+
 \section{Visualization}
 \subsection{Single Image}
 
-Just as done in Azcarraga \& Flores (2016) research work, visualization for the result of the SOM can be done in a single image. The BMU or best matching unit, which will be explained further in section 3.5.1, represents the music trajectory of a certain 1 second music segment from the symphony. This sequence of BMUs make up the visual image representation of a certain symphony. A color coding scheme was also used to denote the time sequence of a certain music trajectory in the image, blue representing the start and going to red as the music progresses as shown in Figure 3.3.
+Just as done in Azcarraga \& Flores (2016)'s research work and in Maaten \& Hiton (2008)'s t-SNE, visualization for the result of the SOM and t-SNE is projected in a single image. With SOM, the BMU or best matching unit, which will be explained further in section 3.5.1, represents the music trajectory of a certain 1 second music segment from the symphony. This sequence of BMUs make up the visual image representation of a certain symphony. A color coding scheme was also used to denote the time sequence of a certain music trajectory in the image, blue representing the start and going to red as the music progresses as shown in Figure 3.3. For t-SNE, sample visual images can be seen in Appendix E.
 
 \begin{figure}[h]
-\caption{Figure 3.3)}
+\caption{SOM Image from SOMphony}
 \centering
 \includegraphics[width=0.5\textwidth]{somphony_sample}
 \end{figure}
@@ -135,30 +145,26 @@ Aside from representing the result of the SOM in a single image, it can also be 
 In Azcarraga, Caronongan,  Setiono, \& Manalili (2016)’s research work, they incorporated the use of a structured 3D SOM instead of the regular SOM which will result in a single image. They represented the 3D map as a 3x3x3 dimensional cube with 27 subcubes each of the same sizes. Each subcube is further divided into 9x9x9 nodes. Here, they introduced the concept of a core cube at the center and the other 26 corresponding exterior cubes surrounding it. The training phase of the cube involved a four step labelling phase which was discussed in greater detail back in chapter 2. The resulting 3D SOM was then used to identify the proximity of a certain music to a particular genre. Each genre represented one corner of the cube as shown in Figure 3.4.
 
 \begin{figure}[h]
-\caption{Figure 3.4)}
+\caption{3D SOM Cube}
 \centering
 \includegraphics[width=0.5\textwidth]{cube}
 \end{figure}
 
 \section{Metrics}
 
-There are two general types of data, qualitative and quantitative data. Qualitative data are data that cannot be measured by numbers while quantitative can be measured by numbers.
+There are two general types of data, qualitative and quantitative data. Qualitative data are data that cannot be measured by numbers while quantitative can be measured by numbers. Since this research will only make use of quantitative measurements, qualitative will no longer be discussed.
 
 \subsection{Quantitative}
 
 When using clustering as the method for machine learning, for example k-means clustering, there will result in k number of clusters after the algorithm is performed. Azcarraga \& Flores (2016) used k-means clustering in clustering the 1 second music segments. The best matching unit (BMU) for each 1 second music segment is first computed using Euclidean distance, which is the square root of the square of the difference between the x-axis of the first and second point added to the square of the difference between the y-axis of the first and second point, as shown in Figure 3.5.
 
 \begin{figure}[h]
-\caption{Figure 3.5)}
+\caption{Euclidean Distance Diagram}
 \centering
 \includegraphics[width=0.5\textwidth]{euclidean}
 \end{figure}
 
 Each time a 1 second music segment has a BMU inside a cluster, the frequency count for that cluster is incremented. In this way, only the clusters that are mainly used by the music or symphony will have a high frequency count. The frequency counts are then normalized by dividing the counts of a certain composition by its total number of 1 second music segments. Once these normalized frequency counts are summarized, the resulting percentages can then be used to perform pair-wise comparisons between symphonies as shown in Appendix D.
-
-\subsection{Qualitative}
-
-In theory, the main purpose of conducting surveys is to generate results for a certain research work; however, surveys can also be used to validate the results of a research by comparing the results of the surveys and the results produced initially by the research work. In performing research regarding the usage of algorithms in visualizing and comparing symphonies, it would be sound to say that performing surveys that require participants to listen to two symphonies that have been calculated by the SOM to have a large degree of similarity and asking the surveyees for their opinion on the closeness of the two symphonies can help validate the research work if it really produced reliable or accurate results.
 
 \nocite{Dubnov}
 \nocite{Azcarraga2016}
@@ -198,3 +204,7 @@ In theory, the main purpose of conducting surveys is to generate results for a c
 \nocite{mitchell}
 \nocite{guyon}
 \nocite{yang}
+\nocite{kohonen}
+\nocite{maaten}
+\nocite{rumelhart}
+\nocite{storkey}
