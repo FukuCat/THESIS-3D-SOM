@@ -16,144 +16,741 @@ This phase will concern the  expansion of the original music dataset for SOMphon
 \section{t-SNE}
 TSNE...
 
-% Please add the following required packages to your document preamble:
-% \usepackage{longtable}
-% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
-\begin{longtable}{lllllll}
+\begin{longtable}{|l|l|l|l|l|l|l|}
+\caption{Frequency Cluster Count}
+\label{my-label}\\
 \hline
-Row Labels & A & B & C & D & E & \begin{tabular}[c]{@{}l@{}}Grand\\   Total\end{tabular} \\ \hline
+Row Labels & A & B & C & D & E & Grand Total \\ \hline
+\endfirsthead
+\endhead
+%
+P1C1S1 & 383 & 43 & 6 & 152 & 1 & 585 \\ \hline
+P1C1S2 & 116 & 1609 & 2 & 16 & 710 & 2453 \\ \hline
+P1C1S3 & 4 & 3 &  & 1 & 795 & 803 \\ \hline
+P1C1S4 & 2 & 243 &  &  &  & 245 \\ \hline
+P1C1S5 & 1 & 352 &  & 3 & 2 & 358 \\ \hline
+P1C2S1 & 223 & 14 &  &  & 153 & 390 \\ \hline
+P1C2S2 & 4 & 841 & 3 & 31 & 1 & 880 \\ \hline
+P1C2S3 & 106 & 100 &  &  & 431 & 637 \\ \hline
+P1C2S4 & 479 & 18 & 5 & 5 & 154 & 661 \\ \hline
+P1C2S5 & 180 & 415 & 48 & 291 & 339 & 1273 \\ \hline
+P1C3S1 & 1 & 41 &  &  & 596 & 638 \\ \hline
+P1C3S2 & 450 & 73 & 5 & 32 & 71 & 631 \\ \hline
+P1C3S3 &  & 90 &  & 1 & 227 & 318 \\ \hline
+P1C3S4 & 2 & 10 &  & 387 &  & 399 \\ \hline
+P1C3S5 & 276 & 2 &  & 1 & 23 & 302 \\ \hline
+P1C4S1 & 58 & 99 & 20 & 82 & 22 & 281 \\ \hline
+P1C4S2 & 83 & 109 &  & 2 & 783 & 977 \\ \hline
+P1C4S3 & 297 & 286 & 83 & 408 & 57 & 1131 \\ \hline
+P1C4S4 & 104 & 78 &  & 4 & 1344 & 1530 \\ \hline
+P1C4S5 & 134 & 690 & 72 & 253 & 44 & 1193 \\ \hline
+P1C5S1 & 33 & 952 & 2 & 1 & 24 & 1012 \\ \hline
+P1C5S2 & 2 & 241 &  & 5 & 87 & 335 \\ \hline
+P1C5S3 & 12 & 338 &  & 1 & 111 & 462 \\ \hline
+P1C5S4 & 7 & 70 &  &  & 251 & 328 \\ \hline
+P1C5S5 & 268 & 13 &  & 2 & 133 & 416 \\ \hline
+P2C1S1 & 1369 & 643 & 228 & 414 & 121 & 2775 \\ \hline
+P2C1S2 & 1055 & 827 & 77 & 398 & 180 & 2537 \\ \hline
+P2C1S3 & 988 & 686 & 107 & 806 & 143 & 2730 \\ \hline
+P2C1S4 & 1808 & 534 & 22 & 217 & 425 & 3006 \\ \hline
+P2C1S5 & 478 & 148 & 18 & 90 & 232 & 966 \\ \hline
+P2C2S1 & 86 & 91 & 40 & 40 & 191 & 448 \\ \hline
+P2C2S2 & 180 & 258 & 60 & 270 & 110 & 878 \\ \hline
+P2C2S3 & 336 & 1059 & 104 & 180 & 373 & 2052 \\ \hline
+P2C2S4 & 353 & 287 & 39 & 32 & 454 & 1165 \\ \hline
+P2C2S5 & 545 & 709 & 34 & 121 & 667 & 2076 \\ \hline
+P2C3S1 & 279 & 369 & 12 & 22 & 249 & 931 \\ \hline
+P2C3S2 & 72 & 206 & 2 & 8 & 804 & 1092 \\ \hline
+P2C3S3 & 259 & 133 & 1 & 1 & 1218 & 1612 \\ \hline
+P2C3S4 & 623 & 192 & 1 & 4 & 864 & 1684 \\ \hline
+P2C3S5 & 504 & 123 & 6 & 81 & 599 & 1313 \\ \hline
+P2C4S1 & 1396 & 330 & 16 & 44 & 1164 & 2950 \\ \hline
+P2C4S2 & 764 & 612 & 421 & 265 & 845 & 2907 \\ \hline
+P2C4S3 & 1082 & 293 & 71 & 162 & 913 & 2521 \\ \hline
+P2C4S4 & 881 & 208 & 30 & 11 & 2112 & 3242 \\ \hline
+P2C4S5 & 1091 & 546 & 492 & 271 & 771 & 3171 \\ \hline
+P2C5S1 & 694 & 521 & 232 & 703 & 1446 & 3596 \\ \hline
+P2C5S2 & 700 & 653 & 476 & 1144 & 80 & 3053 \\ \hline
+P2C5S3 & 1375 & 373 & 539 & 792 & 281 & 3360 \\ \hline
+P2C5S4 & 1145 & 1119 & 629 & 1408 & 26 & 4327 \\ \hline
+P2C5S5 & 472 & 381 & 129 & 301 & 339 & 1622 \\ \hline
+P3C1S1 & 514 & 411 & 87 & 296 & 46 & 1354 \\ \hline
+P3C1S2 & 246 & 103 & 14 & 84 & 28 & 475 \\ \hline
+P3C1S3 & 1460 & 258 & 65 & 112 & 498 & 2393 \\ \hline
+P3C1S4 & 1032 & 102 & 15 & 29 & 933 & 2111 \\ \hline
+P3C1S5 & 47 & 116 & 2 & 3 & 1109 & 1277 \\ \hline
+P3C2S1 & 36 & 3 & 1653 & 237 & 2 & 1931 \\ \hline
+P3C2S2 & 371 & 70 & 10 & 1 & 554 & 1006 \\ \hline
+P3C2S3 & 461 & 41 & 9 &  & 531 & 1042 \\ \hline
+P3C2S4 & 1048 & 102 & 80 & 199 & 574 & 2003 \\ \hline
+P3C2S5 & 487 & 73 & 434 & 444 & 15 & 1453 \\ \hline
+P3C3S1 & 32 &  & 1351 & 724 &  & 2107 \\ \hline
+P3C3S2 & 18 &  & 1068 & 598 & 5 & 1689 \\ \hline
+P3C3S3 & 173 &  & 1568 & 245 & 4 & 1990 \\ \hline
+P3C3S4 & 54 & 10 & 3109 & 1114 & 4 & 4291 \\ \hline
+P3C3S5 & 42 &  & 1139 & 521 &  & 1702 \\ \hline
+P3C4S1 & 1028 & 139 & 53 & 378 & 462 & 2060 \\ \hline
+P3C4S2 & 414 & 316 & 118 & 250 & 90 & 1188 \\ \hline
+P3C4S3 & 2275 & 340 & 135 & 192 & 346 & 3288 \\ \hline
+P3C4S4 & 1021 & 522 & 108 & 145 & 469 & 2265 \\ \hline
+P3C4S5 & 602 & 194 & 6 & 13 & 879 & 1694 \\ \hline
+P3C5S1 & 592 & 311 & 377 & 347 & 317 & 1944 \\ \hline
+P3C5S2 & 1493 & 740 & 244 & 546 & 101 & 3124 \\ \hline
+P3C5S3 & 1753 & 286 & 129 & 329 & 22 & 2519 \\ \hline
+P3C5S4 & 713 & 126 & 14 & 28 & 938 & 1819 \\ \hline
+P3C5S5 & 27 & 70 & 2 & 4 & 723 & 826 \\ \hline
+P4C1S1 & 429 & 316 & 106 & 186 & 143 & 1180 \\ \hline
+P4C1S2 & 820 & 2985 & 264 & 1919 & 58 & 6046 \\ \hline
+P4C1S3 & 1145 & 1717 & 357 & 621 & 307 & 4147 \\ \hline
+P4C1S4 & 1088 & 519 & 54 & 107 & 346 & 2114 \\ \hline
+P4C1S5 & 612 & 215 & 2 & 88 & 424 & 1341 \\ \hline
+P4C2S1 & 438 & 182 & 1 & 100 & 2682 & 3403 \\ \hline
+P4C2S2 & 1456 & 575 & 207 & 490 & 115 & 2843 \\ \hline
+P4C2S3 & 2016 & 1059 & 103 & 332 & 524 & 4034 \\ \hline
+P4C2S4 & 1329 & 354 & 17 & 46 & 804 & 2550 \\ \hline
+P4C2S5 & 593 & 94 &  & 15 & 848 & 1550 \\ \hline
+P4C3S1 & 15 &  & 2838 & 1617 & 21 & 4491 \\ \hline
+P4C3S2 & 7 &  & 2373 & 1664 & 8 & 4052 \\ \hline
+P4C3S3 & 46 &  & 168 & 5139 &  & 5353 \\ \hline
+P4C3S4 & 12 & 253 & 153 & 3404 & 12 & 3834 \\ \hline
+P4C3S5 & 4 & 3885 &  & 62 & 99 & 4050 \\ \hline
+P4C4S1 & 889 & 497 &  & 15 & 1337 & 2738 \\ \hline
+P4C4S2 & 1195 & 566 & 2 & 201 & 910 & 2874 \\ \hline
+P4C4S3 & 1875 & 66 & 212 & 287 & 342 & 2782 \\ \hline
+P4C4S4 & 138 & 1 & 3393 & 25 &  & 3557 \\ \hline
+P4C4S5 & 40 & 7 & 3044 & 60 &  & 3151 \\ \hline
+P4C5S1 & 379 & 367 & 243 & 401 & 70 & 1460 \\ \hline
+P4C5S2 & 673 & 250 & 204 & 327 & 140 & 1594 \\ \hline
+P4C5S3 & 1866 & 331 & 157 & 398 & 408 & 3160 \\ \hline
+P4C5S4 & 672 & 379 & 7 & 104 & 476 & 1638 \\ \hline
+P4C5S5 & 168 & 354 & 33 & 87 & 842 & 1484 \\ \hline
+P5C1S1 & 46 & 471 & 1397 & 3291 & 101 & 5306 \\ \hline
+P5C1S2 & 158 & 15 & 3637 & 1511 &  & 5321 \\ \hline
+P5C1S3 & 150 & 21 & 2394 & 1556 &  & 4121 \\ \hline
+P5C1S4 & 472 & 11 & 3292 & 1729 &  & 5504 \\ \hline
+P5C1S5 & 652 & 13 & 2826 & 2141 &  & 5632 \\ \hline
+P5C2S1 & 2968 & 1071 & 756 & 822 & 75 & 5692 \\ \hline
+P5C2S2 & 2594 & 683 & 1211 & 1497 & 157 & 6142 \\ \hline
+P5C2S3 & 2612 & 217 & 63 & 201 & 1489 & 4582 \\ \hline
+P5C2S4 & 341 & 1070 & 94 & 114 & 4240 & 5859 \\ \hline
+P5C2S5 & 3811 & 854 & 690 & 526 & 385 & 3199 \\ \hline
+P5C3S1 & 1194 & 1907 & 618 & 1215 & 493 & 5427 \\ \hline
+P5C3S2 & 2590 & 1264 & 417 & 734 & 564 & 5569 \\ \hline
+P5C3S3 & 2975 & 1009 & 212 & 786 & 419 & 5401 \\ \hline
+P5C3S4 & 1460 & 534 & 20 & 730 & 1418 & 4162 \\ \hline
+P5C3S5 & 2023 & 707 & 8 & 299 & 2572 & 5609 \\ \hline
+P5C4S1 & 585 & 1076 & 911 & 1186 & 165 & 3923 \\ \hline
+P5C4S2 & 292 & 1955 & 1144 & 1943 & 111 & 5445 \\ \hline
+P5C4S3 & 624 & 2737 & 428 & 1329 & 552 & 5670 \\ \hline
+P5C4S4 & 641 & 2713 & 719 & 1160 & 286 & 5519 \\ \hline
+P5C4S5 & 1242 & 2513 & 299 & 561 & 424 & 5039 \\ \hline
+P5C5S1 & 234 & 2447 & 6 & 360 & 3036 & 6083 \\ \hline
+P5C5S2 & 58 & 3071 & 22 & 26 & 938 & 4115 \\ \hline
+P5C5S3 & 2613 & 665 & 8 & 333 & 2554 & 6173 \\ \hline
+P5C5S4 & 251 & 762 &  & 170 & 4067 & 5250 \\ \hline
+P5C5S5 & 793 & 745 & 913 & 2509 & 777 & 5737 \\ \hline
+Grand Total & 86983 & 65867 & 51845 & 60726 & 65355 & 330776 \\ \hline
+\end{longtable}
+
+\begin{longtable}{|l|l|l|l|l|l|}
+\caption{Percentage Cluster Count}
+\label{my-label}\\
+\hline
+Row Labels & A & B & C & D & E \\ \hline
+\endfirsthead
+\endhead
+%
+P1C1S1 & 65\% & 7\% & 1\% & 26\% & 0\% \\ \hline
+P1C1S2 & 5\% & 66\% & 0\% & 1\% & 29\% \\ \hline
+P1C1S3 & 0\% & 0\% & 0\% & 0\% & 99\% \\ \hline
+P1C1S4 & 1\% & 99\% & 0\% & 0\% & 0\% \\ \hline
+P1C1S5 & 0\% & 98\% & 0\% & 1\% & 1\% \\ \hline
+P1C2S1 & 57\% & 4\% & 0\% & 0\% & 39\% \\ \hline
+P1C2S2 & 0\% & 96\% & 0\% & 4\% & 0\% \\ \hline
+P1C2S3 & 17\% & 16\% & 0\% & 0\% & 68\% \\ \hline
+P1C2S4 & 72\% & 3\% & 1\% & 1\% & 23\% \\ \hline
+P1C2S5 & 14\% & 33\% & 4\% & 23\% & 27\% \\ \hline
+P1C3S1 & 0\% & 6\% & 0\% & 0\% & 93\% \\ \hline
+P1C3S2 & 71\% & 12\% & 1\% & 5\% & 11\% \\ \hline
+P1C3S3 & 0\% & 28\% & 0\% & 0\% & 71\% \\ \hline
+P1C3S4 & 1\% & 3\% & 0\% & 97\% & 0\% \\ \hline
+P1C3S5 & 91\% & 1\% & 0\% & 0\% & 8\% \\ \hline
+P1C4S1 & 21\% & 35\% & 7\% & 29\% & 8\% \\ \hline
+P1C4S2 & 8\% & 11\% & 0\% & 0\% & 80\% \\ \hline
+P1C4S3 & 26\% & 25\% & 7\% & 36\% & 5\% \\ \hline
+P1C4S4 & 7\% & 5\% & 0\% & 0\% & 88\% \\ \hline
+P1C4S5 & 11\% & 58\% & 6\% & 21\% & 4\% \\ \hline
+P1C5S1 & 3\% & 94\% & 0\% & 0\% & 2\% \\ \hline
+P1C5S2 & 1\% & 72\% & 0\% & 1\% & 26\% \\ \hline
+P1C5S3 & 3\% & 73\% & 0\% & 0\% & 24\% \\ \hline
+P1C5S4 & 2\% & 21\% & 0\% & 0\% & 77\% \\ \hline
+P1C5S5 & 64\% & 3\% & 0\% & 0\% & 32\% \\ \hline
+P2C1S1 & 49\% & 23\% & 8\% & 15\% & 4\% \\ \hline
+P2C1S2 & 42\% & 33\% & 3\% & 16\% & 7\% \\ \hline
+P2C1S3 & 36\% & 25\% & 4\% & 30\% & 5\% \\ \hline
+P2C1S4 & 60\% & 18\% & 1\% & 7\% & 14\% \\ \hline
+P2C1S5 & 49\% & 15\% & 2\% & 9\% & 24\% \\ \hline
+P2C2S1 & 19\% & 20\% & 9\% & 9\% & 43\% \\ \hline
+P2C2S2 & 21\% & 29\% & 7\% & 31\% & 13\% \\ \hline
+P2C2S3 & 16\% & 52\% & 5\% & 9\% & 18\% \\ \hline
+P2C2S4 & 30\% & 25\% & 3\% & 3\% & 39\% \\ \hline
+P2C2S5 & 26\% & 34\% & 2\% & 6\% & 32\% \\ \hline
+P2C3S1 & 30\% & 40\% & 1\% & 2\% & 27\% \\ \hline
+P2C3S2 & 7\% & 19\% & 0\% & 1\% & 74\% \\ \hline
+P2C3S3 & 16\% & 8\% & 0\% & 0\% & 76\% \\ \hline
+P2C3S4 & 37\% & 11\% & 0\% & 0\% & 51\% \\ \hline
+P2C3S5 & 38\% & 9\% & 0\% & 6\% & 46\% \\ \hline
+P2C4S1 & 47\% & 11\% & 1\% & 1\% & 39\% \\ \hline
+P2C4S2 & 26\% & 21\% & 14\% & 9\% & 29\% \\ \hline
+P2C4S3 & 43\% & 12\% & 3\% & 6\% & 36\% \\ \hline
+P2C4S4 & 27\% & 6\% & 1\% & 0\% & 65\% \\ \hline
+P2C4S5 & 34\% & 17\% & 16\% & 9\% & 24\% \\ \hline
+P2C5S1 & 19\% & 14\% & 6\% & 20\% & 40\% \\ \hline
+P2C5S2 & 23\% & 21\% & 16\% & 37\% & 3\% \\ \hline
+P2C5S3 & 41\% & 11\% & 16\% & 24\% & 8\% \\ \hline
+P2C5S4 & 26\% & 26\% & 15\% & 33\% & 1\% \\ \hline
+P2C5S5 & 29\% & 23\% & 8\% & 19\% & 21\% \\ \hline
+P3C1S1 & 38\% & 30\% & 6\% & 22\% & 3\% \\ \hline
+P3C1S2 & 52\% & 22\% & 3\% & 18\% & 6\% \\ \hline
+P3C1S3 & 61\% & 11\% & 3\% & 5\% & 21\% \\ \hline
+P3C1S4 & 49\% & 5\% & 1\% & 1\% & 44\% \\ \hline
+P3C1S5 & 4\% & 9\% & 0\% & 0\% & 87\% \\ \hline
+P3C2S1 & 2\% & 0\% & 86\% & 12\% & 0\% \\ \hline
+P3C2S2 & 37\% & 7\% & 1\% & 0\% & 55\% \\ \hline
+P3C2S3 & 44\% & 4\% & 1\% & 0\% & 51\% \\ \hline
+P3C2S4 & 52\% & 5\% & 4\% & 10\% & 29\% \\ \hline
+P3C2S5 & 34\% & 5\% & 30\% & 31\% & 1\% \\ \hline
+P3C3S1 & 2\% & 0\% & 64\% & 34\% & 0\% \\ \hline
+P3C3S2 & 1\% & 0\% & 63\% & 35\% & 0\% \\ \hline
+P3C3S3 & 9\% & 0\% & 79\% & 12\% & 0\% \\ \hline
+P3C3S4 & 1\% & 0\% & 72\% & 26\% & 0\% \\ \hline
+P3C3S5 & 2\% & 0\% & 67\% & 31\% & 0\% \\ \hline
+P3C4S1 & 50\% & 7\% & 3\% & 18\% & 22\% \\ \hline
+P3C4S2 & 35\% & 27\% & 10\% & 21\% & 8\% \\ \hline
+P3C4S3 & 69\% & 10\% & 4\% & 6\% & 11\% \\ \hline
+P3C4S4 & 45\% & 23\% & 5\% & 6\% & 21\% \\ \hline
+P3C4S5 & 36\% & 11\% & 0\% & 1\% & 52\% \\ \hline
+P3C5S1 & 30\% & 16\% & 19\% & 18\% & 16\% \\ \hline
+P3C5S2 & 48\% & 24\% & 8\% & 17\% & 3\% \\ \hline
+P3C5S3 & 70\% & 11\% & 5\% & 13\% & 1\% \\ \hline
+P3C5S4 & 39\% & 7\% & 1\% & 2\% & 52\% \\ \hline
+P3C5S5 & 3\% & 8\% & 0\% & 0\% & 88\% \\ \hline
+P4C1S1 & 36\% & 27\% & 9\% & 16\% & 12\% \\ \hline
+P4C1S2 & 14\% & 49\% & 4\% & 32\% & 1\% \\ \hline
+P4C1S3 & 28\% & 41\% & 9\% & 15\% & 7\% \\ \hline
+P4C1S4 & 51\% & 25\% & 3\% & 5\% & 16\% \\ \hline
+P4C1S5 & 46\% & 16\% & 0\% & 7\% & 32\% \\ \hline
+P4C2S1 & 13\% & 5\% & 0\% & 3\% & 79\% \\ \hline
+P4C2S2 & 51\% & 20\% & 7\% & 17\% & 4\% \\ \hline
+P4C2S3 & 50\% & 26\% & 3\% & 8\% & 13\% \\ \hline
+P4C2S4 & 52\% & 14\% & 1\% & 2\% & 32\% \\ \hline
+P4C2S5 & 38\% & 6\% & 0\% & 1\% & 55\% \\ \hline
+P4C3S1 & 0\% & 0\% & 63\% & 36\% & 0\% \\ \hline
+P4C3S2 & 0\% & 0\% & 59\% & 41\% & 0\% \\ \hline
+P4C3S3 & 1\% & 0\% & 3\% & 96\% & 0\% \\ \hline
+P4C3S4 & 0\% & 7\% & 4\% & 89\% & 0\% \\ \hline
+P4C3S5 & 0\% & 96\% & 0\% & 2\% & 2\% \\ \hline
+P4C4S1 & 32\% & 18\% & 0\% & 1\% & 49\% \\ \hline
+P4C4S2 & 42\% & 20\% & 0\% & 7\% & 32\% \\ \hline
+P4C4S3 & 67\% & 2\% & 8\% & 10\% & 12\% \\ \hline
+P4C4S4 & 4\% & 0\% & 95\% & 1\% & 0\% \\ \hline
+P4C4S5 & 1\% & 0\% & 97\% & 2\% & 0\% \\ \hline
+P4C5S1 & 26\% & 25\% & 17\% & 27\% & 5\% \\ \hline
+P4C5S2 & 42\% & 16\% & 13\% & 21\% & 9\% \\ \hline
+P4C5S3 & 59\% & 10\% & 5\% & 13\% & 13\% \\ \hline
+P4C5S4 & 41\% & 23\% & 0\% & 6\% & 29\% \\ \hline
+P4C5S5 & 11\% & 24\% & 2\% & 6\% & 57\% \\ \hline
+P5C1S1 & 1\% & 9\% & 26\% & 62\% & 2\% \\ \hline
+P5C1S2 & 3\% & 0\% & 68\% & 28\% & 0\% \\ \hline
+P5C1S3 & 4\% & 1\% & 58\% & 38\% & 0\% \\ \hline
+P5C1S4 & 9\% & 0\% & 60\% & 31\% & 0\% \\ \hline
+P5C1S5 & 12\% & 0\% & 50\% & 38\% & 0\% \\ \hline
+P5C2S1 & 52\% & 19\% & 13\% & 14\% & 1\% \\ \hline
+P5C2S2 & 42\% & 11\% & 20\% & 24\% & 3\% \\ \hline
+P5C2S3 & 57\% & 5\% & 1\% & 4\% & 32\% \\ \hline
+P5C2S4 & 6\% & 18\% & 2\% & 2\% & 72\% \\ \hline
+P5C2S5 & 119\% & 27\% & 22\% & 16\% & 12\% \\ \hline
+P5C3S1 & 22\% & 35\% & 11\% & 22\% & 9\% \\ \hline
+P5C3S2 & 47\% & 23\% & 7\% & 13\% & 10\% \\ \hline
+P5C3S3 & 55\% & 19\% & 4\% & 15\% & 8\% \\ \hline
+P5C3S4 & 35\% & 13\% & 0\% & 18\% & 34\% \\ \hline
+P5C3S5 & 36\% & 13\% & 0\% & 5\% & 46\% \\ \hline
+P5C4S1 & 15\% & 27\% & 23\% & 30\% & 4\% \\ \hline
+P5C4S2 & 5\% & 36\% & 21\% & 36\% & 2\% \\ \hline
+P5C4S3 & 11\% & 48\% & 8\% & 23\% & 10\% \\ \hline
+P5C4S4 & 12\% & 49\% & 13\% & 21\% & 5\% \\ \hline
+P5C4S5 & 25\% & 50\% & 6\% & 11\% & 8\% \\ \hline
+P5C5S1 & 4\% & 40\% & 0\% & 6\% & 50\% \\ \hline
+P5C5S2 & 1\% & 75\% & 1\% & 1\% & 23\% \\ \hline
+P5C5S3 & 42\% & 11\% & 0\% & 5\% & 41\% \\ \hline
+P5C5S4 & 5\% & 15\% & 0\% & 3\% & 77\% \\ \hline
+P5C5S5 & 14\% & 13\% & 16\% & 44\% & 14\% \\ \hline
+\end{longtable}
+
+\begin{longtable}{|l|l|l|}
+\caption{Manhattan Distance Result: Full Length Summed}
+\label{my-label}\\
+\hline
+Symphony A & Symphony B & Distance Sum \\ \hline
+\endfirsthead
+\endhead
+%
+P1C1S4 & P1C1S5 & 269.9242 \\ \hline
+P1C3S3 & P1C5S4 & 598.8077 \\ \hline
+P1C1S4 & P1C5S3 & 776.0105 \\ \hline
+P1C1S4 & P1C3S3 & 787.6107 \\ \hline
+P1C1S4 & P1C5S4 & 807.6517 \\ \hline
+P1C4S1 & P1C4S3 & 947.415 \\ \hline
+P1C3S3 & P1C5S3 & 967.2533 \\ \hline
+P1C1S5 & P1C5S3 & 970.1439 \\ \hline
+P1C4S1 & P1C4S5 & 993.4798 \\ \hline
+P1C1S4 & P5C5S2 & 999.3968 \\ \hline
+P1C4S1 & P4C1S2A & 1010.578 \\ \hline
+P1C1S4 & P1C2S2 & 1017.719 \\ \hline
+P1C1S4 & P1C5S2 & 1027.048 \\ \hline
+P1C4S1 & P5C3S3A & 1034.093 \\ \hline
+P1C4S1 & P2C5S2A & 1045.884 \\ \hline
+P1C4S1 & P2C2S2A & 1059.302 \\ \hline
+P1C4S1 & P2C5S4A & 1074.551 \\ \hline
+P1C4S1 & P4C1S3A & 1104.918 \\ \hline
+P1C4S1 & P3C5S3 & 1117.526 \\ \hline
+P1C4S1 & P4C2S3A & 1130.082 \\ \hline
+P1C4S1 & P3C1S1 & 1153.61 \\ \hline
+P1C4S1 & P2C1S3 & 1156.801 \\ \hline
+P1C4S1 & P3C1S2 & 1158.137 \\ \hline
+P1C1S4 & P1C2S5 & 1167.234 \\ \hline
+P1C4S1 & P4C1S4 & 1181.949 \\ \hline
+P1C4S1 & P2C1S2 & 1186.405 \\ \hline
+P1C4S1 & P3C5S2 & 1198.531 \\ \hline
+P1C1S4 & P1C3S1 & 1222.162 \\ \hline
+P1C4S1 & P2C3S1A & 1225.814 \\ \hline
+P1C4S1 & P2C1S1 & 1234.873 \\ \hline
+P1C4S1 & P4C1S1A & 1238.681 \\ \hline
+\end{longtable}
+
+\begin{longtable}{|l|l|l|}
+\caption{Manhattan Distance Result: Transitions Summed}
+\label{my-label}\\
+\hline
+Symphony A & Symphony B & Distance Sum \\ \hline
 \endfirsthead
 %
 \endhead
 %
-\multicolumn{1}{|l|}{P1C1S1} & \multicolumn{1}{l|}{383} & \multicolumn{1}{l|}{43} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{152} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{585} \\ \hline
-\multicolumn{1}{|l|}{P1C1S2} & \multicolumn{1}{l|}{116} & \multicolumn{1}{l|}{1609} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{16} & \multicolumn{1}{l|}{710} & \multicolumn{1}{l|}{2453} \\ \hline
-\multicolumn{1}{|l|}{P1C1S3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{795} & \multicolumn{1}{l|}{803} \\ \hline
-\multicolumn{1}{|l|}{P1C1S4} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{243} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{245} \\ \hline
-\multicolumn{1}{|l|}{P1C1S5} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{352} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{358} \\ \hline
-\multicolumn{1}{|l|}{P1C2S1} & \multicolumn{1}{l|}{223} & \multicolumn{1}{l|}{14} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{153} & \multicolumn{1}{l|}{390} \\ \hline
-\multicolumn{1}{|l|}{P1C2S2} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{841} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{31} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{880} \\ \hline
-\multicolumn{1}{|l|}{P1C2S3} & \multicolumn{1}{l|}{106} & \multicolumn{1}{l|}{100} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{431} & \multicolumn{1}{l|}{637} \\ \hline
-\multicolumn{1}{|l|}{P1C2S4} & \multicolumn{1}{l|}{479} & \multicolumn{1}{l|}{18} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{154} & \multicolumn{1}{l|}{661} \\ \hline
-\multicolumn{1}{|l|}{P1C2S5} & \multicolumn{1}{l|}{180} & \multicolumn{1}{l|}{415} & \multicolumn{1}{l|}{48} & \multicolumn{1}{l|}{291} & \multicolumn{1}{l|}{339} & \multicolumn{1}{l|}{1273} \\ \hline
-\multicolumn{1}{|l|}{P1C3S1} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{41} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{596} & \multicolumn{1}{l|}{638} \\ \hline
-\multicolumn{1}{|l|}{P1C3S2} & \multicolumn{1}{l|}{450} & \multicolumn{1}{l|}{73} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{32} & \multicolumn{1}{l|}{71} & \multicolumn{1}{l|}{631} \\ \hline
-\multicolumn{1}{|l|}{P1C3S3} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{90} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{227} & \multicolumn{1}{l|}{318} \\ \hline
-\multicolumn{1}{|l|}{P1C3S4} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{10} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{387} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{399} \\ \hline
-\multicolumn{1}{|l|}{P1C3S5} & \multicolumn{1}{l|}{276} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{23} & \multicolumn{1}{l|}{302} \\ \hline
-\multicolumn{1}{|l|}{P1C4S1} & \multicolumn{1}{l|}{58} & \multicolumn{1}{l|}{99} & \multicolumn{1}{l|}{20} & \multicolumn{1}{l|}{82} & \multicolumn{1}{l|}{22} & \multicolumn{1}{l|}{281} \\ \hline
-\multicolumn{1}{|l|}{P1C4S2} & \multicolumn{1}{l|}{83} & \multicolumn{1}{l|}{109} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{783} & \multicolumn{1}{l|}{977} \\ \hline
-\multicolumn{1}{|l|}{P1C4S3} & \multicolumn{1}{l|}{297} & \multicolumn{1}{l|}{286} & \multicolumn{1}{l|}{83} & \multicolumn{1}{l|}{408} & \multicolumn{1}{l|}{57} & \multicolumn{1}{l|}{1131} \\ \hline
-\multicolumn{1}{|l|}{P1C4S4} & \multicolumn{1}{l|}{104} & \multicolumn{1}{l|}{78} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1344} & \multicolumn{1}{l|}{1530} \\ \hline
-\multicolumn{1}{|l|}{P1C4S5} & \multicolumn{1}{l|}{134} & \multicolumn{1}{l|}{690} & \multicolumn{1}{l|}{72} & \multicolumn{1}{l|}{253} & \multicolumn{1}{l|}{44} & \multicolumn{1}{l|}{1193} \\ \hline
-\multicolumn{1}{|l|}{P1C5S1} & \multicolumn{1}{l|}{33} & \multicolumn{1}{l|}{952} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{24} & \multicolumn{1}{l|}{1012} \\ \hline
-\multicolumn{1}{|l|}{P1C5S2} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{241} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{87} & \multicolumn{1}{l|}{335} \\ \hline
-\multicolumn{1}{|l|}{P1C5S3} & \multicolumn{1}{l|}{12} & \multicolumn{1}{l|}{338} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{111} & \multicolumn{1}{l|}{462} \\ \hline
-\multicolumn{1}{|l|}{P1C5S4} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{70} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{251} & \multicolumn{1}{l|}{328} \\ \hline
-\multicolumn{1}{|l|}{P1C5S5} & \multicolumn{1}{l|}{268} & \multicolumn{1}{l|}{13} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{133} & \multicolumn{1}{l|}{416} \\ \hline
-\multicolumn{1}{|l|}{P2C1S1} & \multicolumn{1}{l|}{1369} & \multicolumn{1}{l|}{643} & \multicolumn{1}{l|}{228} & \multicolumn{1}{l|}{414} & \multicolumn{1}{l|}{121} & \multicolumn{1}{l|}{2775} \\ \hline
-\multicolumn{1}{|l|}{P2C1S2} & \multicolumn{1}{l|}{1055} & \multicolumn{1}{l|}{827} & \multicolumn{1}{l|}{77} & \multicolumn{1}{l|}{398} & \multicolumn{1}{l|}{180} & \multicolumn{1}{l|}{2537} \\ \hline
-\multicolumn{1}{|l|}{P2C1S3} & \multicolumn{1}{l|}{988} & \multicolumn{1}{l|}{686} & \multicolumn{1}{l|}{107} & \multicolumn{1}{l|}{806} & \multicolumn{1}{l|}{143} & \multicolumn{1}{l|}{2730} \\ \hline
-\multicolumn{1}{|l|}{P2C1S4} & \multicolumn{1}{l|}{1808} & \multicolumn{1}{l|}{534} & \multicolumn{1}{l|}{22} & \multicolumn{1}{l|}{217} & \multicolumn{1}{l|}{425} & \multicolumn{1}{l|}{3006} \\ \hline
-\multicolumn{1}{|l|}{P2C1S5} & \multicolumn{1}{l|}{478} & \multicolumn{1}{l|}{148} & \multicolumn{1}{l|}{18} & \multicolumn{1}{l|}{90} & \multicolumn{1}{l|}{232} & \multicolumn{1}{l|}{966} \\ \hline
-\multicolumn{1}{|l|}{P2C2S1} & \multicolumn{1}{l|}{86} & \multicolumn{1}{l|}{91} & \multicolumn{1}{l|}{40} & \multicolumn{1}{l|}{40} & \multicolumn{1}{l|}{191} & \multicolumn{1}{l|}{448} \\ \hline
-\multicolumn{1}{|l|}{P2C2S2} & \multicolumn{1}{l|}{180} & \multicolumn{1}{l|}{258} & \multicolumn{1}{l|}{60} & \multicolumn{1}{l|}{270} & \multicolumn{1}{l|}{110} & \multicolumn{1}{l|}{878} \\ \hline
-\multicolumn{1}{|l|}{P2C2S3} & \multicolumn{1}{l|}{336} & \multicolumn{1}{l|}{1059} & \multicolumn{1}{l|}{104} & \multicolumn{1}{l|}{180} & \multicolumn{1}{l|}{373} & \multicolumn{1}{l|}{2052} \\ \hline
-\multicolumn{1}{|l|}{P2C2S4} & \multicolumn{1}{l|}{353} & \multicolumn{1}{l|}{287} & \multicolumn{1}{l|}{39} & \multicolumn{1}{l|}{32} & \multicolumn{1}{l|}{454} & \multicolumn{1}{l|}{1165} \\ \hline
-\multicolumn{1}{|l|}{P2C2S5} & \multicolumn{1}{l|}{545} & \multicolumn{1}{l|}{709} & \multicolumn{1}{l|}{34} & \multicolumn{1}{l|}{121} & \multicolumn{1}{l|}{667} & \multicolumn{1}{l|}{2076} \\ \hline
-\multicolumn{1}{|l|}{P2C3S1} & \multicolumn{1}{l|}{279} & \multicolumn{1}{l|}{369} & \multicolumn{1}{l|}{12} & \multicolumn{1}{l|}{22} & \multicolumn{1}{l|}{249} & \multicolumn{1}{l|}{931} \\ \hline
-\multicolumn{1}{|l|}{P2C3S2} & \multicolumn{1}{l|}{72} & \multicolumn{1}{l|}{206} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{804} & \multicolumn{1}{l|}{1092} \\ \hline
-\multicolumn{1}{|l|}{P2C3S3} & \multicolumn{1}{l|}{259} & \multicolumn{1}{l|}{133} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{1218} & \multicolumn{1}{l|}{1612} \\ \hline
-\multicolumn{1}{|l|}{P2C3S4} & \multicolumn{1}{l|}{623} & \multicolumn{1}{l|}{192} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{864} & \multicolumn{1}{l|}{1684} \\ \hline
-\multicolumn{1}{|l|}{P2C3S5} & \multicolumn{1}{l|}{504} & \multicolumn{1}{l|}{123} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{81} & \multicolumn{1}{l|}{599} & \multicolumn{1}{l|}{1313} \\ \hline
-\multicolumn{1}{|l|}{P2C4S1} & \multicolumn{1}{l|}{1396} & \multicolumn{1}{l|}{330} & \multicolumn{1}{l|}{16} & \multicolumn{1}{l|}{44} & \multicolumn{1}{l|}{1164} & \multicolumn{1}{l|}{2950} \\ \hline
-\multicolumn{1}{|l|}{P2C4S2} & \multicolumn{1}{l|}{764} & \multicolumn{1}{l|}{612} & \multicolumn{1}{l|}{421} & \multicolumn{1}{l|}{265} & \multicolumn{1}{l|}{845} & \multicolumn{1}{l|}{2907} \\ \hline
-\multicolumn{1}{|l|}{P2C4S3} & \multicolumn{1}{l|}{1082} & \multicolumn{1}{l|}{293} & \multicolumn{1}{l|}{71} & \multicolumn{1}{l|}{162} & \multicolumn{1}{l|}{913} & \multicolumn{1}{l|}{2521} \\ \hline
-\multicolumn{1}{|l|}{P2C4S4} & \multicolumn{1}{l|}{881} & \multicolumn{1}{l|}{208} & \multicolumn{1}{l|}{30} & \multicolumn{1}{l|}{11} & \multicolumn{1}{l|}{2112} & \multicolumn{1}{l|}{3242} \\ \hline
-\multicolumn{1}{|l|}{P2C4S5} & \multicolumn{1}{l|}{1091} & \multicolumn{1}{l|}{546} & \multicolumn{1}{l|}{492} & \multicolumn{1}{l|}{271} & \multicolumn{1}{l|}{771} & \multicolumn{1}{l|}{3171} \\ \hline
-\multicolumn{1}{|l|}{P2C5S1} & \multicolumn{1}{l|}{694} & \multicolumn{1}{l|}{521} & \multicolumn{1}{l|}{232} & \multicolumn{1}{l|}{703} & \multicolumn{1}{l|}{1446} & \multicolumn{1}{l|}{3596} \\ \hline
-\multicolumn{1}{|l|}{P2C5S2} & \multicolumn{1}{l|}{700} & \multicolumn{1}{l|}{653} & \multicolumn{1}{l|}{476} & \multicolumn{1}{l|}{1144} & \multicolumn{1}{l|}{80} & \multicolumn{1}{l|}{3053} \\ \hline
-\multicolumn{1}{|l|}{P2C5S3} & \multicolumn{1}{l|}{1375} & \multicolumn{1}{l|}{373} & \multicolumn{1}{l|}{539} & \multicolumn{1}{l|}{792} & \multicolumn{1}{l|}{281} & \multicolumn{1}{l|}{3360} \\ \hline
-\multicolumn{1}{|l|}{P2C5S4} & \multicolumn{1}{l|}{1145} & \multicolumn{1}{l|}{1119} & \multicolumn{1}{l|}{629} & \multicolumn{1}{l|}{1408} & \multicolumn{1}{l|}{26} & \multicolumn{1}{l|}{4327} \\ \hline
-\multicolumn{1}{|l|}{P2C5S5} & \multicolumn{1}{l|}{472} & \multicolumn{1}{l|}{381} & \multicolumn{1}{l|}{129} & \multicolumn{1}{l|}{301} & \multicolumn{1}{l|}{339} & \multicolumn{1}{l|}{1622} \\ \hline
-\multicolumn{1}{|l|}{P3C1S1} & \multicolumn{1}{l|}{514} & \multicolumn{1}{l|}{411} & \multicolumn{1}{l|}{87} & \multicolumn{1}{l|}{296} & \multicolumn{1}{l|}{46} & \multicolumn{1}{l|}{1354} \\ \hline
-\multicolumn{1}{|l|}{P3C1S2} & \multicolumn{1}{l|}{246} & \multicolumn{1}{l|}{103} & \multicolumn{1}{l|}{14} & \multicolumn{1}{l|}{84} & \multicolumn{1}{l|}{28} & \multicolumn{1}{l|}{475} \\ \hline
-\multicolumn{1}{|l|}{P3C1S3} & \multicolumn{1}{l|}{1460} & \multicolumn{1}{l|}{258} & \multicolumn{1}{l|}{65} & \multicolumn{1}{l|}{112} & \multicolumn{1}{l|}{498} & \multicolumn{1}{l|}{2393} \\ \hline
-\multicolumn{1}{|l|}{P3C1S4} & \multicolumn{1}{l|}{1032} & \multicolumn{1}{l|}{102} & \multicolumn{1}{l|}{15} & \multicolumn{1}{l|}{29} & \multicolumn{1}{l|}{933} & \multicolumn{1}{l|}{2111} \\ \hline
-\multicolumn{1}{|l|}{P3C1S5} & \multicolumn{1}{l|}{47} & \multicolumn{1}{l|}{116} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{1109} & \multicolumn{1}{l|}{1277} \\ \hline
-\multicolumn{1}{|l|}{P3C2S1} & \multicolumn{1}{l|}{36} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{1653} & \multicolumn{1}{l|}{237} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{1931} \\ \hline
-\multicolumn{1}{|l|}{P3C2S2} & \multicolumn{1}{l|}{371} & \multicolumn{1}{l|}{70} & \multicolumn{1}{l|}{10} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{554} & \multicolumn{1}{l|}{1006} \\ \hline
-\multicolumn{1}{|l|}{P3C2S3} & \multicolumn{1}{l|}{461} & \multicolumn{1}{l|}{41} & \multicolumn{1}{l|}{9} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{531} & \multicolumn{1}{l|}{1042} \\ \hline
-\multicolumn{1}{|l|}{P3C2S4} & \multicolumn{1}{l|}{1048} & \multicolumn{1}{l|}{102} & \multicolumn{1}{l|}{80} & \multicolumn{1}{l|}{199} & \multicolumn{1}{l|}{574} & \multicolumn{1}{l|}{2003} \\ \hline
-\multicolumn{1}{|l|}{P3C2S5} & \multicolumn{1}{l|}{487} & \multicolumn{1}{l|}{73} & \multicolumn{1}{l|}{434} & \multicolumn{1}{l|}{444} & \multicolumn{1}{l|}{15} & \multicolumn{1}{l|}{1453} \\ \hline
-\multicolumn{1}{|l|}{P3C3S1} & \multicolumn{1}{l|}{32} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1351} & \multicolumn{1}{l|}{724} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{2107} \\ \hline
-\multicolumn{1}{|l|}{P3C3S2} & \multicolumn{1}{l|}{18} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1068} & \multicolumn{1}{l|}{598} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{1689} \\ \hline
-\multicolumn{1}{|l|}{P3C3S3} & \multicolumn{1}{l|}{173} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1568} & \multicolumn{1}{l|}{245} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1990} \\ \hline
-\multicolumn{1}{|l|}{P3C3S4} & \multicolumn{1}{l|}{54} & \multicolumn{1}{l|}{10} & \multicolumn{1}{l|}{3109} & \multicolumn{1}{l|}{1114} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{4291} \\ \hline
-\multicolumn{1}{|l|}{P3C3S5} & \multicolumn{1}{l|}{42} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1139} & \multicolumn{1}{l|}{521} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{1702} \\ \hline
-\multicolumn{1}{|l|}{P3C4S1} & \multicolumn{1}{l|}{1028} & \multicolumn{1}{l|}{139} & \multicolumn{1}{l|}{53} & \multicolumn{1}{l|}{378} & \multicolumn{1}{l|}{462} & \multicolumn{1}{l|}{2060} \\ \hline
-\multicolumn{1}{|l|}{P3C4S2} & \multicolumn{1}{l|}{414} & \multicolumn{1}{l|}{316} & \multicolumn{1}{l|}{118} & \multicolumn{1}{l|}{250} & \multicolumn{1}{l|}{90} & \multicolumn{1}{l|}{1188} \\ \hline
-\multicolumn{1}{|l|}{P3C4S3} & \multicolumn{1}{l|}{2275} & \multicolumn{1}{l|}{340} & \multicolumn{1}{l|}{135} & \multicolumn{1}{l|}{192} & \multicolumn{1}{l|}{346} & \multicolumn{1}{l|}{3288} \\ \hline
-\multicolumn{1}{|l|}{P3C4S4} & \multicolumn{1}{l|}{1021} & \multicolumn{1}{l|}{522} & \multicolumn{1}{l|}{108} & \multicolumn{1}{l|}{145} & \multicolumn{1}{l|}{469} & \multicolumn{1}{l|}{2265} \\ \hline
-\multicolumn{1}{|l|}{P3C4S5} & \multicolumn{1}{l|}{602} & \multicolumn{1}{l|}{194} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{13} & \multicolumn{1}{l|}{879} & \multicolumn{1}{l|}{1694} \\ \hline
-\multicolumn{1}{|l|}{P3C5S1} & \multicolumn{1}{l|}{592} & \multicolumn{1}{l|}{311} & \multicolumn{1}{l|}{377} & \multicolumn{1}{l|}{347} & \multicolumn{1}{l|}{317} & \multicolumn{1}{l|}{1944} \\ \hline
-\multicolumn{1}{|l|}{P3C5S2} & \multicolumn{1}{l|}{1493} & \multicolumn{1}{l|}{740} & \multicolumn{1}{l|}{244} & \multicolumn{1}{l|}{546} & \multicolumn{1}{l|}{101} & \multicolumn{1}{l|}{3124} \\ \hline
-\multicolumn{1}{|l|}{P3C5S3} & \multicolumn{1}{l|}{1753} & \multicolumn{1}{l|}{286} & \multicolumn{1}{l|}{129} & \multicolumn{1}{l|}{329} & \multicolumn{1}{l|}{22} & \multicolumn{1}{l|}{2519} \\ \hline
-\multicolumn{1}{|l|}{P3C5S4} & \multicolumn{1}{l|}{713} & \multicolumn{1}{l|}{126} & \multicolumn{1}{l|}{14} & \multicolumn{1}{l|}{28} & \multicolumn{1}{l|}{938} & \multicolumn{1}{l|}{1819} \\ \hline
-\multicolumn{1}{|l|}{P3C5S5} & \multicolumn{1}{l|}{27} & \multicolumn{1}{l|}{70} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{723} & \multicolumn{1}{l|}{826} \\ \hline
-\multicolumn{1}{|l|}{P4C1S1} & \multicolumn{1}{l|}{429} & \multicolumn{1}{l|}{316} & \multicolumn{1}{l|}{106} & \multicolumn{1}{l|}{186} & \multicolumn{1}{l|}{143} & \multicolumn{1}{l|}{1180} \\ \hline
-\multicolumn{1}{|l|}{P4C1S2} & \multicolumn{1}{l|}{820} & \multicolumn{1}{l|}{2985} & \multicolumn{1}{l|}{264} & \multicolumn{1}{l|}{1919} & \multicolumn{1}{l|}{58} & \multicolumn{1}{l|}{6046} \\ \hline
-\multicolumn{1}{|l|}{P4C1S3} & \multicolumn{1}{l|}{1145} & \multicolumn{1}{l|}{1717} & \multicolumn{1}{l|}{357} & \multicolumn{1}{l|}{621} & \multicolumn{1}{l|}{307} & \multicolumn{1}{l|}{4147} \\ \hline
-\multicolumn{1}{|l|}{P4C1S4} & \multicolumn{1}{l|}{1088} & \multicolumn{1}{l|}{519} & \multicolumn{1}{l|}{54} & \multicolumn{1}{l|}{107} & \multicolumn{1}{l|}{346} & \multicolumn{1}{l|}{2114} \\ \hline
-\multicolumn{1}{|l|}{P4C1S5} & \multicolumn{1}{l|}{612} & \multicolumn{1}{l|}{215} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{88} & \multicolumn{1}{l|}{424} & \multicolumn{1}{l|}{1341} \\ \hline
-\multicolumn{1}{|l|}{P4C2S1} & \multicolumn{1}{l|}{438} & \multicolumn{1}{l|}{182} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{100} & \multicolumn{1}{l|}{2682} & \multicolumn{1}{l|}{3403} \\ \hline
-\multicolumn{1}{|l|}{P4C2S2} & \multicolumn{1}{l|}{1456} & \multicolumn{1}{l|}{575} & \multicolumn{1}{l|}{207} & \multicolumn{1}{l|}{490} & \multicolumn{1}{l|}{115} & \multicolumn{1}{l|}{2843} \\ \hline
-\multicolumn{1}{|l|}{P4C2S3} & \multicolumn{1}{l|}{2016} & \multicolumn{1}{l|}{1059} & \multicolumn{1}{l|}{103} & \multicolumn{1}{l|}{332} & \multicolumn{1}{l|}{524} & \multicolumn{1}{l|}{4034} \\ \hline
-\multicolumn{1}{|l|}{P4C2S4} & \multicolumn{1}{l|}{1329} & \multicolumn{1}{l|}{354} & \multicolumn{1}{l|}{17} & \multicolumn{1}{l|}{46} & \multicolumn{1}{l|}{804} & \multicolumn{1}{l|}{2550} \\ \hline
-\multicolumn{1}{|l|}{P4C2S5} & \multicolumn{1}{l|}{593} & \multicolumn{1}{l|}{94} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{15} & \multicolumn{1}{l|}{848} & \multicolumn{1}{l|}{1550} \\ \hline
-\multicolumn{1}{|l|}{P4C3S1} & \multicolumn{1}{l|}{15} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{2838} & \multicolumn{1}{l|}{1617} & \multicolumn{1}{l|}{21} & \multicolumn{1}{l|}{4491} \\ \hline
-\multicolumn{1}{|l|}{P4C3S2} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{2373} & \multicolumn{1}{l|}{1664} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{4052} \\ \hline
-\multicolumn{1}{|l|}{P4C3S3} & \multicolumn{1}{l|}{46} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{168} & \multicolumn{1}{l|}{5139} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5353} \\ \hline
-\multicolumn{1}{|l|}{P4C3S4} & \multicolumn{1}{l|}{12} & \multicolumn{1}{l|}{253} & \multicolumn{1}{l|}{153} & \multicolumn{1}{l|}{3404} & \multicolumn{1}{l|}{12} & \multicolumn{1}{l|}{3834} \\ \hline
-\multicolumn{1}{|l|}{P4C3S5} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{3885} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{62} & \multicolumn{1}{l|}{99} & \multicolumn{1}{l|}{4050} \\ \hline
-\multicolumn{1}{|l|}{P4C4S1} & \multicolumn{1}{l|}{889} & \multicolumn{1}{l|}{497} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{15} & \multicolumn{1}{l|}{1337} & \multicolumn{1}{l|}{2738} \\ \hline
-\multicolumn{1}{|l|}{P4C4S2} & \multicolumn{1}{l|}{1195} & \multicolumn{1}{l|}{566} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{201} & \multicolumn{1}{l|}{910} & \multicolumn{1}{l|}{2874} \\ \hline
-\multicolumn{1}{|l|}{P4C4S3} & \multicolumn{1}{l|}{1875} & \multicolumn{1}{l|}{66} & \multicolumn{1}{l|}{212} & \multicolumn{1}{l|}{287} & \multicolumn{1}{l|}{342} & \multicolumn{1}{l|}{2782} \\ \hline
-\multicolumn{1}{|l|}{P4C4S4} & \multicolumn{1}{l|}{138} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{3393} & \multicolumn{1}{l|}{25} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{3557} \\ \hline
-\multicolumn{1}{|l|}{P4C4S5} & \multicolumn{1}{l|}{40} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{3044} & \multicolumn{1}{l|}{60} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{3151} \\ \hline
-\multicolumn{1}{|l|}{P4C5S1} & \multicolumn{1}{l|}{379} & \multicolumn{1}{l|}{367} & \multicolumn{1}{l|}{243} & \multicolumn{1}{l|}{401} & \multicolumn{1}{l|}{70} & \multicolumn{1}{l|}{1460} \\ \hline
-\multicolumn{1}{|l|}{P4C5S2} & \multicolumn{1}{l|}{673} & \multicolumn{1}{l|}{250} & \multicolumn{1}{l|}{204} & \multicolumn{1}{l|}{327} & \multicolumn{1}{l|}{140} & \multicolumn{1}{l|}{1594} \\ \hline
-\multicolumn{1}{|l|}{P4C5S3} & \multicolumn{1}{l|}{1866} & \multicolumn{1}{l|}{331} & \multicolumn{1}{l|}{157} & \multicolumn{1}{l|}{398} & \multicolumn{1}{l|}{408} & \multicolumn{1}{l|}{3160} \\ \hline
-\multicolumn{1}{|l|}{P4C5S4} & \multicolumn{1}{l|}{672} & \multicolumn{1}{l|}{379} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{104} & \multicolumn{1}{l|}{476} & \multicolumn{1}{l|}{1638} \\ \hline
-\multicolumn{1}{|l|}{P4C5S5} & \multicolumn{1}{l|}{168} & \multicolumn{1}{l|}{354} & \multicolumn{1}{l|}{33} & \multicolumn{1}{l|}{87} & \multicolumn{1}{l|}{842} & \multicolumn{1}{l|}{1484} \\ \hline
-\multicolumn{1}{|l|}{P5C1S1} & \multicolumn{1}{l|}{46} & \multicolumn{1}{l|}{471} & \multicolumn{1}{l|}{1397} & \multicolumn{1}{l|}{3291} & \multicolumn{1}{l|}{101} & \multicolumn{1}{l|}{5306} \\ \hline
-\multicolumn{1}{|l|}{P5C1S2} & \multicolumn{1}{l|}{158} & \multicolumn{1}{l|}{15} & \multicolumn{1}{l|}{3637} & \multicolumn{1}{l|}{1511} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5321} \\ \hline
-\multicolumn{1}{|l|}{P5C1S3} & \multicolumn{1}{l|}{150} & \multicolumn{1}{l|}{21} & \multicolumn{1}{l|}{2394} & \multicolumn{1}{l|}{1556} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{4121} \\ \hline
-\multicolumn{1}{|l|}{P5C1S4} & \multicolumn{1}{l|}{472} & \multicolumn{1}{l|}{11} & \multicolumn{1}{l|}{3292} & \multicolumn{1}{l|}{1729} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5504} \\ \hline
-\multicolumn{1}{|l|}{P5C1S5} & \multicolumn{1}{l|}{652} & \multicolumn{1}{l|}{13} & \multicolumn{1}{l|}{2826} & \multicolumn{1}{l|}{2141} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{5632} \\ \hline
-\multicolumn{1}{|l|}{P5C2S1} & \multicolumn{1}{l|}{2968} & \multicolumn{1}{l|}{1071} & \multicolumn{1}{l|}{756} & \multicolumn{1}{l|}{822} & \multicolumn{1}{l|}{75} & \multicolumn{1}{l|}{5692} \\ \hline
-\multicolumn{1}{|l|}{P5C2S2} & \multicolumn{1}{l|}{2594} & \multicolumn{1}{l|}{683} & \multicolumn{1}{l|}{1211} & \multicolumn{1}{l|}{1497} & \multicolumn{1}{l|}{157} & \multicolumn{1}{l|}{6142} \\ \hline
-\multicolumn{1}{|l|}{P5C2S3} & \multicolumn{1}{l|}{2612} & \multicolumn{1}{l|}{217} & \multicolumn{1}{l|}{63} & \multicolumn{1}{l|}{201} & \multicolumn{1}{l|}{1489} & \multicolumn{1}{l|}{4582} \\ \hline
-\multicolumn{1}{|l|}{P5C2S4} & \multicolumn{1}{l|}{341} & \multicolumn{1}{l|}{1070} & \multicolumn{1}{l|}{94} & \multicolumn{1}{l|}{114} & \multicolumn{1}{l|}{4240} & \multicolumn{1}{l|}{5859} \\ \hline
-\multicolumn{1}{|l|}{P5C2S5} & \multicolumn{1}{l|}{1856} & \multicolumn{1}{l|}{434} & \multicolumn{1}{l|}{377} & \multicolumn{1}{l|}{325} & \multicolumn{1}{l|}{207} & \multicolumn{1}{l|}{3199} \\ \hline
-\multicolumn{1}{|l|}{P5C2S5C} & \multicolumn{1}{l|}{1101} & \multicolumn{1}{l|}{103} & \multicolumn{1}{l|}{231} & \multicolumn{1}{l|}{69} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1508} \\ \hline
-\multicolumn{1}{|l|}{P5C2S5D} & \multicolumn{1}{l|}{854} & \multicolumn{1}{l|}{317} & \multicolumn{1}{l|}{82} & \multicolumn{1}{l|}{132} & \multicolumn{1}{l|}{174} & \multicolumn{1}{l|}{1559} \\ \hline
-\multicolumn{1}{|l|}{P5C3S1} & \multicolumn{1}{l|}{1194} & \multicolumn{1}{l|}{1907} & \multicolumn{1}{l|}{618} & \multicolumn{1}{l|}{1215} & \multicolumn{1}{l|}{493} & \multicolumn{1}{l|}{5427} \\ \hline
-\multicolumn{1}{|l|}{P5C3S2} & \multicolumn{1}{l|}{2590} & \multicolumn{1}{l|}{1264} & \multicolumn{1}{l|}{417} & \multicolumn{1}{l|}{734} & \multicolumn{1}{l|}{564} & \multicolumn{1}{l|}{5569} \\ \hline
-\multicolumn{1}{|l|}{P5C3S3} & \multicolumn{1}{l|}{2975} & \multicolumn{1}{l|}{1009} & \multicolumn{1}{l|}{212} & \multicolumn{1}{l|}{786} & \multicolumn{1}{l|}{419} & \multicolumn{1}{l|}{5401} \\ \hline
-\multicolumn{1}{|l|}{P5C3S4} & \multicolumn{1}{l|}{1460} & \multicolumn{1}{l|}{534} & \multicolumn{1}{l|}{20} & \multicolumn{1}{l|}{730} & \multicolumn{1}{l|}{1418} & \multicolumn{1}{l|}{4162} \\ \hline
-\multicolumn{1}{|l|}{P5C3S5} & \multicolumn{1}{l|}{2023} & \multicolumn{1}{l|}{707} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{299} & \multicolumn{1}{l|}{2572} & \multicolumn{1}{l|}{5609} \\ \hline
-\multicolumn{1}{|l|}{P5C4S1} & \multicolumn{1}{l|}{585} & \multicolumn{1}{l|}{1076} & \multicolumn{1}{l|}{911} & \multicolumn{1}{l|}{1186} & \multicolumn{1}{l|}{165} & \multicolumn{1}{l|}{3923} \\ \hline
-\multicolumn{1}{|l|}{P5C4S2} & \multicolumn{1}{l|}{292} & \multicolumn{1}{l|}{1955} & \multicolumn{1}{l|}{1144} & \multicolumn{1}{l|}{1943} & \multicolumn{1}{l|}{111} & \multicolumn{1}{l|}{5445} \\ \hline
-\multicolumn{1}{|l|}{P5C4S3} & \multicolumn{1}{l|}{624} & \multicolumn{1}{l|}{2737} & \multicolumn{1}{l|}{428} & \multicolumn{1}{l|}{1329} & \multicolumn{1}{l|}{552} & \multicolumn{1}{l|}{5670} \\ \hline
-\multicolumn{1}{|l|}{P5C4S4} & \multicolumn{1}{l|}{641} & \multicolumn{1}{l|}{2713} & \multicolumn{1}{l|}{719} & \multicolumn{1}{l|}{1160} & \multicolumn{1}{l|}{286} & \multicolumn{1}{l|}{5519} \\ \hline
-\multicolumn{1}{|l|}{P5C4S5} & \multicolumn{1}{l|}{1242} & \multicolumn{1}{l|}{2513} & \multicolumn{1}{l|}{299} & \multicolumn{1}{l|}{561} & \multicolumn{1}{l|}{424} & \multicolumn{1}{l|}{5039} \\ \hline
-\multicolumn{1}{|l|}{P5C5S1} & \multicolumn{1}{l|}{234} & \multicolumn{1}{l|}{2447} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{360} & \multicolumn{1}{l|}{3036} & \multicolumn{1}{l|}{6083} \\ \hline
-\multicolumn{1}{|l|}{P5C5S2} & \multicolumn{1}{l|}{58} & \multicolumn{1}{l|}{3071} & \multicolumn{1}{l|}{22} & \multicolumn{1}{l|}{26} & \multicolumn{1}{l|}{938} & \multicolumn{1}{l|}{4115} \\ \hline
-\multicolumn{1}{|l|}{P5C5S3} & \multicolumn{1}{l|}{2613} & \multicolumn{1}{l|}{665} & \multicolumn{1}{l|}{8} & \multicolumn{1}{l|}{333} & \multicolumn{1}{l|}{2554} & \multicolumn{1}{l|}{6173} \\ \hline
-\multicolumn{1}{|l|}{P5C5S4} & \multicolumn{1}{l|}{251} & \multicolumn{1}{l|}{762} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{170} & \multicolumn{1}{l|}{4067} & \multicolumn{1}{l|}{5250} \\ \hline
-\multicolumn{1}{|l|}{P5C5S5} & \multicolumn{1}{l|}{793} & \multicolumn{1}{l|}{745} & \multicolumn{1}{l|}{913} & \multicolumn{1}{l|}{2509} & \multicolumn{1}{l|}{777} & \multicolumn{1}{l|}{5737} \\ \hline
-Grand Total & 86983 & 65867 & 51845 & 60726 & 65355 & 330776 \\ \hline
+P2C1S3 & P1C1S4 & 6.342487 \\ \hline
+P2C5S3A & P1C1S4 & 7.09482 \\ \hline
+P3C1S3 & P1C1S4 & 7.191891 \\ \hline
+P2C4S2A & P1C1S4 & 7.276127 \\ \hline
+P1C1S4 & P1C1S5 & 7.354168 \\ \hline
+P4C2S1A & P1C1S4 & 7.489208 \\ \hline
+P1C2S5 & P1C1S4 & 7.49975 \\ \hline
+P2C3S1A & P1C1S4 & 7.522169 \\ \hline
+P1C1S5 & P1C1S4 & 7.667543 \\ \hline
+P1C1S4 & P1C5S5 & 7.682119 \\ \hline
+P1C1S4 & P2C3S2A & 7.769781 \\ \hline
+P2C3S2A & P1C1S4 & 7.805628 \\ \hline
+P2C1S4 & P1C1S4 & 7.806015 \\ \hline
+P2C2S5A & P1C1S4 & 7.961077 \\ \hline
+P2C3S3A & P1C1S4 & 7.981119 \\ \hline
+P5C2S3 & P1C1S4 & 8.046022 \\ \hline
+P1C2S3 & P1C2S3 & 8.079905 \\ \hline
+P4C1S1A & P1C1S4 & 8.13656 \\ \hline
+P4C1S5A & P1C1S4 & 8.149289 \\ \hline
+P2C4S1A & P1C1S4 & 8.167969 \\ \hline
+P2C2S1 & P1C1S4 & 8.23078 \\ \hline
+P4C5S4 & P1C1S4 & 8.290154 \\ \hline
+P2C5S1A & P1C1S4 & 8.318904 \\ \hline
+P5C5S4 & P1C1S4 & 8.383004 \\ \hline
+P1C1S4 & P2C5S1A & 8.563907 \\ \hline
+P1C1S4 & P1C1S2 & 8.621842 \\ \hline
+P1C1S4 & P5C3S1A & 8.723814 \\ \hline
+P1C4S5 & P1C1S4 & 8.732073 \\ \hline
+P4C4S2 & P1C1S4 & 8.783347 \\ \hline
+P1C1S4 & P3C1S5 & 8.82796 \\ \hline
+\end{longtable}
+
+\begin{longtable}{|l|l|l|}
+\caption{Manhattan Distance Result: Distances Mean}
+\label{my-label}\\
+\hline
+Symphony A & Symphony B & Distance Mean \\ \hline
+\endfirsthead
+%
+\endhead
+%
+P1C1S4 & P1C1S5 & 1.106247 \\ \hline
+P1C3S3 & P1C5S4 & 1.888983 \\ \hline
+P3C3S2 & P3C3S5 & 2.709862 \\ \hline
+P1C1S5 & P1C5S3 & 2.71749 \\ \hline
+P4C4S4 & P4C4S5 & 2.783062 \\ \hline
+P3C2S1 & P3C3S1 & 2.885411 \\ \hline
+P3C3S1 & P3C3S2 & 2.894063 \\ \hline
+P1C3S3 & P1C5S3 & 3.051272 \\ \hline
+P3C2S1 & P3C3S4 & 3.158728 \\ \hline
+P1C1S4 & P1C5S3 & 3.180371 \\ \hline
+P3C3S1 & P3C3S3 & 3.197033 \\ \hline
+P3C3S2 & P3C3S3 & 3.213563 \\ \hline
+P1C1S4 & P1C3S3 & 3.227913 \\ \hline
+P3C3S1 & P3C3S4 & 3.303385 \\ \hline
+P1C1S4 & P1C5S4 & 3.310048 \\ \hline
+P1C1S1 & P3C5S3 & 3.356575 \\ \hline
+P1C4S1 & P1C4S3 & 3.383625 \\ \hline
+P3C2S1 & P3C3S2 & 3.384755 \\ \hline
+P3C1S4 & P4C2S1A & 3.422252 \\ \hline
+P1C1S1 & P1C3S2 & 3.433787 \\ \hline
+P2C4S4A & P4C2S1A & 3.438686 \\ \hline
+P1C1S1 & P3C1S1 & 3.472338 \\ \hline
+P3C1S4 & P3C5S4 & 3.541771 \\ \hline
+P3C4S5 & P4C2S1A & 3.548003 \\ \hline
+P1C4S1 & P1C4S5 & 3.548142 \\ \hline
+P1C5S1 & P4C3S5 & 3.583475 \\ \hline
+P3C5S4 & P4C2S1A & 3.58519 \\ \hline
+P3C2S1 & P3C3S3 & 3.594948 \\ \hline
+P1C4S1 & P4C1S2A & 3.609206 \\ \hline
+P2C4S4A & P3C1S4 & 3.637364 \\ \hline
+P1C1S1 & P4C5S2 & 3.6608 \\ \hline
+\end{longtable}
+
+\begin{longtable}{|l|l|l|}
+\caption{LCS Truncated Result}
+\label{my-label}\\
+\hline
+Symphony A & Symphony B & Percent Match \\ \hline
+\endfirsthead
+%
+\endhead
+%
+P1C1S3 & P1C4S4 & 100\% \\ \hline
+P1C1S3 & P2C3S4A & 100\% \\ \hline
+P1C1S3 & P2C4S1A & 100\% \\ \hline
+P1C1S3 & P2C4S2A & 100\% \\ \hline
+P1C1S3 & P2C4S3A & 100\% \\ \hline
+P1C1S3 & P2C4S4A & 100\% \\ \hline
+P1C1S3 & P2C5S1A & 100\% \\ \hline
+P1C1S3 & P3C1S4 & 100\% \\ \hline
+P1C1S3 & P3C1S5 & 100\% \\ \hline
+P1C1S3 & P4C2S1A & 100\% \\ \hline
+P1C1S3 & P4C4S1 & 100\% \\ \hline
+P1C1S3 & P4C4S2 & 100\% \\ \hline
+P1C1S3 & P5C2S3 & 100\% \\ \hline
+P1C1S3 & P5C2S4A & 100\% \\ \hline
+P1C1S3 & P5C3S4 & 100\% \\ \hline
+P1C1S3 & P5C3S5A & 100\% \\ \hline
+P1C1S3 & P5C5S1A & 100\% \\ \hline
+P1C1S3 & P5C5S3 & 100\% \\ \hline
+P1C1S3 & P5C5S4 & 100\% \\ \hline
+P1C1S4 & P1C1S2 & 100\% \\ \hline
+P1C1S4 & P1C2S5 & 100\% \\ \hline
+P1C1S4 & P1C4S3 & 100\% \\ \hline
+P1C1S4 & P1C4S5 & 100\% \\ \hline
+P1C1S4 & P1C5S1 & 100\% \\ \hline
+P1C1S4 & P2C1S1 & 100\% \\ \hline
+P1C1S4 & P2C1S2 & 100\% \\ \hline
+P1C1S4 & P2C1S3 & 100\% \\ \hline
+P1C1S4 & P2C1S4 & 100\% \\ \hline
+P1C1S4 & P2C2S2A & 100\% \\ \hline
+P1C1S4 & P2C2S3A & 100\% \\ \hline
+\end{longtable}
+
+\begin{longtable}{|l|l|l|}
+\caption{LCS Full Length Result}
+\label{my-label}\\
+\hline
+Symphony A & Symphony B & Percent Match \\ \hline
+\endfirsthead
+%
+\endhead
+%
+P2C4S4A & P2C4S4A & 61\% \\ \hline
+P2C5S2A & P2C5S2A & 58\% \\ \hline
+P2C5S4A & P5C2S2A & 56\% \\ \hline
+P2C4S1A & P2C4S1A & 56\% \\ \hline
+P2C4S4A & P5C3S5A & 55\% \\ \hline
+P2C5S4A & P5C4S2A & 54\% \\ \hline
+P2C4S4A & P5C5S3 & 53\% \\ \hline
+P2C5S4A & P5C4S3A & 53\% \\ \hline
+P2C5S4A & P5C5S5A & 51\% \\ \hline
+P2C5S4A & P5C2S1A & 51\% \\ \hline
+P2C5S4A & P5C4S4A & 49\% \\ \hline
+P2C5S3A & P5C2S2A & 49\% \\ \hline
+P2C4S1A & P5C5S3 & 49\% \\ \hline
+P2C5S1A & P5C3S5A & 49\% \\ \hline
+P2C5S4A & P5C3S1A & 49\% \\ \hline
+P2C4S4A & P5C2S4A & 48\% \\ \hline
+P2C5S4A & P5C3S2A & 48\% \\ \hline
+P2C4S4A & P5C5S4 & 47\% \\ \hline
+P2C1S4 & P5C5S3 & 47\% \\ \hline
+P2C4S4A & P5C5S1A & 47\% \\ \hline
+P2C5S4A & P5C3S3A & 47\% \\ \hline
+P2C4S4A & P4C2S1A & 46\% \\ \hline
+P2C1S4 & P5C3S3A & 46\% \\ \hline
+P2C5S4A & P5C4S5A & 46\% \\ \hline
+P2C1S4 & P5C2S5A & 46\% \\ \hline
+P2C5S3A & P5C2S1A & 46\% \\ \hline
+P2C1S4 & P5C3S2A & 45\% \\ \hline
+P2C1S4 & P5C2S1A & 45\% \\ \hline
+P2C5S4A & P5C4S1A & 45\% \\ \hline
+P2C5S2A & P5C2S2A & 45\% \\ \hline
+\end{longtable}
+
+\begin{longtable}{|l|l|l|}
+\caption{LCS  Transitions Result}
+\label{my-label}\\
+\hline
+Symphony A & Symphony B & Percentage Match \\ \hline
+\endfirsthead
+%
+\endhead
+%
+P2C5S4A & P5C2S2A & 42\% \\ \hline
+P5C5S5A & P5C2S2A & 41\% \\ \hline
+P5C4S3A & P5C5S5A & 41\% \\ \hline
+P5C5S5A & P5C4S3A & 41\% \\ \hline
+P5C2S1A & P5C2S2A & 41\% \\ \hline
+P2C5S4A & P5C4S3A & 41\% \\ \hline
+P5C4S2A & P5C5S5A & 40\% \\ \hline
+P5C2S2A & P5C4S2A & 40\% \\ \hline
+P5C2S2A & P5C4S3A & 40\% \\ \hline
+P5C4S3A & P5C4S4A & 40\% \\ \hline
+P2C5S4A & P5C4S2A & 40\% \\ \hline
+P5C3S1A & P5C4S3A & 39\% \\ \hline
+P5C2S2A & P5C3S2A & 39\% \\ \hline
+P5C4S2A & P5C4S4A & 38\% \\ \hline
+P5C4S3A & P5C5S1A & 38\% \\ \hline
+P2C5S4A & P5C5S5A & 38\% \\ \hline
+P5C3S2A & P5C4S3A & 37\% \\ \hline
+P5C3S5A & P5C5S1A & 37\% \\ \hline
+P2C5S4A & P5C2S1A & 37\% \\ \hline
+P5C4S3A & P5C4S5A & 37\% \\ \hline
+P5C1S4A & P5C1S5A & 37\% \\ \hline
+P2C5S4A & P5C4S4A & 36\% \\ \hline
+P5C3S5A & P5C5S3 & 36\% \\ \hline
+P5C2S2A & P5C3S1A & 36\% \\ \hline
+P5C4S4A & P5C5S5A & 36\% \\ \hline
+P5C1S5A & P5C2S2A & 36\% \\ \hline
+P5C2S2A & P5C4S4A & 36\% \\ \hline
+P2C5S4A & P5C3S2A & 36\% \\ \hline
+P2C5S4A & P5C3S1A & 35\% \\ \hline
+P5C2S1A & P5C4S3A & 35\% \\ \hline
+\end{longtable}
+
+\begin{longtable}{|l|l|l|}
+\caption{Sequence Match Result}
+\label{my-label}\\
+\hline
+Symphony A & Symphony B & Percentage Match \\ \hline
+\endfirsthead
+%
+\endhead
+%
+P1C3S1 & P1C5S2 & 83\% \\ \hline
+P1C5S5 & P3C2S3 & 76\% \\ \hline
+P1C5S2 & P1C5S4 & 74\% \\ \hline
+P1C2S3 & P1C2S4 & 72\% \\ \hline
+P4C3S2 & P3C2S1 & 69\% \\ \hline
+P1C4S2 & P1C4S4 & 68\% \\ \hline
+P1C2S4 & P3C2S2 & 68\% \\ \hline
+P1C3S1 & P1C3S3 & 67\% \\ \hline
+P3C2S2 & P1C2S4 & 67\% \\ \hline
+P1C3S1 & P1C5S4 & 64\% \\ \hline
+P3C3S2 & P3C2S1 & 63\% \\ \hline
+P1C5S3 & P1C5S4 & 63\% \\ \hline
+P1C5S5 & P3C2S2 & 62\% \\ \hline
+P1C3S5 & P1C5S5 & 61\% \\ \hline
+P1C2S1 & P1C5S5 & 61\% \\ \hline
+P1C2S4 & P1C5S5 & 60\% \\ \hline
+P1C2S4 & P1C2S1 & 60\% \\ \hline
+P1C3S1 & P1C5S3 & 59\% \\ \hline
+P1C2S1 & P1C2S4 & 59\% \\ \hline
+P3C1S5 & P3C2S2 & 59\% \\ \hline
+P3C4S5 & P1C4S2 & 59\% \\ \hline
+P1C5S1 & P3C5S5 & 58\% \\ \hline
+P3C2S3 & P1C4S2 & 58\% \\ \hline
+P3C4S5 & P1C4S4 & 58\% \\ \hline
+P3C2S3 & P3C5S5 & 57\% \\ \hline
+P3C2S2 & P3C1S5 & 57\% \\ \hline
+P3C3S5 & P3C2S1 & 57\% \\ \hline
+P3C2S2 & P1C5S5 & 57\% \\ \hline
+P1C5S2 & P1C5S3 & 57\% \\ \hline
+P4C3S3 & P3C2S1 & 57\% \\ \hline
+\end{longtable}
+
+\begin{longtable}{|l|l|l|}
+\caption{Levenshtein Result - Full Length}
+\label{my-label}\\
+\hline
+Symphony A & Symphony B & Distance \\ \hline
+\endfirsthead
+%
+\endhead
+%
+P1C1S4 & P1C5S2 & 95 \\ \hline
+P1C3S3 & P1C5S4 & 102 \\ \hline
+P1C1S3 & P3C5S5 & 107 \\ \hline
+P1C1S5 & P1C5S2 & 114 \\ \hline
+P1C1S4 & P1C1S5 & 115 \\ \hline
+P1C1S5 & P1C5S3 & 125 \\ \hline
+P1C2S1 & P1C3S5 & 147 \\ \hline
+P1C3S5 & P1C5S5 & 155 \\ \hline
+P1C2S2 & P1C5S1 & 167 \\ \hline
+P1C1S4 & P1C4S1 & 180 \\ \hline
+P1C2S1 & P1C5S5 & 184 \\ \hline
+P1C3S3 & P1C5S2 & 188 \\ \hline
+P1C1S3 & P1C4S2 & 194 \\ \hline
+P1C5S2 & P1C5S4 & 202 \\ \hline
+P1C1S3 & P1C3S1 & 205 \\ \hline
+P1C5S2 & P1C5S3 & 205 \\ \hline
+P1C3S1 & P3C5S5 & 207 \\ \hline
+P1C2S3 & P1C3S1 & 217 \\ \hline
+P1C1S4 & P1C5S3 & 219 \\ \hline
+P1C3S5 & P3C1S2 & 223 \\ \hline
+P1C4S1 & P1C5S2 & 226 \\ \hline
+P1C1S4 & P1C3S3 & 228 \\ \hline
+P1C2S1 & P1C5S4 & 234 \\ \hline
+P1C3S3 & P2C2S1 & 234 \\ \hline
+P1C3S5 & P1C4S1 & 238 \\ \hline
+P1C2S4 & P1C3S2 & 240 \\ \hline
+P1C3S3 & P1C4S1 & 242 \\ \hline
+P1C4S2 & P3C5S5 & 244 \\ \hline
+P1C5S4 & P2C2S1 & 249 \\ \hline
+P1C2S1 & P1C3S3 & 252 \\ \hline
+\end{longtable}
+
+\begin{longtable}{|l|l|l|}
+\caption{Levenshtein Transitions Result}
+\label{my-label}\\
+\hline
+Symphony A & Symphony B & Distance \\ \hline
+\endfirsthead
+%
+\endhead
+%
+P1C1S3 & P1C1S5 & 6 \\ \hline
+P1C1S5 & P1C3S4 & 6 \\ \hline
+P1C1S3 & P1C1S4 & 8 \\ \hline
+P1C1S4 & P1C1S5 & 8 \\ \hline
+P1C3S1 & P1C5S4 & 8 \\ \hline
+P1C1S3 & P1C3S4 & 11 \\ \hline
+P1C1S4 & P1C3S4 & 12 \\ \hline
+P1C3S1 & P1C5S2 & 12 \\ \hline
+P1C3S5 & P1C5S3 & 14 \\ \hline
+P1C1S5 & P1C5S3 & 15 \\ \hline
+P1C2S1 & P1C5S5 & 15 \\ \hline
+P1C3S4 & P1C5S3 & 15 \\ \hline
+P1C5S2 & P1C5S4 & 15 \\ \hline
+P1C1S3 & P1C5S3 & 16 \\ \hline
+P1C1S3 & P1C3S5 & 17 \\ \hline
+P1C1S4 & P1C5S3 & 20 \\ \hline
+P1C3S1 & P1C5S3 & 21 \\ \hline
+P1C1S5 & P1C3S5 & 22 \\ \hline
+P1C2S1 & P1C2S3 & 22 \\ \hline
+P1C5S3 & P1C5S4 & 22 \\ \hline
+P1C1S4 & P1C3S5 & 23 \\ \hline
+P1C3S4 & P1C3S5 & 24 \\ \hline
+P1C2S1 & P3C2S3 & 25 \\ \hline
+P1C2S3 & P3C2S3 & 25 \\ \hline
+P1C3S5 & P1C5S4 & 25 \\ \hline
+P1C2S2 & P1C5S2 & 27 \\ \hline
+P1C2S3 & P1C2S4 & 27 \\ \hline
+P1C5S5 & P3C2S3 & 27 \\ \hline
+P1C3S1 & P1C3S5 & 28 \\ \hline
+P1C5S2 & P1C5S5 & 28 \\ \hline
+\end{longtable}
+
+\begin{longtable}[c]{|l|l|l|}
+\caption{My caption}
+\label{my-label}\\
+\hline
+Metric 1 & Metric 2 & Matches \\ \hline
+\endfirsthead
+%
+\endhead
+%
+Manhattan Distance Mean & Manhattan Distance Sum & 10 \\ \hline
+Manhattan Distance Mean & LCS Truncated & 1 \\ \hline
+Manhattan Distance Mean & Sequence Match & 1 \\ \hline
+Manhattan Distance Sum & LCS Truncated & 0 \\ \hline
+Manhattan Distance Sum & Sequence Match & 0 \\ \hline
+LCS Truncated & Sequence Match & 0 \\ \hline
+Manhattan Distance Transition Sum & Manhattan Distance Mean & 2 \\ \hline
+Manhattan Distance Transition Sum & Manhattan Distance Sum & 3 \\ \hline
+Manhattan Distance Transition Sum & LCS Truncated & 0 \\ \hline
+Manhattan Distance Transition Sum & Sequence Match & 1 \\ \hline
+Edit Distance Full & Manhattan Distance Mean & 5 \\ \hline
+Edit Distance Full & Manhattan Distance Sum & 6 \\ \hline
+Edit Distance Full & LCS Truncated & 0 \\ \hline
+Edit Distance Full & Sequence Match & 4 \\ \hline
+Edit Distance Full & Manhattan Distance Transition Sum & 2 \\ \hline
+Edit Distance Transitions & Manhattan Distance Mean & 3 \\ \hline
+Edit Distance Transitions & Manhattan Distance Sum & 3 \\ \hline
+Edit Distance Transitions & LCS Truncated & 0 \\ \hline
+Edit Distance Transitions & Sequence Match & 8 \\ \hline
+Edit Distance Transitions & Manhattan Distance Transition Sum & 2 \\ \hline
+Edit Distance Transitions & Edit Distance Full & 5 \\ \hline
+\end{longtable}
+
+\begin{longtable}{|l|l|l|l|l|l|}
+\caption{Average Levenshtein Distance per Composer}
+\label{my-label}\\
+\hline
+Row & Baroque & Classical & 19th Century & Romantic & 20th Century \\ \hline
+\endfirsthead
+%
+\endhead
+%
+C1 & 1191.4 & 1120.7 & 1420.6 & 3097.2 & 2447.4 \\ \hline
+C2 & 724.5 & 1204 & 1309.1 & 2232.6 & 4005.6 \\ \hline
+C3 & 468.3 & 815.3 & 1424.7 & 3308.7 & 3380.3 \\ \hline
+C4 & 1018 & 1755.8 & 1639.6 & 2451 & 3133.3 \\ \hline
+C5 & 503 & 2378.3 & 1852.2 & 1559.4 & 3863 \\ \hline
+\end{longtable}
+
+\begin{longtable}{|l|l|l|l|l|l|}
+\caption{Average Levenshtein Distance (Compressed) per Composer}
+\label{my-label}\\
+\hline
+Row & Baroque & Classical & 19th Century & Romantic & 20th Century  \\ \hline
+\endfirsthead
+%
+\endhead
+%
+C1 & 160.7 & 422.6 & 229.5 & 852.3 & 702.3 \\ \hline
+C2 & 272.1 & 623 & 199.1 & 674.4 & 1736.7 \\ \hline
+C3 & 111.2 & 191.7 & 509.7 & 260.5 & 1547.7 \\ \hline
+C4 & 228.3 & 795.6 & 290.1 & 428.1 & 1583.2 \\ \hline
+C5 & 40.1 & 1448.3 & 403.2 & 302.1 & 1581.6 \\ \hline
+\end{longtable}
+
+\begin{longtable}{|l|l|l|l|l|l|}
+\caption{Average Manhattan Distance per Composer}
+\label{my-label}\\
+\hline
+Row & Baroque & Classical & 19th Century & Romantic & 20th Century \\ \hline
+\endfirsthead
+%
+\endhead
+%
+C1 & 8166.221 & 15215.32 & 10140.51 & 15769.45 & 23068.61 \\ \hline
+C2 & 6089.764 & 8331.856 & 13083.8 & 14746.23 & 19661.5 \\ \hline
+C3 & 4140.392 & 9954.428 & 17667.8 & 27076.32 & 18392.58 \\ \hline
+C4 & 7199.323 & 16218.67 & 11979.14 & 19391.64 & 20215.49 \\ \hline
+C5 & 4918.109 & 17404.75 & 12183.51 & 13561.83 & 22579.82 \\ \hline
+\end{longtable}
+
+\begin{longtable}{|l|l|l|l|l|l|}
+\caption{Average Normalized Manhattan Distance per Composer}
+\label{my-label}\\
+\hline
+Row & Baroque & Classical & 19th Century & Romantic & 20th Century \\ \hline
+\endfirsthead
+%
+\endhead
+%
+C1 & 491.3077674 & 2117.378009 & 1291.064646 & 3230.844887 & 6138.347886 \\ \hline
+C2 & 905.0273959 & 2499.334816 & 1299.300606 & 3090.077958 & 4774.202967 \\ \hline
+C3 & 461.8045741 & 2436.608763 & 2771.299898 & 2163.809725 & 4931.113653 \\ \hline
+C4 & 1279.07484 & 3778.909272 & 1838.724787 & 2024.689936 & 5613.785691 \\ \hline
+C5 & 410.6783212 & 4618.480295 & 1784.439225 & 1848.743024 & 5857.821717 \\ \hline
 \end{longtable}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum placerat lorem, non porta erat euismod non. Suspendisse potenti. Nam id dolor a est finibus fringilla vitae in elit. Cras fermentum est nibh, id tristique dui porttitor eget. Integer efficitur nec est ut accumsan. Nullam sagittis dignissim arcu, et sollicitudin risus. Duis varius mollis orci, ut vulputate urna sollicitudin in. In hac habitasse platea dictumst. Integer porttitor nulla augue, vitae dignissim sem venenatis ac. Sed iaculis aliquam urna, id consequat leo lobortis eget. Vivamus semper mauris erat, nec aliquam dui egestas eget. Sed lacinia nisi at condimentum tristique.
