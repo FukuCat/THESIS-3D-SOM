@@ -14,7 +14,11 @@ This chapter contains all the results from the research conducted and the corres
 This phase will concern the  expansion of the original music dataset for SOMphony. Each of the 5 eras will have 5 composers with 5 symphonies each. This will sum up to a total of 125 symphonies. The proponents have decided to only include composers that have composed at least 5 symphonies to be able to maintain a balanced data set. The process of selecting which symphonies to be added would be by random to have a better grasp of the general style of the composer. The audio files would be retrieved from online sources and physical means. The researchers would not take into consideration the file type and bitrate of the audio files since music data that is free for use is limited.
 
 \section{t-SNE}
-TSNE...
+After t-SNE was applied on the dataset as was discussed in Chapter 4, the resulting points were plotted according to different categories. For Figures 5.1 to 5.5, the points were filtered so that the visual plot per musical period can be projected. Figure 5.1 shows the Baroque Period, Figure 5.2 shows the Classical Period, Figure 5.3 shows 19th Century, Figure 5.4 shows Romantic Period, and Figure 5.5 shows 20th Century. All five periods had a similar shape of a ball since all of them represents an entire period of music and it would only be appropriate that the points are evenly scattered in the plane. Baroque period, however, has an obvious lack of plotted points in the figure compared to the others since this period in particular had the lowest number of data points originally due to the fact that the symphonies from here are generally shorter in time span.20th Century, on the other hand, shows a more concentrated ball shape as opposed to others since this period had symphonies that are generally longer than that of other periods. Each color represents a particular era, blue for Baroque, green for Classical, red for 19th Century, purple for Romantic, and Yellow for 20th Century.
+
+Then, Figures 5.6 to 5.10 shows composers from the Baroque Period, namely Bach, Boyce, Gabrieli, Sammartini, and Viadana respectively. Figures 5.11 to 5.15 shows composers from the Classical Period, namely Boccherini, Gluck, Haydn, Mozart, Salieri. Figures 5.16 to 5.20 shows composers from the 19th Century Period namely, Beethoven, Clementi, Gossec, Kalliwoda, and Rubinstein. Figures 5.21 to 5.25 features composers from the Romantic Period namely, Dvorak, Mendelssohn, Schubert, Schumann, and Tchaikovsky. Lastly, Figures 5.26 to 5.30 features composers from the 20th Century namely, Antheil, Rachmaninoff, Rubbra, Shostakovich, and Stravinsky. Each color is represented by a particular composer in that era, blue for composer 1, green for composer 2, red for composer 3, purple for composer 4, and yellow for composer 5.
+
+Table 5.1 below shows the frequency count of each cluster per symphony. Each time a point is found in a cluster, the frequency count of the corresponding label is incremented. Table 5.5 shows the percentage of the same frequency distribution table of clusters per symphony. Cluster label A has the highest number of frequency with a total of 86983, followed by B with 65867, E with 65355, D with 60726, and lastly C with 51845. These cluster counts can be used to help verify the similarity of symphonies by, for example, checking the results from the above comparisons and seeing whether their cluster counts are truly similar. Since cluster counts do not incorporate the presence of time, unlike the previous comparisons, it is highly unlikely that comparisons made would be similar.and tabulated.
 
 \begin{longtable}{|l|l|l|l|l|l|l|}
 \caption{Frequency Cluster Count}
@@ -287,8 +291,12 @@ P5C5S4 & 5\% & 15\% & 0\% & 3\% & 77\% \\ \hline
 P5C5S5 & 14\% & 13\% & 16\% & 44\% & 14\% \\ \hline
 \end{longtable}
 
+Listed below in table 5.3 are the results of using Manhattan distance for pairwise comparison of symphonies with respect to the time dimension of each symphonies. Each point in time of the t-SNE result for a symphony is matched with a point of another symphony and the distance between these two points is computed. The process is simply repeated until the end of either symphony is reached. Truncation is thus performed on the longer string to match the lengths of the two symphonies being compared. The resulting collection of distances are thus summed 
+
+The results show that Bach’s sinfonia no. 7 and sinfonia no. 4 are the most similar among the entire list of symphonies, followed by Gabrieli’s canzon noni toni a 12-correggio with Viadana’s sinfonia la bolognese, and so on. Contrary to expectation that symphonies from the same composer would be more similar compared to those of other composers, a lot of entries in the top 30 have symphonies that come from different composers. Interestingly, a lot of entries in the top 30 also come from Bach’s sinfonia no. 7, which could very well indicate that its points may be well scattered throughout the map when plotted or the points could be positioned near the center of the map. Verifying this, we look at Bach’s graph in Figure 5.6 and the green points, which represent Bach’s sinfonia no. 7 are somewhat located near the middle of the graph. They are not, however, scattered throughout the map. Viadana’s Sinfonia la Bergamasca is the second most number of matches in the top 30 and based on its graph in Figure 5.10, it can be seen that this symphony is somewhat scattered but the main bulk of its points are still near the middle. Seeing this result may well indicate that symphonies located near the middle when graphed may have a stronger tendency to have higher matches with more symphonies when comparing through distances of points via time. To furr verify this method of comparison between symphonies, we shall compare these results with the results of other metrics later on. The results of this metric together with other succeeding partial results below can be further viewed in their respective spreadsheet files as the results of these pairwise comparisons have a total number of 125x125 rows.
+
 \begin{longtable}{|l|l|l|}
-\caption{Manhattan Distance Result: Full Length Summed}
+\caption{Manhattan Distance Top Results: Full Length Summed}
 \label{my-label}\\
 \hline
 Symphony A & Symphony B & Distance Sum \\ \hline
@@ -327,6 +335,8 @@ P1C4S1 & P2C3S1A & 1225.814 \\ \hline
 P1C4S1 & P2C1S1 & 1234.873 \\ \hline
 P1C4S1 & P4C1S1A & 1238.681 \\ \hline
 \end{longtable}
+
+Table 5.4 below shows the Manhattan distance comparison of symphonies, but this time, through the transitions only. Interestingly, a lot of the rankings of the results matched that of the earlier comparisons like for example, a lot of the top 30 results here still showed Bach’s sinfonia no. 7.
 
 \begin{longtable}{|l|l|l|}
 \caption{Manhattan Distance Result: Transitions Summed}
@@ -369,6 +379,10 @@ P4C4S2 & P1C1S4 & 8.783347 \\ \hline
 P1C1S4 & P3C1S5 & 8.82796 \\ \hline
 \end{longtable}
 
+If we take the the top results from the Manhattan distance above, with Bach’s sinfonia no. 7 (P1C1S4) and sinfonia no. 4 (P1C1S5) being the top for Manhattan distance comparison, we can see below in Table 5.4 that indeed their cluster couts are somewhat similar with the majority of the points being in cluster B. Sinfonia no. 7 has 99\% of points in B while sinfonia no. 4 has 98\% of points in B.  The second closest with the Manhattan result, Gabrieli’s canzon noni toni a 12-correggio (P1C3S3) and Viadana’s sinfonia la bolognese (P1C5S4), again show the same result with their cluster counts being very similar in that both of them had near 75\% of points in cluster E and nea 25\% in cluster B.
+
+Bach’s sinfonia no. 7 (P1C1S4) which produced a lot of high matches with other symphonies is also coincidentally the shortest symphony among the dataset and this may indicate that truncation indeed is not a reliable method of matching the lengths of the symphonies for comparison or it could also mean that sinfonia no. 7 simply has a lot in common with most symphonies. In order to further verify this, we repeat the Manhattan distance comparison, but this time, by taking the average of the distances of all the points that were compared instead of simply adding them all up. Table 5.5 below shows the top 30 results. Bach’s sinfonia no. 7 can still be seen in some entries but the entries this time around have more variance in them unlike the total distance from before.
+
 \begin{longtable}{|l|l|l|}
 \caption{Manhattan Distance Result: Distances Mean}
 \label{my-label}\\
@@ -410,6 +424,8 @@ P1C4S1 & P4C1S2A & 3.609206 \\ \hline
 P2C4S4A & P3C1S4 & 3.637364 \\ \hline
 P1C1S1 & P4C5S2 & 3.6608 \\ \hline
 \end{longtable}
+
+Table 5.6 below shows the top results when longest common subsequence (LCS) is used and the symphony points were truncated to match each pair of symphonies. Table 5.7 shows the top results when LCS was used and no truncation was done. When truncation was done, a lot of top results became perfect matches as seen below and due to this, the results are deemed bad and inapproriate for comparison. The untruncated version shows better results with the top match being 61\%. Table 5.8, on the other hand, shows LCS results using the transitions only. This resulted in overall lower percentage matches but may still be a good metric and shall be evaluated further later on.
 
 \begin{longtable}{|l|l|l|}
 \caption{LCS Truncated Result}
@@ -534,6 +550,8 @@ P2C5S4A & P5C3S1A & 35\% \\ \hline
 P5C2S1A & P5C4S3A & 35\% \\ \hline
 \end{longtable}
 
+Table 5.9 below shows the top results for sequence matcher as was discussed in Chapter 4. Table 5.10 shows the results of Levenshtein using the full length data while 5.11 shows the transitions results.
+
 \begin{longtable}{|l|l|l|}
 \caption{Sequence Match Result}
 \label{my-label}\\
@@ -657,8 +675,10 @@ P1C3S1 & P1C3S5 & 28 \\ \hline
 P1C5S2 & P1C5S5 & 28 \\ \hline
 \end{longtable}
 
+In order to verify which metric was the best, we compare the top 30 most similar pairs of symphonies generated by each metric and find out which two metrics had the most matches. Note also that we chose to include different implementations for each algorithm like the mean procedure of Manhattan distance over the summation procedure. Based on Table 5.12 below, mean and summation procedure of Manhattan distance would produce non-similar results since only 10 out of 30 matched. Among the different metrics, Levenshtein and sequence match matched best with 8 out of 30 matches, although the score is still low.
+
 \begin{longtable}[c]{|l|l|l|}
-\caption{My caption}
+\caption{Metric Evaluation from Pairwise Symphonies}
 \label{my-label}\\
 \hline
 Metric 1 & Metric 2 & Matches \\ \hline

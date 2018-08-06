@@ -160,46 +160,6 @@ Python has a built-in library called difflib which particularly provides classes
 
 The algorithm used by the library dates back to Ratcliff and Metzener (1988)’s gestalt pattern matching wherein the basic algorithm is “to find the longest contiguous matching subsequence that contains no junk element.” The same concept is then applied to the left and to the right of the substring until a match that looks right to people is found.
 
-\section{Visualization}
-\subsection{Single Image}
-
-Just as done in Azcarraga \& Flores (2016)'s research work and in Maaten \& Hiton (2008)'s t-SNE, visualization for the result of the SOM and t-SNE is projected in a single image. With SOM, the BMU or best matching unit, which will be explained further in section 3.5.1, represents the music trajectory of a certain 1 second music segment from the symphony. This sequence of BMUs make up the visual image representation of a certain symphony. A color coding scheme was also used to denote the time sequence of a certain music trajectory in the image, blue representing the start and going to red as the music progresses as shown in Figure 3.3. For t-SNE, sample visual images can be seen in Appendix E.
-
-\begin{figure}[h]
-\caption{SOM Image from SOMphony}
-\centering
-\includegraphics[width=0.5\textwidth]{somphony_sample}
-\end{figure}
-
-\subsection{Video}
-Aside from representing the result of the SOM in a single image, it can also be represented in a video or multiple images. Video can be produced for the results of this research by collating  each 1 second segment result in order to show the progression of the musical trajectory grow from the start of the symphony to the end. This allows clearer visualization of the data to have more accurate analysis. Using this kind of visualization also greatly helps the survey user in the outcome of this research.
-
-\subsection{3D Models}
-
-In Azcarraga, Caronongan,  Setiono, \& Manalili (2016)’s research work, they incorporated the use of a structured 3D SOM instead of the regular SOM which will result in a single image. They represented the 3D map as a 3x3x3 dimensional cube with 27 subcubes each of the same sizes. Each subcube is further divided into 9x9x9 nodes. Here, they introduced the concept of a core cube at the center and the other 26 corresponding exterior cubes surrounding it. The training phase of the cube involved a four step labelling phase which was discussed in greater detail back in chapter 2. The resulting 3D SOM was then used to identify the proximity of a certain music to a particular genre. Each genre represented one corner of the cube as shown in Figure 3.4.
-
-\begin{figure}[h]
-\caption{3D SOM Cube}
-\centering
-\includegraphics[width=0.5\textwidth]{cube}
-\end{figure}
-
-\section{Metrics}
-
-There are two general types of data, qualitative and quantitative data. Qualitative data are data that cannot be measured by numbers while quantitative can be measured by numbers. Since this research will only make use of quantitative measurements, qualitative will no longer be discussed.
-
-\subsection{Quantitative}
-
-When using clustering as the method for machine learning, for example k-means clustering, there will result in k number of clusters after the algorithm is performed. Azcarraga \& Flores (2016) used k-means clustering in clustering the 1 second music segments. The best matching unit (BMU) for each 1 second music segment is first computed using Euclidean distance, which is the square root of the square of the difference between the x-axis of the first and second point added to the square of the difference between the y-axis of the first and second point, as shown in Figure 3.5.
-
-\begin{figure}[h]
-\caption{Euclidean Distance Diagram}
-\centering
-\includegraphics[width=0.5\textwidth]{euclidean}
-\end{figure}
-
-Each time a 1 second music segment has a BMU inside a cluster, the frequency count for that cluster is incremented. In this way, only the clusters that are mainly used by the music or symphony will have a high frequency count. The frequency counts are then normalized by dividing the counts of a certain composition by its total number of 1 second music segments. Once these normalized frequency counts are summarized, the resulting percentages can then be used to perform pair-wise comparisons between symphonies as shown in Appendix D.
-
 \nocite{Dubnov}
 \nocite{Azcarraga2016}
 \nocite{cambouropoulosEmilios}
