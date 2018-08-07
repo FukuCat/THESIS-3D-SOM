@@ -138,9 +138,11 @@ The distance between the first $i$ characters of $a$ and the first $j$ character
 
 Levenshtein distance has several upper and lower bounds. The distance should be at least the difference of the sizes of the two strings and at most, the length of the longer string. The distance is zero if and only if the strings are equal. Lastly, the distance between two strings is no greater than the sum of their Levenshtein distances from a third string, which satisfies the triangle inequality.
 
-The researchers implement Levenshtein distance using java-string-similarity, a Java library by tdebatty implementing different string similarity and distance measures. Here, the Levenshtein distance is computed using dynamic programming (Wagner-Fischer algorithm), which has a space requirement of $O(m)$ and runs in $O(m*n)$.
+Levenshtein distance can be implemented using java-string-similarity, a Java library by tdebatty implementing different string similarity and distance measures. Here, the Levenshtein distance is computed using dynamic programming (Wagner-Fischer algorithm), which has a space requirement of $O(m)$ and runs in $O(m*n)$.
 
 Marzal and Vidal (1993) proposed an algorithm that computes for the normalized edit distance that works in $O(m*n/sup$ $2/)$ time and $O(n/sup$ $2/)$ memory space, where $m$ and $n$ are the lengths of the strings under consideration, and $m>=n$. Their research shows that normalized edit distance consistently provides better results than regular edit distance and post-normalized edit distance.
+
+The normalized Levenshtein distance is then computed with maximum alignment, dividing the Levenshtein distance by the maximum length of the two strings. 
 
 \subsection{Damerau-Levenshtein Distance}
 In relation to Levenshtein distance, Damerau-Levenshtein allows another edit operation, the transposition of two adjacent characters. The Damerau-Levenshtein distance between two strings a and b is given by $d_{a,b}(i,j)$, whose value is a distance between an initial substring of string $a$ and a $j$ symbol prefix of $b$. The function is recursively defined below.
