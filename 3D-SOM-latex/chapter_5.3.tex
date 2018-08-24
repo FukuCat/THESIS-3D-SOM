@@ -1,6 +1,7 @@
 \section{Quantitative Analysis}
 
-Table 5.1 below shows the frequency count of each cluster per symphony. Each time a point is found in a cluster, the frequency count of the corresponding label is incremented. Table 5.5 shows the percentage of the same frequency distribution table of clusters per symphony. Cluster label A has the highest number of frequency with a total of 86983, followed by B with 65867, E with 65355, D with 60726, and lastly C with 51845. These cluster counts can be used to help verify the similarity of symphonies by, for example, checking the results from the above comparisons and seeing whether their cluster counts are truly similar. Since cluster counts do not incorporate the presence of time, unlike the previous comparisons, it is highly unlikely that comparisons made would be similar.and tabulated.
+\subsection{Cluster Counting}
+Table 5.1 below shows the frequency count of each cluster per symphony. Each time a point is found in a cluster, the frequency count of the corresponding label is incremented. Table 5.2 shows the percentage of the same frequency distribution table of clusters per symphony. Cluster label A has the highest number of frequency with a total of 86983, followed by B with 65867, E with 65355, D with 60726, and lastly, C with 51845. These cluster counts can be used to help verify the similarity of symphonies by, for example, checking the results from the metrics done later on and seeing whether their cluster counts are truly similar.
 
 \begin{longtable}{|l|l|l|l|l|l|l|}
 \caption{Frequency Cluster Count}
@@ -273,100 +274,38 @@ P5C5S4 & 5\% & 15\% & 0\% & 3\% & 77\% \\ \hline
 P5C5S5 & 14\% & 13\% & 16\% & 44\% & 14\% \\ \hline
 \end{longtable}
 
-Listed below in table 5.3 are the results of using Manhattan distance for pairwise comparison of symphonies with respect to the time dimension of each symphonies. Each point in time of the t-SNE result for a symphony is matched with a point of another symphony and the distance between these two points is computed. The process is simply repeated until the end of either symphony is reached. Truncation is thus performed on the longer string to match the lengths of the two symphonies being compared. The resulting collection of distances are thus summed 
+\subsection{Symphony Pairwise Comparisons}
+Listed below in Table 5.3 are the top 30 result of using Manhattan distance for pairwise comparison of symphonies with respect to the time dimension of each symphonies using the original data as was discussed back in Chapter 4. Each point in time of the t-SNE result for a symphony is matched with a point of another symphony and the Manhattan distance between these two points is computed. The process is simply repeated until the end of either symphony is reached. Truncation is thus performed on the longer string to match the lengths of the two symphonies being compared. The resulting collection of distances are thus averaged.
 
-The results show that Bach’s sinfonia no. 7 and sinfonia no. 4 are the most similar among the entire list of symphonies, followed by Gabrieli’s canzon noni toni a 12-correggio with Viadana’s sinfonia la bolognese, and so on. Contrary to expectation that symphonies from the same composer would be more similar compared to those of other composers, a lot of entries in the top 30 have symphonies that come from different composers. Interestingly, a lot of entries in the top 30 also come from Bach’s sinfonia no. 7, which could very well indicate that its points may be well scattered throughout the map when plotted or the points could be positioned near the center of the map. Verifying this, we look at Bach’s graph in Figure 5.6 and the green points, which represent Bach’s sinfonia no. 7 are somewhat located near the middle of the graph. They are not, however, scattered throughout the map. Viadana’s Sinfonia la Bergamasca is the second most number of matches in the top 30 and based on its graph in Figure 5.10, it can be seen that this symphony is somewhat scattered but the main bulk of its points are still near the middle. Seeing this result may well indicate that symphonies located near the middle when graphed may have a stronger tendency to have higher matches with more symphonies when comparing through distances of points via time. To furr verify this method of comparison between symphonies, we shall compare these results with the results of other metrics later on. The results of this metric together with other succeeding partial results below can be further viewed in their respective spreadsheet files as the results of these pairwise comparisons have a total number of 125x125 rows.
+The results show that Bach\'s Sinfonia No. 7 (P1C1S4) and Sinfonia No. 4 (P1C1S5) are the most similar among the entire list of symphonies with an average Manhattan distance of 1.11, followed by Gabrieli\'s canzon noni toni a 12-correggio (P1C3S3) with Viadana\'s sinfonia la bolognese (P1C5S4), and so on. Contrary to expectation that symphonies from the same composer would be more similar compared to those of other composers, a lot of entries in the top 30 have pairs of symphonies that come from different composers. Interestingly, a lot of entries in the top 30 also come from Bach\'s sinfonia no. 7 which is also coincidentally the shortest symphony among the dataset which may indicate that truncation does indeed place some bias toward the length of a symphony. Verifying this, we look at both graphs, Figure 5.24 and Figure 5.25. Both graphs however share almost little similarity with each other which may either be caused by non-similar time sequences of each of the two symphonies or simply by Manhattan distance not being a good metric for comparison. Based from Table 5.2 however, we can see that both symphonies have most of their points in cluster B, which shows their similarity in terms of cluster assignment but not necessarily when time sequence is followed.
 
-\begin{longtable}{|l|l|l|}
-\caption{Manhattan Distance Top Results: Full Length Summed}
-\label{my-label}\\
-\hline
-Symphony A & Symphony B & Distance Sum \\ \hline
-\endfirsthead
-\endhead
-%
-P1C1S4 & P1C1S5 & 269.9242 \\ \hline
-P1C3S3 & P1C5S4 & 598.8077 \\ \hline
-P1C1S4 & P1C5S3 & 776.0105 \\ \hline
-P1C1S4 & P1C3S3 & 787.6107 \\ \hline
-P1C1S4 & P1C5S4 & 807.6517 \\ \hline
-P1C4S1 & P1C4S3 & 947.415 \\ \hline
-P1C3S3 & P1C5S3 & 967.2533 \\ \hline
-P1C1S5 & P1C5S3 & 970.1439 \\ \hline
-P1C4S1 & P1C4S5 & 993.4798 \\ \hline
-P1C1S4 & P5C5S2 & 999.3968 \\ \hline
-P1C4S1 & P4C1S2A & 1010.578 \\ \hline
-P1C1S4 & P1C2S2 & 1017.719 \\ \hline
-P1C1S4 & P1C5S2 & 1027.048 \\ \hline
-P1C4S1 & P5C3S3A & 1034.093 \\ \hline
-P1C4S1 & P2C5S2A & 1045.884 \\ \hline
-P1C4S1 & P2C2S2A & 1059.302 \\ \hline
-P1C4S1 & P2C5S4A & 1074.551 \\ \hline
-P1C4S1 & P4C1S3A & 1104.918 \\ \hline
-P1C4S1 & P3C5S3 & 1117.526 \\ \hline
-P1C4S1 & P4C2S3A & 1130.082 \\ \hline
-P1C4S1 & P3C1S1 & 1153.61 \\ \hline
-P1C4S1 & P2C1S3 & 1156.801 \\ \hline
-P1C4S1 & P3C1S2 & 1158.137 \\ \hline
-P1C1S4 & P1C2S5 & 1167.234 \\ \hline
-P1C4S1 & P4C1S4 & 1181.949 \\ \hline
-P1C4S1 & P2C1S2 & 1186.405 \\ \hline
-P1C4S1 & P3C5S2 & 1198.531 \\ \hline
-P1C1S4 & P1C3S1 & 1222.162 \\ \hline
-P1C4S1 & P2C3S1A & 1225.814 \\ \hline
-P1C4S1 & P2C1S1 & 1234.873 \\ \hline
-P1C4S1 & P4C1S1A & 1238.681 \\ \hline
-\end{longtable}
+The two symphonies are then viewed in 3D to see whether time sequence might have caused the symphonies to be deemed almost unsimilar in their 2D graph. As shown in Figure 5.26, the 3D graph shows a 93\% similarity with much of the ribbon being green, meaning that most of the points are near each other time-wise.
 
-Table 5.4 below shows the Manhattan distance comparison of symphonies, but this time, through the transitions only. Interestingly, a lot of the rankings of the results matched that of the earlier comparisons like for example, a lot of the top 30 results here still showed Bach’s sinfonia no. 7.
+To further verify this method of comparison between symphonies, we shall compare these results with the results of other metrics later on if they share similar pairs of results. The results of this metric together with other succeeding partial results below can be further viewed in their respective spreadsheet files as the results of these pairwise comparisons have a total number of 7750 rows each.
+
+\begin{figure}[H]
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Bach: Sinfonia No. 7}
+  \centering
+  \includegraphics[scale=0.15]{newP1C3S3}
+  \label{fig:test1}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Bach: Sinfonia No. 4}
+  \centering
+  \includegraphics[scale=0.15]{newP1C5S4}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+\caption{3D Graph of P1C3S3 and P1C5S4}
+\centering
+\includegraphics[scale=0.5]{comp1}
+\end{figure}
 
 \begin{longtable}{|l|l|l|}
-\caption{Manhattan Distance Result: Transitions Summed}
-\label{my-label}\\
-\hline
-Symphony A & Symphony B & Distance Sum \\ \hline
-\endfirsthead
-%
-\endhead
-%
-P2C1S3 & P1C1S4 & 6.342487 \\ \hline
-P2C5S3A & P1C1S4 & 7.09482 \\ \hline
-P3C1S3 & P1C1S4 & 7.191891 \\ \hline
-P2C4S2A & P1C1S4 & 7.276127 \\ \hline
-P1C1S4 & P1C1S5 & 7.354168 \\ \hline
-P4C2S1A & P1C1S4 & 7.489208 \\ \hline
-P1C2S5 & P1C1S4 & 7.49975 \\ \hline
-P2C3S1A & P1C1S4 & 7.522169 \\ \hline
-P1C1S5 & P1C1S4 & 7.667543 \\ \hline
-P1C1S4 & P1C5S5 & 7.682119 \\ \hline
-P1C1S4 & P2C3S2A & 7.769781 \\ \hline
-P2C3S2A & P1C1S4 & 7.805628 \\ \hline
-P2C1S4 & P1C1S4 & 7.806015 \\ \hline
-P2C2S5A & P1C1S4 & 7.961077 \\ \hline
-P2C3S3A & P1C1S4 & 7.981119 \\ \hline
-P5C2S3 & P1C1S4 & 8.046022 \\ \hline
-P1C2S3 & P1C2S3 & 8.079905 \\ \hline
-P4C1S1A & P1C1S4 & 8.13656 \\ \hline
-P4C1S5A & P1C1S4 & 8.149289 \\ \hline
-P2C4S1A & P1C1S4 & 8.167969 \\ \hline
-P2C2S1 & P1C1S4 & 8.23078 \\ \hline
-P4C5S4 & P1C1S4 & 8.290154 \\ \hline
-P2C5S1A & P1C1S4 & 8.318904 \\ \hline
-P5C5S4 & P1C1S4 & 8.383004 \\ \hline
-P1C1S4 & P2C5S1A & 8.563907 \\ \hline
-P1C1S4 & P1C1S2 & 8.621842 \\ \hline
-P1C1S4 & P5C3S1A & 8.723814 \\ \hline
-P1C4S5 & P1C1S4 & 8.732073 \\ \hline
-P4C4S2 & P1C1S4 & 8.783347 \\ \hline
-P1C1S4 & P3C1S5 & 8.82796 \\ \hline
-\end{longtable}
-
-If we take the the top results from the Manhattan distance above, with Bach’s sinfonia no. 7 (P1C1S4) and sinfonia no. 4 (P1C1S5) being the top for Manhattan distance comparison, we can see below in Table 5.4 that indeed their cluster couts are somewhat similar with the majority of the points being in cluster B. Sinfonia no. 7 has 99\% of points in B while sinfonia no. 4 has 98\% of points in B.  The second closest with the Manhattan result, Gabrieli’s canzon noni toni a 12-correggio (P1C3S3) and Viadana’s sinfonia la bolognese (P1C5S4), again show the same result with their cluster counts being very similar in that both of them had near 75\% of points in cluster E and nea 25\% in cluster B.
-
-Bach’s sinfonia no. 7 (P1C1S4) which produced a lot of high matches with other symphonies is also coincidentally the shortest symphony among the dataset and this may indicate that truncation indeed is not a reliable method of matching the lengths of the symphonies for comparison or it could also mean that sinfonia no. 7 simply has a lot in common with most symphonies. In order to further verify this, we repeat the Manhattan distance comparison, but this time, by taking the average of the distances of all the points that were compared instead of simply adding them all up. Table 5.5 below shows the top 30 results. Bach’s sinfonia no. 7 can still be seen in some entries but the entries this time around have more variance in them unlike the total distance from before.
-
-\begin{longtable}{|l|l|l|}
-\caption{Manhattan Distance Result: Distances Mean}
+\caption{Manhattan Distance Original Result}
 \label{my-label}\\
 \hline
 Symphony A & Symphony B & Distance Mean \\ \hline
@@ -407,10 +346,99 @@ P2C4S4A & P3C1S4 & 3.637364 \\ \hline
 P1C1S1 & P4C5S2 & 3.6608 \\ \hline
 \end{longtable}
 
-Table 5.6 below shows the top results when longest common subsequence (LCS) is used and the symphony points were truncated to match each pair of symphonies. Table 5.7 shows the top results when LCS was used and no truncation was done. When truncation was done, a lot of top results became perfect matches as seen below and due to this, the results are deemed bad and inapproriate for comparison. The untruncated version shows better results with the top match being 61\%. Table 5.8, on the other hand, shows LCS results using the transitions only. This resulted in overall lower percentage matches but may still be a good metric and shall be evaluated further later on.
+Table 5.4 below shows the result of Manhattan distance using the compressed data. Similarly, the longer of each pairwise symphonies were truncated when performing the Manhattan distances and the collective distances are thus averaged. Gabrieli\'s Canzon Duodecimi toni a 10 (P1C3S1) and Gabrieli\'s Canzon noni toni a 12 – Correggio (P1C3S3) were the top match with an average Manhattan distance of 1.69. Shown below in Figure 5.27 and 5.28 are the corresponding graphs of the pair. The pair now looks more similar than with the original data; however, there is still no strong similarity in the 2D graphs. This time, however, their cluster count based from Table 5.2 are no longer similar, with P1C3S1 having 93\% in E and only 6\% in B while P1C3S3 having 71\% in E and 28\% in B.
+
+\begin{figure}[H]
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Gabrieli: Canzon Duodecimi toni a 10}
+  \centering
+  \includegraphics[scale=0.15]{newP1C3S1}
+  \label{fig:test1}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Gabrieli: Canzon noni toni a 12 – Correggio}
+  \centering
+  \includegraphics[scale=0.15]{newP1C3S3}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+Again, the graphs shall be viewed in 3D to see if time played a role on the similarity of the pair. As seen in Figure 5.29 below, most of the ribbon are still colored green; however, the percentage similarity is now only 77\%.
+
+\begin{figure}[H]
+\caption{3D Graph of P1C3S1 and P1C3S3}
+\centering
+\includegraphics[scale=0.5]{comp2}
+\end{figure}
 
 \begin{longtable}{|l|l|l|}
-\caption{LCS Truncated Result}
+\caption{Manhattan Distance Compressed Result}
+\label{my-label}\\
+\hline
+Symphony A & Symphony B & Distance Mean \\ \hline
+\endfirsthead
+%
+\endhead
+%
+P1C3S1 & P1C3S3 & 1.696353309 \\ \hline
+P1C3S3 & P1C5S4 & 2.126664331 \\ \hline
+P1C1S4 & P2C3S1A & 2.297832753 \\ \hline
+P1C3S1 & P1C5S4 & 2.461786717 \\ \hline
+P3C3S1 & P3C3S5 & 2.466141032 \\ \hline
+P3C3S1 & P3C3S2 & 2.551953281 \\ \hline
+P3C3S2 & P3C3S5 & 2.564866152 \\ \hline
+P1C1S1 & P1C3S2 & 2.569937456 \\ \hline
+P1C1S1 & P3C1S1 & 2.703949414 \\ \hline
+P1C1S4 & P3C1S2 & 2.710989293 \\ \hline
+P3C3S1 & P3C3S4 & 2.748674242 \\ \hline
+P1C3S3 & P1C5S2 & 2.749400728 \\ \hline
+P1C1S4 & P2C5S3A & 2.759343787 \\ \hline
+P1C1S1 & P3C5S3 & 2.89002101 \\ \hline
+P1C1S1 & P1C4S1 & 2.930982991 \\ \hline
+P3C3S2 & P3C3S4 & 2.946366998 \\ \hline
+P1C1S1 & P1C4S3 & 2.969399095 \\ \hline
+P3C3S3 & P3C3S5 & 2.997141424 \\ \hline
+P1C1S4 & P1C2S5 & 3.019357516 \\ \hline
+P4C2S1A & P4C2S5 & 3.107856552 \\ \hline
+P1C1S1 & P3C4S3 & 3.10991521 \\ \hline
+P1C4S1 & P3C1S1 & 3.129107393 \\ \hline
+P1C4S1 & P3C5S3 & 3.129297274 \\ \hline
+P1C4S1 & P1C4S3 & 3.152097396 \\ \hline
+P3C3S4 & P3C3S5 & 3.152275501 \\ \hline
+P1C4S1 & P2C5S2A & 3.177974942 \\ \hline
+P3C3S1 & P3C3S3 & 3.188811801 \\ \hline
+P1C1S5 & P5C3S1A & 3.195726451 \\ \hline
+P1C1S1 & P4C5S2 & 3.200008271 \\ \hline
+P3C3S2 & P3C3S3 & 3.210794633 \\ \hline
+\end{longtable}
+
+Table 5.5 below shows the top results when longest common subsequence (LCS) is used with the original data using the cluster labels as strings as was discussed back in Chapter 4. Salieri\'s Sinfonia Veneziana in D major A (P2C5S4) and Rachmaninoff\'s Isle of the Dead (P5C2S2) is the top matching pair with a percent match of 56\%. This percentage was obtained by normalizing the resulting longest match between the two strings by dividing it with the length of the longer string between the pair. As shown in Figure 5.30 and Figure 5.31, both these symphonies indeed show a strong similarity with each other. This result may point to the direction that LCS is a good metric for comparing similarities between symphonies. Table 5.2 shows that both symphonies have evenly distributed points among the clusters; however, the distributions are not exactly near with P2C5S4 having 26\%, 26\%, 15\%, 33\%, and 1\% respectively, and P5C2S2 having 42\%, 11\%, 20\%, 24\%, and 3\%.
+
+Figure 5.32 shows the 3D results of the two symphonies. The percentage similarity is now only 69\% with many parts of the ribbon now being red. This shows that while LCS provides good comparison with the 2D graph, when time is now incorporated, the result shows now that the percentage match isn\'t that high afterall.
+
+\begin{figure}[H]
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{ Salieri: Sinfonia Veneziana in D major A}
+  \centering
+  \includegraphics[scale=0.15]{newP2C5S4A}
+  \label{fig:test1}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Rachmaninoff: Isle of the Dead}
+  \centering
+  \includegraphics[scale=0.15]{newP5C2S2A}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+\caption{3D Graph of P2C5S4 and P5C2S2}
+\centering
+\includegraphics[scale=0.5]{comp3}
+\end{figure}
+
+\begin{longtable}{|l|l|l|}
+\caption{LCS Original Result}
 \label{my-label}\\
 \hline
 Symphony A & Symphony B & Percent Match \\ \hline
@@ -418,81 +446,42 @@ Symphony A & Symphony B & Percent Match \\ \hline
 %
 \endhead
 %
-P1C1S3 & P1C4S4 & 100\% \\ \hline
-P1C1S3 & P2C3S4A & 100\% \\ \hline
-P1C1S3 & P2C4S1A & 100\% \\ \hline
-P1C1S3 & P2C4S2A & 100\% \\ \hline
-P1C1S3 & P2C4S3A & 100\% \\ \hline
-P1C1S3 & P2C4S4A & 100\% \\ \hline
-P1C1S3 & P2C5S1A & 100\% \\ \hline
-P1C1S3 & P3C1S4 & 100\% \\ \hline
-P1C1S3 & P3C1S5 & 100\% \\ \hline
-P1C1S3 & P4C2S1A & 100\% \\ \hline
-P1C1S3 & P4C4S1 & 100\% \\ \hline
-P1C1S3 & P4C4S2 & 100\% \\ \hline
-P1C1S3 & P5C2S3 & 100\% \\ \hline
-P1C1S3 & P5C2S4A & 100\% \\ \hline
-P1C1S3 & P5C3S4 & 100\% \\ \hline
-P1C1S3 & P5C3S5A & 100\% \\ \hline
-P1C1S3 & P5C5S1A & 100\% \\ \hline
-P1C1S3 & P5C5S3 & 100\% \\ \hline
-P1C1S3 & P5C5S4 & 100\% \\ \hline
-P1C1S4 & P1C1S2 & 100\% \\ \hline
-P1C1S4 & P1C2S5 & 100\% \\ \hline
-P1C1S4 & P1C4S3 & 100\% \\ \hline
-P1C1S4 & P1C4S5 & 100\% \\ \hline
-P1C1S4 & P1C5S1 & 100\% \\ \hline
-P1C1S4 & P2C1S1 & 100\% \\ \hline
-P1C1S4 & P2C1S2 & 100\% \\ \hline
-P1C1S4 & P2C1S3 & 100\% \\ \hline
-P1C1S4 & P2C1S4 & 100\% \\ \hline
-P1C1S4 & P2C2S2A & 100\% \\ \hline
-P1C1S4 & P2C2S3A & 100\% \\ \hline
+P2C5S4A & P5C2S2A & 0.559178289 \\ \hline
+P2C4S4A & P5C3S5A & 0.545797211 \\ \hline
+P2C5S4A & P5C4S2A & 0.53618545 \\ \hline
+P2C4S4A & P5C5S3 & 0.52977761 \\ \hline
+P2C5S4A & P5C4S3A & 0.526950622 \\ \hline
+P2C5S4A & P5C5S5A & 0.514134942 \\ \hline
+P2C5S4A & P5C2S1A & 0.505277045 \\ \hline
+P2C5S4A & P4C1S2A & 0.500565398 \\ \hline
+P2C4S1A & P5C3S5A & 0.494911421 \\ \hline
+P2C5S4A & P5C4S4A & 0.494534489 \\ \hline
+P2C5S3A & P5C2S2A & 0.492272899 \\ \hline
+P2C4S1A & P5C5S3 & 0.491519035 \\ \hline
+P2C5S1A & P5C3S5A & 0.486807388 \\ \hline
+P2C5S4A & P5C3S1A & 0.485865058 \\ \hline
+P2C4S4A & P5C2S4A & 0.481341877 \\ \hline
+P2C5S4A & P5C3S2A & 0.481341877 \\ \hline
+P2C4S4A & P5C5S4 & 0.474934037 \\ \hline
+P2C1S4 & P5C5S3 & 0.473614776 \\ \hline
+P2C4S4A & P5C5S1A & 0.470976253 \\ \hline
+P2C5S4A & P5C3S3A & 0.46701847 \\ \hline
+P2C4S4A & P4C2S1A & 0.463626084 \\ \hline
+P2C1S4 & P5C3S3A & 0.463437618 \\ \hline
+P2C5S4A & P5C4S5A & 0.463437618 \\ \hline
+P2C1S4 & P5C2S5A & 0.463060686 \\ \hline
+P2C5S3A & P5C2S1A & 0.459102902 \\ \hline
+P2C1S4 & P5C3S2A & 0.453071994 \\ \hline
+P2C1S4 & P5C2S1A & 0.451752733 \\ \hline
+P2C5S4A & P5C4S1A & 0.451187335 \\ \hline
+P2C5S2A & P5C2S2A & 0.447983415 \\ \hline
+P2C5S3A & P5C3S2A & 0.447229551 \\ \hline
 \end{longtable}
 
-\begin{longtable}{|l|l|l|}
-\caption{LCS Full Length Result}
-\label{my-label}\\
-\hline
-Symphony A & Symphony B & Percent Match \\ \hline
-\endfirsthead
-%
-\endhead
-%
-P2C4S4A & P2C4S4A & 61\% \\ \hline
-P2C5S2A & P2C5S2A & 58\% \\ \hline
-P2C5S4A & P5C2S2A & 56\% \\ \hline
-P2C4S1A & P2C4S1A & 56\% \\ \hline
-P2C4S4A & P5C3S5A & 55\% \\ \hline
-P2C5S4A & P5C4S2A & 54\% \\ \hline
-P2C4S4A & P5C5S3 & 53\% \\ \hline
-P2C5S4A & P5C4S3A & 53\% \\ \hline
-P2C5S4A & P5C5S5A & 51\% \\ \hline
-P2C5S4A & P5C2S1A & 51\% \\ \hline
-P2C5S4A & P5C4S4A & 49\% \\ \hline
-P2C5S3A & P5C2S2A & 49\% \\ \hline
-P2C4S1A & P5C5S3 & 49\% \\ \hline
-P2C5S1A & P5C3S5A & 49\% \\ \hline
-P2C5S4A & P5C3S1A & 49\% \\ \hline
-P2C4S4A & P5C2S4A & 48\% \\ \hline
-P2C5S4A & P5C3S2A & 48\% \\ \hline
-P2C4S4A & P5C5S4 & 47\% \\ \hline
-P2C1S4 & P5C5S3 & 47\% \\ \hline
-P2C4S4A & P5C5S1A & 47\% \\ \hline
-P2C5S4A & P5C3S3A & 47\% \\ \hline
-P2C4S4A & P4C2S1A & 46\% \\ \hline
-P2C1S4 & P5C3S3A & 46\% \\ \hline
-P2C5S4A & P5C4S5A & 46\% \\ \hline
-P2C1S4 & P5C2S5A & 46\% \\ \hline
-P2C5S3A & P5C2S1A & 46\% \\ \hline
-P2C1S4 & P5C3S2A & 45\% \\ \hline
-P2C1S4 & P5C2S1A & 45\% \\ \hline
-P2C5S4A & P5C4S1A & 45\% \\ \hline
-P2C5S2A & P5C2S2A & 45\% \\ \hline
-\end{longtable}
+Table 5.6 below shows the result of LCS performed on the compressed data. Viadana\'s Sinfonia la Bolognese (P2C5S4) and Rachmaninoff\'s Isle of the Dead (P5C2S2) are the top match, which is the same with the result of LCS performed on the original data. Having the same result, which also happens to be a very good result, since they are indeed similar-looking, means that LCS indeed may be a very good metric for comparison of symphonies using this particular methodology.
 
 \begin{longtable}{|l|l|l|}
-\caption{LCS  Transitions Result}
+\caption{LCS  Compressed Result}
 \label{my-label}\\
 \hline
 Symphony A & Symphony B & Percentage Match \\ \hline
@@ -532,53 +521,32 @@ P2C5S4A & P5C3S1A & 35\% \\ \hline
 P5C2S1A & P5C4S3A & 35\% \\ \hline
 \end{longtable}
 
-Table 5.9 below shows the top results for sequence matcher as was discussed in Chapter 4.
+Table 5.7 below shows the result of Levenshtein distance using the original data. Given the trajectory of the symphony, which is represented by letters from A to E, the researchers compared all of the symphonies and normalized the results by dividing the distance with the length of the longer symphony. Bach\'s Brandenburg Concerto No.3 (P1C1S3) and Rubinstein\'s Symphony No.6 in A minor Op.111 (P3C5S5) had the least distance with only 0.13. Looking at their 2D graphs in Figure 5.33 and Figure 5.34, there is a slight similarity between the two in the positioning of the points; however, the visual output of the 2D graph does not show the closeness of the two symphonies. Looking at the 3D graph in Figure 5.35 though, it can be seen that 
+the percentage similarity is 71\% which is quite low compared to that of Manhattan distance.
+
+\begin{figure}[H]
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Bach: Brandenburg Concerto No.3}
+  \centering
+  \includegraphics[scale=0.15]{newP1C1S3}
+  \label{fig:test1}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Rubinstein: Symphony No.6 in A minor Op.111}
+  \centering
+  \includegraphics[scale=0.15]{newP3C5S5}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+\caption{3D Graph of P1C1S3 and P3C5S5}
+\centering
+\includegraphics[scale=0.5]{comp5}
+\end{figure}
 
 \begin{longtable}{|l|l|l|}
-\caption{Sequence Match Result}
-\label{my-label}\\
-\hline
-Symphony A & Symphony B & Percentage Match \\ \hline
-\endfirsthead
-%
-\endhead
-%
-P1C3S1 & P1C5S2 & 83\% \\ \hline
-P1C5S5 & P3C2S3 & 76\% \\ \hline
-P1C5S2 & P1C5S4 & 74\% \\ \hline
-P1C2S3 & P1C2S4 & 72\% \\ \hline
-P4C3S2 & P3C2S1 & 69\% \\ \hline
-P1C4S2 & P1C4S4 & 68\% \\ \hline
-P1C2S4 & P3C2S2 & 68\% \\ \hline
-P1C3S1 & P1C3S3 & 67\% \\ \hline
-P3C2S2 & P1C2S4 & 67\% \\ \hline
-P1C3S1 & P1C5S4 & 64\% \\ \hline
-P3C3S2 & P3C2S1 & 63\% \\ \hline
-P1C5S3 & P1C5S4 & 63\% \\ \hline
-P1C5S5 & P3C2S2 & 62\% \\ \hline
-P1C3S5 & P1C5S5 & 61\% \\ \hline
-P1C2S1 & P1C5S5 & 61\% \\ \hline
-P1C2S4 & P1C5S5 & 60\% \\ \hline
-P1C2S4 & P1C2S1 & 60\% \\ \hline
-P1C3S1 & P1C5S3 & 59\% \\ \hline
-P1C2S1 & P1C2S4 & 59\% \\ \hline
-P3C1S5 & P3C2S2 & 59\% \\ \hline
-P3C4S5 & P1C4S2 & 59\% \\ \hline
-P1C5S1 & P3C5S5 & 58\% \\ \hline
-P3C2S3 & P1C4S2 & 58\% \\ \hline
-P3C4S5 & P1C4S4 & 58\% \\ \hline
-P3C2S3 & P3C5S5 & 57\% \\ \hline
-P3C2S2 & P3C1S5 & 57\% \\ \hline
-P3C3S5 & P3C2S1 & 57\% \\ \hline
-P3C2S2 & P1C5S5 & 57\% \\ \hline
-P1C5S2 & P1C5S3 & 57\% \\ \hline
-P4C3S3 & P3C2S1 & 57\% \\ \hline
-\end{longtable}
-
-Levenshtein distance was applied to the cluster trajectories of the each symphony. Given the trajectory of the symphony, which is represented by letters from A to E, the researchers compared all of the symphonies and tabulated their respective Levenshtein distances. The same is done to the compressed version of these trajectories.  Table 5.10 shows the results of Levenshtein using the full length data while 5.11 shows the transitions results.
-
-\begin{longtable}{|l|l|l|}
-\caption{Levenshtein Result - Full Length}
+\caption{Levenshtein Distance Original Result}
 \label{my-label}\\
 \hline
 Symphony A & Symphony B & Distance \\ \hline
@@ -586,40 +554,63 @@ Symphony A & Symphony B & Distance \\ \hline
 %
 \endhead
 %
-P1C1S4 & P1C5S2 & 95 \\ \hline
-P1C3S3 & P1C5S4 & 102 \\ \hline
-P1C1S3 & P3C5S5 & 107 \\ \hline
-P1C1S5 & P1C5S2 & 114 \\ \hline
-P1C1S4 & P1C1S5 & 115 \\ \hline
-P1C1S5 & P1C5S3 & 125 \\ \hline
-P1C2S1 & P1C3S5 & 147 \\ \hline
-P1C3S5 & P1C5S5 & 155 \\ \hline
-P1C2S2 & P1C5S1 & 167 \\ \hline
-P1C1S4 & P1C4S1 & 180 \\ \hline
-P1C2S1 & P1C5S5 & 184 \\ \hline
-P1C3S3 & P1C5S2 & 188 \\ \hline
-P1C1S3 & P1C4S2 & 194 \\ \hline
-P1C5S2 & P1C5S4 & 202 \\ \hline
-P1C1S3 & P1C3S1 & 205 \\ \hline
-P1C5S2 & P1C5S3 & 205 \\ \hline
-P1C3S1 & P3C5S5 & 207 \\ \hline
-P1C2S3 & P1C3S1 & 217 \\ \hline
-P1C1S4 & P1C5S3 & 219 \\ \hline
-P1C3S5 & P3C1S2 & 223 \\ \hline
-P1C4S1 & P1C5S2 & 226 \\ \hline
-P1C1S4 & P1C3S3 & 228 \\ \hline
-P1C2S1 & P1C5S4 & 234 \\ \hline
-P1C3S3 & P2C2S1 & 234 \\ \hline
-P1C3S5 & P1C4S1 & 238 \\ \hline
-P1C2S4 & P1C3S2 & 240 \\ \hline
-P1C3S3 & P1C4S1 & 242 \\ \hline
-P1C4S2 & P3C5S5 & 244 \\ \hline
-P1C5S4 & P2C2S1 & 249 \\ \hline
-P1C2S1 & P1C3S3 & 252 \\ \hline
+P1C1S3 & P3C5S5 & 0.13 \\ \hline
+P4C4S4 & P4C4S5 & 0.14 \\ \hline
+P1C2S2 & P1C5S1 & 0.17 \\ \hline
+P1C1S3 & P1C4S2 & 0.20 \\ \hline
+P1C4S2 & P3C5S5 & 0.25 \\ \hline
+P1C3S1 & P3C5S5 & 0.25 \\ \hline
+P1C4S4 & P3C1S5 & 0.25 \\ \hline
+P1C1S3 & P1C3S1 & 0.26 \\ \hline
+P4C3S5 & P5C5S2 & 0.27 \\ \hline
+P1C1S5 & P1C5S3 & 0.27 \\ \hline
+P1C4S4 & P2C3S3 & 0.28 \\ \hline
+P3C2S1 & P3C3S3 & 0.28 \\ \hline
+P3C3S4 & P4C4S5 & 0.28 \\ \hline
+P1C1S4 & P1C5S2 & 0.28 \\ \hline
+P3C3S4 & P4C4S4 & 0.29 \\ \hline
+P1C3S3 & P1C5S4 & 0.31 \\ \hline
+P1C1S5 & P1C5S2 & 0.32 \\ \hline
+P1C1S4 & P1C1S5 & 0.32 \\ \hline
+P2C3S2 & P3C1S5 & 0.32 \\ \hline
+P1C4S2 & P2C3S2 & 0.33 \\ \hline
+P2C3S2 & P3C5S5 & 0.33 \\ \hline
+P1C4S2 & P3C1S5 & 0.34 \\ \hline
+P4C3S1 & P4C3S2 & 0.34 \\ \hline
+P3C3S1 & P3C3S5 & 0.34 \\ \hline
+P3C2S1 & P3C3S1 & 0.34 \\ \hline
+P1C2S4 & P2C3S5 & 0.34 \\ \hline
+P1C2S3 & P1C3S1 & 0.34 \\ \hline
+P3C3S2 & P3C3S5 & 0.34 \\ \hline
+P3C2S1 & P3C3S5 & 0.34 \\ \hline
+P3C3S1 & P3C3S2 & 0.35 \\ \hline
 \end{longtable}
 
+Table 5.8 below shows the result of Levenshtein distance using the compressed data. The resulting distances are, again, normalized to prevent bias to symphony lengths. As shown in Figure 5.36 and Figure 5.37, the graphs do not share a large similarity, but they are somewhat located near the same coordinates. Figure 5.38 shows that there is a large similarity, however, between these two symphonies with a similarity percentage of 86\%.
+
+\begin{figure}[H]
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Gossec: Symphony in E-flat major Op.XII No.5}
+  \centering
+  \includegraphics[scale=0.15]{newP3C3S2}
+  \label{fig:test1}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+  \captionof{figure}{Schubert: Symphony No.5 in B-flat major}
+  \centering
+  \includegraphics[scale=0.15]{newP4C3S3}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+\caption{3D Graph of P3C3S2 and P4C3S3}
+\centering
+\includegraphics[scale=0.5]{comp6}
+\end{figure}
+
 \begin{longtable}{|l|l|l|}
-\caption{Levenshtein Transitions Result}
+\caption{Levenshtein Disance Result (Compressed)}
 \label{my-label}\\
 \hline
 Symphony A & Symphony B & Distance \\ \hline
@@ -627,178 +618,274 @@ Symphony A & Symphony B & Distance \\ \hline
 %
 \endhead
 %
-P1C1S3 & P1C1S5 & 6 \\ \hline
-P1C1S5 & P1C3S4 & 6 \\ \hline
-P1C1S3 & P1C1S4 & 8 \\ \hline
-P1C1S4 & P1C1S5 & 8 \\ \hline
-P1C3S1 & P1C5S4 & 8 \\ \hline
-P1C1S3 & P1C3S4 & 11 \\ \hline
-P1C1S4 & P1C3S4 & 12 \\ \hline
-P1C3S1 & P1C5S2 & 12 \\ \hline
-P1C3S5 & P1C5S3 & 14 \\ \hline
-P1C1S5 & P1C5S3 & 15 \\ \hline
-P1C2S1 & P1C5S5 & 15 \\ \hline
-P1C3S4 & P1C5S3 & 15 \\ \hline
-P1C5S2 & P1C5S4 & 15 \\ \hline
-P1C1S3 & P1C5S3 & 16 \\ \hline
-P1C1S3 & P1C3S5 & 17 \\ \hline
-P1C1S4 & P1C5S3 & 20 \\ \hline
-P1C3S1 & P1C5S3 & 21 \\ \hline
-P1C1S5 & P1C3S5 & 22 \\ \hline
-P1C2S1 & P1C2S3 & 22 \\ \hline
-P1C5S3 & P1C5S4 & 22 \\ \hline
-P1C1S4 & P1C3S5 & 23 \\ \hline
-P1C3S4 & P1C3S5 & 24 \\ \hline
-P1C2S1 & P3C2S3 & 25 \\ \hline
-P1C2S3 & P3C2S3 & 25 \\ \hline
-P1C3S5 & P1C5S4 & 25 \\ \hline
-P1C2S2 & P1C5S2 & 27 \\ \hline
-P1C2S3 & P1C2S4 & 27 \\ \hline
-P1C5S5 & P3C2S3 & 27 \\ \hline
-P1C3S1 & P1C3S5 & 28 \\ \hline
-P1C5S2 & P1C5S5 & 28 \\ \hline
+P3C3S2 & P4C3S3 & 0.0067 \\ \hline
+P1C1S3 & P1C1S5 & 0.0075 \\ \hline
+P3C2S1 & P4C3S2 & 0.0096 \\ \hline
+P1C1S3 & P1C1S4 & 0.0100 \\ \hline
+P3C3S2 & P4C3S2 & 0.0111 \\ \hline
+P4C3S2 & P4C3S3 & 0.0116 \\ \hline
+P3C3S5 & P4C3S3 & 0.0118 \\ \hline
+P1C3S1 & P1C5S4 & 0.0126 \\ \hline
+P1C5S1 & P4C3S5 & 0.0126 \\ \hline
+P1C3S3 & P4C3S5 & 0.0133 \\ \hline
+P1C2S2 & P4C3S5 & 0.0136 \\ \hline
+P1C1S3 & P1C3S4 & 0.0137 \\ \hline
+P3C3S3 & P4C3S2 & 0.0148 \\ \hline
+P1C1S5 & P1C3S4 & 0.0151 \\ \hline
+P1C5S2 & P4C3S5 & 0.0161 \\ \hline
+P3C5S5 & P4C3S5 & 0.0163 \\ \hline
+P4C4S4 & P4C4S5 & 0.0166 \\ \hline
+P3C1S2 & P4C3S5 & 0.0168 \\ \hline
+P3C2S1 & P4C3S3 & 0.0170 \\ \hline
+P1C4S1 & P4C3S5 & 0.0170 \\ \hline
+P1C3S1 & P4C3S5 & 0.0180 \\ \hline
+P4C3S5 & P4C4S5 & 0.0180 \\ \hline
+P1C5S4 & P4C3S5 & 0.0183 \\ \hline
+P1C2S3 & P4C3S5 & 0.0185 \\ \hline
+P1C3S1 & P1C5S2 & 0.0188 \\ \hline
+P1C2S4 & P4C3S5 & 0.0190 \\ \hline
+P3C2S3 & P4C3S5 & 0.0193 \\ \hline
+P3C3S3 & P4C4S4 & 0.0197 \\ \hline
+P1C1S3 & P1C5S3 & 0.0200 \\ \hline
+P3C2S2 & P4C3S5 & 0.0200 \\ \hline
 \end{longtable}
 
-In order to verify which metric was the best, we compare the top 30 most similar pairs of symphonies generated by each metric and find out which two metrics had the most matches. Note also that we chose to include different implementations for each algorithm like the mean procedure of Manhattan distance over the summation procedure. Based on Table 5.12 below, mean and summation procedure of Manhattan distance would produce non-similar results since only 10 out of 30 matched. 
+In order to verify which metric was the best, we compare the top 30 most similar pairs of symphonies generated by each metric and find out which two metrics had the most matches. Based on Table 5.19 below, Manhattan distance got the top match between its original and compressed version, followed by LCS between its original and compressed version again. The first match between two completely different metric is Levenshtein distance with Manhattan distance, both using the original dataset, with a match of 6/30.
 
-Among the different metrics, Levenshtein and sequence match matched best with 8 out of 30 matches, although the score is still low. Manhattan distance and Edit Distance had the most number of entries in the top 10, with Manhattan distance sum having 5 entries while the mean version having 3. Edit Distance has a total of 3 for the full length and 3 for the transitions. LCS had the worst performance with all its entries below the top 10 and sequence match performed decent with half of its entries above the top 10 and the rest below.
+Most of the entries in the last few spots are dominated by the compressed dataset, which means that using compressed data for metric comparison has a large variance among each other in terms of the results produced by each metric.
 
-There resulted a total of 12 entries for the non-transitions and 8 for transitions which means that testing only the transitions for comparison is not enough to find similarities as its results are more inconsistent compared to that of the original length.
-
-\begin{longtable}[c]{|l|l|l|}
-\caption{Metric Evaluation from Pairwise Symphonies}
+\begin{longtable}{|l|l|l|}
+\caption{Metric Evaluation for Pairwise Comparison of Symphonies}
 \label{my-label}\\
 \hline
-Metric 1 & Metric 2 & Matches \\ \hline
+Metric 1 & Metric 2 & Number of Matches \\ \hline
 \endfirsthead
 %
 \endhead
 %
-Manhattan Distance Mean & Manhattan Distance Sum & 10 \\ \hline
-Manhattan Distance Mean & LCS Truncated & 1 \\ \hline
-Manhattan Distance Mean & Sequence Match & 1 \\ \hline
-Manhattan Distance Sum & LCS Truncated & 0 \\ \hline
-Manhattan Distance Sum & Sequence Match & 0 \\ \hline
-LCS Truncated & Sequence Match & 0 \\ \hline
-Manhattan Distance Transition Sum & Manhattan Distance Mean & 2 \\ \hline
-Manhattan Distance Transition Sum & Manhattan Distance Sum & 3 \\ \hline
-Manhattan Distance Transition Sum & LCS Truncated & 0 \\ \hline
-Manhattan Distance Transition Sum & Sequence Match & 1 \\ \hline
-Edit Distance Full & Manhattan Distance Mean & 5 \\ \hline
-Edit Distance Full & Manhattan Distance Sum & 6 \\ \hline
-Edit Distance Full & LCS Truncated & 0 \\ \hline
-Edit Distance Full & Sequence Match & 4 \\ \hline
-Edit Distance Full & Manhattan Distance Transition Sum & 2 \\ \hline
-Edit Distance Transitions & Manhattan Distance Mean & 3 \\ \hline
-Edit Distance Transitions & Manhattan Distance Sum & 3 \\ \hline
-Edit Distance Transitions & LCS Truncated & 0 \\ \hline
-Edit Distance Transitions & Sequence Match & 8 \\ \hline
-Edit Distance Transitions & Manhattan Distance Transition Sum & 2 \\ \hline
-Edit Distance Transitions & Edit Distance Full & 5 \\ \hline
+MD Original & MD Compressed & 10 \\ \hline
+LCS Compressed & LCS Original & 9 \\ \hline
+LD Original & MD Original & 6 \\ \hline
+LD Compressed & LD Original & 6 \\ \hline
+LD Compressed & MD Original & 4 \\ \hline
+MD Original & LCS Original & 2 \\ \hline
+LD Original & MD Compressed & 2 \\ \hline
+LCS Compressed & MD Original & 1 \\ \hline
+LCS Compressed & LD Original & 1 \\ \hline
+LCS Compressed & LD Compressed & 1 \\ \hline
+LD Original & LCS Original & 1 \\ \hline
+LD Transitions & MD Compressed & 1 \\ \hline
+LD Transitions & LCS Original & 1 \\ \hline
+LCS Compressed & MD Compressed & 0 \\ \hline
+MD Compressed & LCS Original & 0 \\ \hline
 \end{longtable}
 
-In order to evaluate which composers had a wider impact to other symphonies, we tabulate the average distances or percentage per composer per era to see which composer had the least distance or the highest percentage. If different metrics produce similar results, then we can say that those metrics produced good results. Table 5.13 shows the average number of edits per composer, under each era. The table shows that Gabrieli (P1C3) has the lowest average Levenshtein distance from all of the composers across all eras while Rachmaninoff (P5C2) has the largest. It can be seen that composers from the 20th Century era (P5) returned the largest results, this could be due to the fact that the symphonies are longer than the other symphonies, which results to them having a longer trajectory string. In order to address the issue, the researchers have normalized the Levenshtein distances by dividing the results by the length of the longer trajectory string.
+\subsection{Composer Evaluation}
 
-\begin{longtable}{|l|l|l|l|l|l|}
-\caption{Average Levenshtein Distance per Composer}
-\label{my-label}\\
-\hline
-Row & Baroque & Classical & 19th Century & Romantic & 20th Century \\ \hline
-\endfirsthead
-%
-\endhead
-%
-C1 & 1191.4 & 1120.7 & 1420.6 & 3097.2 & 2447.4 \\ \hline
-C2 & 724.5 & 1204 & 1309.1 & 2232.6 & 4005.6 \\ \hline
-C3 & 468.3 & 815.3 & 1424.7 & 3308.7 & 3380.3 \\ \hline
-C4 & 1018 & 1755.8 & 1639.6 & 2451 & 3133.3 \\ \hline
-C5 & 503 & 2378.3 & 1852.2 & 1559.4 & 3863 \\ \hline
-\end{longtable}
+In order to evaluate which composers had the most similar compositions, we take the average of the distances per symphony made by each composer using pairwise comparisons of his compositions only. Table 5.10 shows the average number of edits per composer, under each era. The distances were also normalized prior to averaging by dividing the results by the length of the longer trajectory string. Figure 5.39 shows Antheil's graph. Each color, again, represents a particular symphony, blue for symphony 1, green for symphony 2, red for symphony 3, purple for symphony 4, and yellow for symphony 5. Figure 5.40 shows the individual symphonies of Antheil respectively. In Table 5.11, which shows Antheil\'s symphonies\' distances with one another in a correlation matrix, S2 and S3 had the least distance, which means they are the most similar according to Levenshtein distance. Also, the structure of S2 to S5 are very similar with each other visually which correlates to the finding that Antheil as a composer is deemed by Levenshtein distance as the composer with the most similar symphonies.
 
-\begin{longtable}{|l|l|l|l|l|l|}
+\begin{figure}[H]
+\caption{Antheil Graph}
+\centering
+\includegraphics[scale=0.5]{P5C1}
+\end{figure}
+
+\begin{figure}[H]
+\caption{Individual Symphony Graphs by Antheil}
+\centering
+\includegraphics[scale=0.5]{antheil_symphonies}
+\end{figure}
+
+\begin{longtable}{|l|l|l|}
 \caption{Average Normalized Levenshtein Distance per Composer}
 \label{my-label}\\
 \hline
-Row & Baroque & Classical & 19th Century & Romantic & 20th Century \\ \hline
+Era & Composer & Percentage Similarity \\ \hline
 \endfirsthead
 %
 \endhead
 %
-C1 & 0.854 & 0.439 & 0.693 & 0.705 & 0.436 \\ \hline
-C2 & 0.743 & 0.681 & 0.721 & 0.701 & 0.66-1 \\ \hline
-C3 & 0.857 & 0.538 & 0.442 & 0.7101 & 0.611 \\ \hline
-C4 & 0.781 & 0.569 & 0.635 & 0.755 & 0.569 \\ \hline
-C5 & 0.736 & 0.63 & 0.717 & 0.7 & 0.649 \\ \hline
+Baroque & Bach & 85\% \\ \hline
+ & Boyce & 74\% \\ \hline
+ & Gabrieli & 86\% \\ \hline
+ & Sammartini & 78\% \\ \hline
+ & Viadana & 74\% \\ \hline
+Classical & Boccherini & 44\% \\ \hline
+ & Gluck & 68\% \\ \hline
+ & Haydn & 54\% \\ \hline
+ & Mozart & 57\% \\ \hline
+ & Salieri & 63\% \\ \hline
+19th Century & Beethoven & 69\% \\ \hline
+ & Clementi & 72\% \\ \hline
+ & Gossec & 44\% \\ \hline
+ & Kalliwoda & 64\% \\ \hline
+ & Rubinstein & 72\% \\ \hline
+Romantic & Dvorak & 71\% \\ \hline
+ & Mendelssohn & 70\% \\ \hline
+ & Schubert & 71\% \\ \hline
+ & Schumann & 76\% \\ \hline
+ & Tchaikovsky & 70\% \\ \hline
+20th Century & Antheil & 44\% \\ \hline
+ & Rachmaninoff & 66\% \\ \hline
+ & Rubbra & 61\% \\ \hline
+ & Shostakovich & 57\% \\ \hline
+ & Stravinsky & 65\% \\ \hline
 \end{longtable}
 
-The researchers experimented on compressing the trajectory string, only taking into consideration the different transitions from letter to letter, ignoring the number of times the letter was repeated. This compressed trajectory string will now be compared using Levenshtein distance. Table 5.15 shows the average Levenshtein distances per composer using the compressed trajectory string. Viadana (P1C5) has the lowest average Levenshtein distance.
-
 \begin{longtable}{|l|l|l|l|l|l|}
-\caption{Average Levenshtein Distance (Compressed) per Composer}
+\caption{Antheil Matrix of Symphony Comparisons}
 \label{my-label}\\
 \hline
-Row & Baroque & Classical & 19th Century & Romantic & 20th Century \\ \hline
+P5C1 & S1 & S2 & S3 & S4 & S5 \\ \hline
 \endfirsthead
 %
 \endhead
 %
-C1 & 160.7 & 422.6 & 229.5 & 852.3 & 702.3 \\ \hline
-C2 & 272.1 & 623 & 199.1 & 674.4 & 1736.7 \\ \hline
-C3 & 111.2 & 191.7 & 509.7 & 260.5 & 1547.7 \\ \hline
-C4 & 228.3 & 795.6 & 290.1 & 428.1 & 1583.2 \\ \hline
-C5 & 40.1 & 1448.3 & 403.2 & 302.1 & 1581.6 \\ \hline
+S1 &  & 2853 & 2701 & 2847 & 2774 \\ \hline
+S2 & 2853 &  & 2139 & 1857 & 2223 \\ \hline
+S3 & 2701 & 2139 &  & 2329 & 2571 \\ \hline
+S4 & 2847 & 1857 & 2329 &  & 2180 \\ \hline
+S5 & 2774 & 2223 & 2571 & 2180 &  \\ \hline
 \end{longtable}
 
-The compressed trajectory strings also underwent normalized Levenshtein distance and results are shown in Table 5.16. Antheil (P5C1) is shown to have the smallest average Levenshtein distance. It also can be noted that having a low Levenshtein distance does not not guarantee having a low normalized Levenshtein distance. In this case, 
+The compressed trajectory strings also underwent normalized Levenshtein distance and the results are shown in Table 5.12. Antheil (P5C1) is shown to have the smallest average Levenshtein distance and as was shown in the graphs for Antheil, most of Antheil\'s symphonies really look alike.
 
-\begin{longtable}{|l|l|l|l|l|l|}
+\begin{longtable}{|l|l|l|}
 \caption{Average Normalized Levenshtein Distance (Compressed) per Composer}
 \label{my-label}\\
 \hline
-Row & Baroque & Classical & 19th Century & Romantic & 20th Century \\ \hline
+Era & Composer & Percentage Similarity \\ \hline
 \endfirsthead
 %
 \endhead
 %
-C1 & 0.873 & 0.58 & 0.624 & 0.593 & 0.319 \\ \hline
-C2 & 0.697 & 0.641 & 0.693 & 0.54 & 0.621 \\ \hline
-C3 & 0.807 & 0.382 & 0.579 & 0.626 & 0.532 \\ \hline
-C4 & 0.64 & 0.485 & 0.54 & 0.722 & 0.492 \\ \hline
-C5 & 0.559 & 0.565 & 0.676 & 0.584 & 0.544 \\ \hline
+Baroque & Bach & 87\% \\ \hline
+ & Boyce & 70\% \\ \hline
+ & Gabrieli & 81\% \\ \hline
+ & Sammartini & 64\% \\ \hline
+ & Viadana & 56\% \\ \hline
+Classical & Boccherini & 58\% \\ \hline
+ & Gluck & 64\% \\ \hline
+ & Haydn & 38\% \\ \hline
+ & Mozart & 49\% \\ \hline
+ & Salieri & 57\% \\ \hline
+19th Century & Beethoven & 62\% \\ \hline
+ & Clementi & 69\% \\ \hline
+ & Gossec & 58\% \\ \hline
+ & Kalliwoda & 54\% \\ \hline
+ & Rubinstein & 68\% \\ \hline
+Romantic & Dvorak & 59\% \\ \hline
+ & Mendelssohn & 54\% \\ \hline
+ & Schubert & 63\% \\ \hline
+ & Schumann & 72\% \\ \hline
+ & Tchaikovsky & 58\% \\ \hline
+20th Century & Antheil & 32\% \\ \hline
+ & Rachmaninoff & 62\% \\ \hline
+ & Rubbra & 53\% \\ \hline
+ & Shostakovich & 49\% \\ \hline
+ & Stravinsky & 54\% \\ \hline
 \end{longtable}
 
-Similarly, the result from Manhattan distance was tabulated to show the average distances of each composer per era as seen in Table 5.17. The result shows that Gabrieli of Baroque era (P1C3) had the smallest distance value using the Manhattan while Schubert of Romantic era (P4C3) had the largest. This means that Gabrieli had symphonies that are closer to more symphonies than by other composers while Schubert had symphonies that are more dissimilar to other symphonies. Baroque era, in general, also had overall smaller distances compared to other eras while Romantic era had the largest.
+Similarly, the result from Manhattan distance was tabulated to show the average distances of each composer per era as seen in Table 5.13. The result shows that Gossec of 19th Century  (P3C3) had the smallest distance value of 3.84 while Beethoven of 19th Century (P3C1) had the largest. This means that Gossec had symphonies that are very close with each other while Schubert had symphonies that are more dissimilar. Based from Table 5.14, S2 and S5 are the most similar among Gossec\'s symphonies. In the visual plots in Figure 5.41 and Figure 5.42 however, they look less alike than with S2 and S3 which appear to be more similar.
 
-\begin{longtable}{|l|l|l|l|l|l|}
-\caption{Average Manhattan Distance per Composer}
+\begin{figure}[H]
+\caption{Gossec Graph}
+\centering
+\includegraphics[scale=0.5]{P3C3}
+\end{figure}
+
+\begin{figure}[H]
+\caption{Individual Symphony Graphs by Gossec}
+\centering
+\includegraphics[scale=0.5]{gossec_symphonies}
+\end{figure}
+
+\begin{longtable}{|l|l|l|}
+\caption{Average Manhattan Distance per Composer (Original)}
 \label{my-label}\\
 \hline
-Row & Baroque & Classical & 19th Century & Romantic & 20th Century \\ \hline
+Era & Composer & Percentage Similarity \\ \hline
 \endfirsthead
 %
 \endhead
 %
-C1 & 8166.221 & 15215.32 & 10140.51 & 15769.45 & 23068.61 \\ \hline
-C2 & 6089.764 & 8331.856 & 13083.8 & 14746.23 & 19661.5 \\ \hline
-C3 & 4140.392 & 9954.428 & 17667.8 & 27076.32 & 18392.58 \\ \hline
-C4 & 7199.323 & 16218.67 & 11979.14 & 19391.64 & 20215.49 \\ \hline
-C5 & 4918.109 & 17404.75 & 12183.51 & 13561.83 & 22579.82 \\ \hline
+Baroque & Bach & 7.14 \\ \hline
+ & Boyce & 5.18 \\ \hline
+ & Gabrieli & 6.05 \\ \hline
+ & Sammartini & 6.59 \\ \hline
+ & Viadana & 5.61 \\ \hline
+Classical & Boccherini & 8.30 \\ \hline
+ & Gluck & 5.33 \\ \hline
+ & Haydn & 9.42 \\ \hline
+ & Mozart & 6.27 \\ \hline
+ & Salieri & 6.38 \\ \hline
+19th Century & Beethoven & 10.45 \\ \hline
+ & Clementi & 6.68 \\ \hline
+ & Gossec & 3.84 \\ \hline
+ & Kalliwoda & 9.59 \\ \hline
+ & Rubinstein & 5.81 \\ \hline
+Romantic & Dvorak & 6.89 \\ \hline
+ & Mendelssohn & 5.36 \\ \hline
+ & Schubert & 5.23 \\ \hline
+ & Schumann & 8.01 \\ \hline
+ & Tchaikovsky & 6.88 \\ \hline
+20th Century & Antheil & 8.11 \\ \hline
+ & Rachmaninoff & 5.78 \\ \hline
+ & Rubbra & 5.82 \\ \hline
+ & Shostakovich & 6.02 \\ \hline
+ & Stravinsky & 8.53 \\ \hline
 \end{longtable}
 
-Using the normalized Manhattan distance results with the same procedure as above, it can be seen in Table 5.18 that this time, Viadana of Baroque era (P1C5) had the smallest distance, although Gabrieli, the smallest distance from the non-normalized manhattan distance result, still had a very small distance compared to most composers. This time, however, Antheil of 20th Century had the largest distance instead of Schubert
-
 \begin{longtable}{|l|l|l|l|l|l|}
-\caption{Average Normalized Manhattan Distance per Composer}
+\caption{Gossec Matrix of Symphony Comparisons}
 \label{my-label}\\
 \hline
-Row & Baroque & Classical & 19th Century & Romantic & 20th Century \\ \hline
+P3C3 & S1 & S2 & S3 & S4 & S5 \\ \hline
 \endfirsthead
 %
 \endhead
 %
-C1 & 491.3077674 & 2117.378009 & 1291.064646 & 3230.844887 & 6138.347886 \\ \hline
-C2 & 905.0273959 & 2499.334816 & 1299.300606 & 3090.077958 & 4774.202967 \\ \hline
-C3 & 461.8045741 & 2436.608763 & 2771.299898 & 2163.809725 & 4931.113653 \\ \hline
-C4 & 1279.07484 & 3778.909272 & 1838.724787 & 2024.689936 & 5613.785691 \\ \hline
-C5 & 410.6783212 & 4618.480295 & 1784.439225 & 1848.743024 & 5857.821717 \\ \hline
+S1 &  & 2.894063 & 3.197033 & 3.303385 & 4.294225 \\ \hline
+S2 & 2.894063 &  & 3.213563 & 3.745208 & 2.709862 \\ \hline
+S3 & 3.197033 & 3.213563 &  & 3.874635 & 4.016775 \\ \hline
+S4 & 3.303385 & 3.745208 & 3.874635 &  & 7.194489 \\ \hline
+S5 & 4.294225 & 2.709862 & 4.016775 & 7.194489 &  \\ \hline
+\end{longtable}
+
+Using Manhattan distance on the compressed data, the result can be seen in Table 5.15 and similarly, Gossec of 19th Century (P3C3) had the smallest distance of 2.98 while Beethoven still had the largest with 9.36. These results show that both the original data and the compressed data showed consistent results with both Manhattan distance and Levenshtein distance.
+
+\begin{longtable}{|l|l|l|}
+\caption{Average Manhattan Distance per Composer (Compressed)}
+\label{my-label}\\
+\hline
+Era & Composer & Percentage Similarity \\ \hline
+\endfirsthead
+%
+\endhead
+%
+Baroque & Bach & 5.81 \\ \hline
+ & Boyce & 4.18 \\ \hline
+ & Gabrieli & 5.01 \\ \hline
+ & Sammartini & 5.61 \\ \hline
+ & Viadana & 5.08 \\ \hline
+Classical & Boccherini & 6.96 \\ \hline
+ & Gluck & 4.76 \\ \hline
+ & Haydn & 8.55 \\ \hline
+ & Mozart & 4.60 \\ \hline
+ & Salieri & 6.18 \\ \hline
+19th Century & Beethoven & 9.36 \\ \hline
+ & Clementi & 5.58 \\ \hline
+ & Gossec & 2.98 \\ \hline
+ & Kalliwoda & 8.62 \\ \hline
+ & Rubinstein & 5.29 \\ \hline
+Romantic & Dvorak & 6.32 \\ \hline
+ & Mendelssohn & 4.93 \\ \hline
+ & Schubert & 4.39 \\ \hline
+ & Schumann & 7.89 \\ \hline
+ & Tchaikovsky & 6.28 \\ \hline
+20th Century & Antheil & 6.79 \\ \hline
+ & Rachmaninoff & 5.40 \\ \hline
+ & Rubbra & 5.50 \\ \hline
+ & Shostakovich & 5.29 \\ \hline
+ & Stravinsky & 7.67 \\ \hline
 \end{longtable}
