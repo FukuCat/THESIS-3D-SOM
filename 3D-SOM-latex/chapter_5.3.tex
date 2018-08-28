@@ -281,6 +281,8 @@ The results show that Bach\'s Sinfonia No. 7 (P1C1S4) and Sinfonia No. 4 (P1C1S5
 
 The two symphonies are then viewed in 3D to see whether time sequence might have caused the symphonies to be deemed almost unsimilar in their 2D graph. As shown in Figure 5.26, the 3D graph shows a 93\% similarity with much of the ribbon being green, meaning that most of the points are near each other time-wise.
 
+Additionally, since Bach's 30 sinfonias were created between 1720 and 1725, it might have been the catalyst at to why both these symphonies were deemed similar.
+
 To further verify this method of comparison between symphonies, we shall compare these results with the results of other metrics later on if they share similar pairs of results. The results of this metric together with other succeeding partial results below can be further viewed in their respective spreadsheet files as the results of these pairwise comparisons have a total number of 7750 rows each.
 
 \begin{figure}[H]
@@ -346,7 +348,7 @@ P2C4S4A & P3C1S4 & 3.637364 \\ \hline
 P1C1S1 & P4C5S2 & 3.6608 \\ \hline
 \end{longtable}
 
-Table 5.4 below shows the result of Manhattan distance using the compressed data. Similarly, the longer of each pairwise symphonies were truncated when performing the Manhattan distances and the collective distances are thus averaged. Gabrieli\'s Canzon Duodecimi toni a 10 (P1C3S1) and Gabrieli\'s Canzon noni toni a 12 – Correggio (P1C3S3) were the top match with an average Manhattan distance of 1.69. Shown below in Figure 5.27 and 5.28 are the corresponding graphs of the pair. The pair now looks more similar than with the original data; however, there is still no strong similarity in the 2D graphs. This time, however, their cluster count based from Table 5.2 are no longer similar, with P1C3S1 having 93\% in E and only 6\% in B while P1C3S3 having 71\% in E and 28\% in B.
+Table 5.4 below shows the result of Manhattan distance using the compressed data. Similarly, the longer of each pairwise symphonies were truncated when performing the Manhattan distances and the collective distances are thus averaged. Gabrieli\'s Canzon Duodecimi toni a 10 (P1C3S1) and Gabrieli\'s Canzon noni toni a 12 – Correggio (P1C3S3) were the top match with an average Manhattan distance of 1.69. Shown below in Figure 5.27 and 5.28 are the corresponding graphs of the pair. The pair now looks more similar than with the original data; however, there is still no strong similarity in the 2D graphs. This time, however, their cluster count based from Table 5.2 are no longer similar, with P1C3S1 having 93\% in E and only 6\% in B while P1C3S3 having 71\% in E and 28\% in B. Both Canzons by Gabrieli were also made at the same year of 1597, thereby correlating their similarity somehow.
 
 \begin{figure}[H]
 \begin{minipage}{.5\textwidth}
@@ -412,7 +414,7 @@ P1C1S1 & P4C5S2 & 3.200008271 \\ \hline
 P3C3S2 & P3C3S3 & 3.210794633 \\ \hline
 \end{longtable}
 
-Table 5.5 below shows the top results when longest common subsequence (LCS) is used with the original data using the cluster labels as strings as was discussed back in Chapter 4. Salieri\'s Sinfonia Veneziana in D major A (P2C5S4) and Rachmaninoff\'s Isle of the Dead (P5C2S2) is the top matching pair with a percent match of 56\%. This percentage was obtained by normalizing the resulting longest match between the two strings by dividing it with the length of the longer string between the pair. As shown in Figure 5.30 and Figure 5.31, both these symphonies indeed show a strong similarity with each other. This result may point to the direction that LCS is a good metric for comparing similarities between symphonies. Table 5.2 shows that both symphonies have evenly distributed points among the clusters; however, the distributions are not exactly near with P2C5S4 having 26\%, 26\%, 15\%, 33\%, and 1\% respectively, and P5C2S2 having 42\%, 11\%, 20\%, 24\%, and 3\%.
+Table 5.5 below shows the top results when longest common subsequence (LCS) is used with the original data using the cluster labels as strings as was discussed back in Chapter 4. Salieri\'s Sinfonia Veneziana in D major A (P2C5S4) and Rachmaninoff\'s Isle of the Dead (P5C2S2) is the top matching pair with a percent match of 56\%. This percentage was obtained by normalizing the resulting longest match between the two strings by dividing it with the length of the longer string between the pair. As shown in Figure 5.30 and Figure 5.31, both these symphonies indeed show a strong similarity with each other. This result may point to the direction that LCS is a good metric for comparing similarities between symphonies. Table 5.2 shows that both symphonies have evenly distributed points among the clusters; however, the distributions are not exactly near with P2C5S4 having 26\%, 26\%, 15\%, 33\%, and 1\% respectively, and P5C2S2 having 42\%, 11\%, 20\%, 24\%, and 3\%. Salieri\'s symphony was created sometime near 1775 while Rachmaninoff\'s was in 1908. The pair of symphonies, this time, are very far apart from each other which might mean that Salieri had a lasting impression from his works.
 
 Figure 5.32 shows the 3D results of the two symphonies. The percentage similarity is now only 69\% with many parts of the ribbon now being red. This shows that while LCS provides good comparison with the 2D graph, when time is now incorporated, the result shows now that the percentage match isn\'t that high afterall.
 
@@ -478,7 +480,7 @@ P2C5S2A & P5C2S2A & 0.447983415 \\ \hline
 P2C5S3A & P5C3S2A & 0.447229551 \\ \hline
 \end{longtable}
 
-Table 5.6 below shows the result of LCS performed on the compressed data. Viadana\'s Sinfonia la Bolognese (P2C5S4) and Rachmaninoff\'s Isle of the Dead (P5C2S2) are the top match, which is the same with the result of LCS performed on the original data. Having the same result, which also happens to be a very good result, since they are indeed similar-looking, means that LCS indeed may be a very good metric for comparison of symphonies using this particular methodology.
+Table 5.6 below shows the result of LCS performed on the compressed data.  Salieri\'s Sinfonia Veneziana in D major A (P2C5S4) and Rachmaninoff\'s Isle of the Dead (P5C2S2) are the top match, which is the same with the result of LCS performed on the original data. Having the same result, which also happens to be a very good result, since they are indeed similar-looking, means that LCS indeed may be a very good metric for comparison of symphonies using this particular methodology.
 
 \begin{longtable}{|l|l|l|}
 \caption{LCS  Compressed Result}
@@ -522,7 +524,7 @@ P5C2S1A & P5C4S3A & 35\% \\ \hline
 \end{longtable}
 
 Table 5.7 below shows the result of Levenshtein distance using the original data. Given the trajectory of the symphony, which is represented by letters from A to E, the researchers compared all of the symphonies and normalized the results by dividing the distance with the length of the longer symphony. Bach\'s Brandenburg Concerto No.3 (P1C1S3) and Rubinstein\'s Symphony No.6 in A minor Op.111 (P3C5S5) had the least distance with only 0.13. Looking at their 2D graphs in Figure 5.33 and Figure 5.34, there is a slight similarity between the two in the positioning of the points; however, the visual output of the 2D graph does not show the closeness of the two symphonies. Looking at the 3D graph in Figure 5.35 though, it can be seen that 
-the percentage similarity is 71\% which is quite low compared to that of Manhattan distance.
+the percentage similarity is 71\% which is quite low compared to that of Manhattan distance. Bach\'s composition was from 1721 while Rubinstein\'s was from 1886. Both symphonies are, again, very far from each other; however, considering that Bach is a very popular and influential composer, it may very well be true that Bach had a lasting impression on Rubinstein based from this result.
 
 \begin{figure}[H]
 \begin{minipage}{.5\textwidth}
@@ -586,7 +588,7 @@ P3C2S1 & P3C3S5 & 0.34 \\ \hline
 P3C3S1 & P3C3S2 & 0.35 \\ \hline
 \end{longtable}
 
-Table 5.8 below shows the result of Levenshtein distance using the compressed data. The resulting distances are, again, normalized to prevent bias to symphony lengths. As shown in Figure 5.36 and Figure 5.37, the graphs do not share a large similarity, but they are somewhat located near the same coordinates. Figure 5.38 shows that there is a large similarity, however, between these two symphonies with a similarity percentage of 86\%.
+Table 5.8 below shows the result of Levenshtein distance using the compressed data. The resulting distances are, again, normalized to prevent bias to symphony lengths. Gossec\'s Symphony in E-Flat Major Op. XII No. 5 and Schubert\'s Symphony No. 5 in B-Flat Major were the top match. As shown in Figure 5.36 and Figure 5.37, the graphs do not share a large similarity, but they are somewhat located near the same coordinates. Figure 5.38 shows that there is a large similarity, however, between these two symphonies with a similarity percentage of 86\%. Gossec's symphony, which was composed in 1769, is also a bit far from Schubert's symphony, which was composed in 1816.
 
 \begin{figure}[H]
 \begin{minipage}{.5\textwidth}
@@ -682,7 +684,7 @@ MD Compressed & LCS Original & 0 \\ \hline
 
 \subsection{Composer Evaluation}
 
-In order to evaluate which composers had the most similar compositions, we take the average of the distances per symphony made by each composer using pairwise comparisons of his compositions only. Table 5.10 shows the average number of edits per composer, under each era. The distances were also normalized prior to averaging by dividing the results by the length of the longer trajectory string. Figure 5.39 shows Antheil's graph. Each color, again, represents a particular symphony, blue for symphony 1, green for symphony 2, red for symphony 3, purple for symphony 4, and yellow for symphony 5. Figure 5.40 shows the individual symphonies of Antheil respectively. In Table 5.11, which shows Antheil\'s symphonies\' distances with one another in a correlation matrix, S2 and S3 had the least distance, which means they are the most similar according to Levenshtein distance. Also, the structure of S2 to S5 are very similar with each other visually which correlates to the finding that Antheil as a composer is deemed by Levenshtein distance as the composer with the most similar symphonies.
+In order to evaluate which composers had the most similar compositions, we take the average of the distances per symphony made by each composer using pairwise comparisons of his compositions only. Table 5.10 shows the average number of edits per composer, under each era. The distances were also normalized prior to averaging by dividing the results by the length of the longer trajectory string. Figure 5.39 shows Antheil's graph. Each color, again, represents a particular symphony, blue for symphony 1, green for symphony 2, red for symphony 3, purple for symphony 4, and yellow for symphony 5. Figure 5.40 shows the individual symphonies of Antheil respectively. In Table 5.11, which shows Antheil\'s symphonies\' distances with one another in a correlation matrix, S2 and S3 had the least distance, which means they are the most similar according to Levenshtein distance. Also, the structure of S2 to S5 are very similar with each other visually which correlates to the finding that Antheil as a composer is deemed by Levenshtein distance as the composer with the most similar symphonies. All symphonies of Antheil chosen for the dataset were also composed near each other, ranging from 1936 to 1947, except for Symphony No. 1 which was composed in 1920. This also correlates with the graphs, with Symphony 1 being the only one different from the other four symphonies.
 
 \begin{figure}[H]
 \caption{Antheil Graph}
@@ -741,11 +743,11 @@ P5C1 & S1 & S2 & S3 & S4 & S5 \\ \hline
 %
 \endhead
 %
-S1 &  & 2853 & 2701 & 2847 & 2774 \\ \hline
-S2 & 2853 &  & 2139 & 1857 & 2223 \\ \hline
-S3 & 2701 & 2139 &  & 2329 & 2571 \\ \hline
-S4 & 2847 & 1857 & 2329 &  & 2180 \\ \hline
-S5 & 2774 & 2223 & 2571 & 2180 &  \\ \hline
+Symphony No. 1 &  & 2853 & 2701 & 2847 & 2774 \\ \hline
+Symphony No. 3 & 2853 &  & 2139 & 1857 & 2223 \\ \hline
+Symphony No. 4 & 2701 & 2139 &  & 2329 & 2571 \\ \hline
+Symphony No. 5 & 2847 & 1857 & 2329 &  & 2180 \\ \hline
+Symphony No. 6 & 2774 & 2223 & 2571 & 2180 &  \\ \hline
 \end{longtable}
 
 The compressed trajectory strings also underwent normalized Levenshtein distance and the results are shown in Table 5.12. Antheil (P5C1) is shown to have the smallest average Levenshtein distance and as was shown in the graphs for Antheil, most of Antheil\'s symphonies really look alike.
@@ -786,7 +788,7 @@ Romantic & Dvorak & 59\% \\ \hline
  & Stravinsky & 54\% \\ \hline
 \end{longtable}
 
-Similarly, the result from Manhattan distance was tabulated to show the average distances of each composer per era as seen in Table 5.13. The result shows that Gossec of 19th Century  (P3C3) had the smallest distance value of 3.84 while Beethoven of 19th Century (P3C1) had the largest. This means that Gossec had symphonies that are very close with each other while Schubert had symphonies that are more dissimilar. Based from Table 5.14, S2 and S5 are the most similar among Gossec\'s symphonies. In the visual plots in Figure 5.41 and Figure 5.42 however, they look less alike than with S2 and S3 which appear to be more similar.
+Similarly, the result from Manhattan distance was tabulated to show the average distances of each composer per era as seen in Table 5.13. The result shows that Gossec of 19th Century  (P3C3) had the smallest distance value of 3.84 while Beethoven of 19th Century (P3C1) had the largest. This means that Gossec had symphonies that are very close with each other while Schubert had symphonies that are more dissimilar. Based from Table 5.14, Symphony in E and Symphony No. 6 are the most similar among Gossec\'s symphonies. In the visual plots in Figure 5.41 and Figure 5.42 however, they look less alike than with Symphony in E and Symphony in F which appear to be more similar. Coincidentally, Symphony E and Symphony F were both composed in 1969, which explains their similarity in the graph. Generally, however, Gossec\'s symphonies have similarities with each other, just like with Antheil.
 
 \begin{figure}[H]
 \caption{Gossec Graph}
@@ -845,11 +847,11 @@ P3C3 & S1 & S2 & S3 & S4 & S5 \\ \hline
 %
 \endhead
 %
-S1 &  & 2.894063 & 3.197033 & 3.303385 & 4.294225 \\ \hline
-S2 & 2.894063 &  & 3.213563 & 3.745208 & 2.709862 \\ \hline
-S3 & 3.197033 & 3.213563 &  & 3.874635 & 4.016775 \\ \hline
-S4 & 3.303385 & 3.745208 & 3.874635 &  & 7.194489 \\ \hline
-S5 & 4.294225 & 2.709862 & 4.016775 & 7.194489 &  \\ \hline
+Symphonie in D &  & 2.894063 & 3.197033 & 3.303385 & 4.294225 \\ \hline
+Symphony in E & 2.894063 &  & 3.213563 & 3.745208 & 2.709862 \\ \hline
+Symphony in F-Major & 3.197033 & 3.213563 &  & 3.874635 & 4.016775 \\ \hline
+Symphony No. 2 & 3.303385 & 3.745208 & 3.874635 &  & 7.194489 \\ \hline
+Symphony No. 6 & 4.294225 & 2.709862 & 4.016775 & 7.194489 &  \\ \hline
 \end{longtable}
 
 Using Manhattan distance on the compressed data, the result can be seen in Table 5.15 and similarly, Gossec of 19th Century (P3C3) had the smallest distance of 2.98 while Beethoven still had the largest with 9.36. These results show that both the original data and the compressed data showed consistent results with both Manhattan distance and Levenshtein distance.
